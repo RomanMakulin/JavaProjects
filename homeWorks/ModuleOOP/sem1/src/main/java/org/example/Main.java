@@ -39,16 +39,18 @@ public class Main {
             System.out.println(item);
         }
 
-        int maxBasket = 10;
-        Product[] basketList = new Product[maxBasket];
+        ArrayList<Product> basketList = new ArrayList<>();
 
-        for (int i = 0; i < basketList.length; i++) {
-            basketList[i] = new Product(" ", 0, 0);
-        }
 
-        User user1 = new User("123", "Roman", new Basket(basketList));
+
+
+        User user1 = new User("123", "Roman");
+        user1.clearBasket();
+        user1.PutBasket(basketball[0]);
         user1.PutBasket(basketball[1]);
-        user1.CheckBasket();
+        user1.checkBasket();
+
+
 
 
     }

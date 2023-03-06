@@ -7,16 +7,12 @@ public class User {
     private String login;
     private Basket basket;
 
-    public User(String password, String login, Basket basket) {
-        this.password = password;
-        this.login = login;
-        this.basket = basket;
-    }
-
     public User(String password, String login) {
         this.password = password;
         this.login = login;
+        this.basket = new Basket();
     }
+
 
     public Basket getBasket() {
         return basket;
@@ -34,7 +30,12 @@ public class User {
         basket.removeFromBasket(i);
     }
 
-    public void CheckBasket(){
+    public void clearBasket(){
+        basket.clear();
+    }
+
+    public void checkBasket(){
+        System.out.println("Корзина покупателя "+this.login+" :");
         this.basket.showBasket();
     }
 
