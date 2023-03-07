@@ -15,8 +15,14 @@ public class Category {
 
     @Override
     public String toString() {
-
-        return String.format("%s:\n%s", name, Arrays.toString(AllProducts));
+        StringBuilder m_list = new StringBuilder();
+        for (Product item : AllProducts) {
+            if (item != null) {
+                m_list.append(item.prodInfo());
+                m_list.append("\n");
+            }
+        }
+        return String.format("%s:\n%s", name, m_list);
     }
 
 }

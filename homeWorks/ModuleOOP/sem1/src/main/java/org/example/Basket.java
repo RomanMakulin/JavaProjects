@@ -13,8 +13,6 @@ public class Basket {
         this.buy = buy;
     }
 
-    //    ArrayList<Product> basketList;
-//
     public Basket() {
         this.buy = new Product[10];
     }
@@ -26,33 +24,16 @@ public class Basket {
     }
 
     public void showBasket() {
-        System.out.println(Arrays.toString(buy));
+        StringBuilder m_list = new StringBuilder();
+        int number = 1;
+        for (Product item : buy) {
+            if (item != null) {
+                m_list.append(String.format("%d) ", number++));
+                m_list.append(item.prodInfo());
+                m_list.append("\n");
+            }
+        }
+        System.out.println(m_list);
     }
-//
-//    public Basket(Product[] prodList) {
-//        this.basketList = new ArrayList(List.of(prodList));
-//    }
-//
-//    protected void clear() {
-//        basketList.clear();
-//    }
-//
-//    protected void addBasket(Product item) {
-//        basketList.add(item);
-//    }
-//
-//    protected void removeFromBasket(Product item) {
-//        basketList.remove(item);
-//    }
-//
-//    public void showBasket() {
-//        System.out.println(basketList.toString() + "\n");
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return basketList.toString();
-//    }
-
 
 }

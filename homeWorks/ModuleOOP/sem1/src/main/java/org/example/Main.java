@@ -39,25 +39,26 @@ public class Main {
             System.out.println(item);
         }
 
+        System.out.println("===============");
+        System.out.println("Реализация покупок");
 
         User user1 = new User("123", "Roman");
         user1.putBasket(0, basketball);
         user1.putBasket(1, basketball);
-
         user1.checkBasket();
 
+        System.out.println();
+        User user2 = new User("21", "Max");
+        user2.putBasket(0, football);
+        user2.putBasket(1, football);
+        user2.checkBasket();
 
-//        User user1 = new User("123", "Roman");
-//        user1.clearBasket();
-//        user1.PutBasket(basketball[0]);
-//        user1.PutBasket(basketball[1]);
-//        user1.checkBasket();
-//
-//
-        System.out.println(shopList[0]);
-
-
-
+        System.out.println("=============================");
+        System.out.println(" Весь ассортимент магазина: ");
+        System.out.println("=============================");
+        for (Category item : shopList) {
+            System.out.println(item);
+        }
 
     }
 }

@@ -1,5 +1,7 @@
 package org.example;
+
 import java.util.Objects;
+
 public class Product {
     protected String name;
     protected int price;
@@ -11,7 +13,7 @@ public class Product {
         this.rating = rating;
     }
 
-    public String prodInfo(){
+    public String prodInfo() {
         return String.format("Название товара: %s, стоимость: %d р., рейтинг: %d/5.", name, price, rating);
     }
 
@@ -24,5 +26,4 @@ public class Product {
     public int hashCode() {
         return Objects.hash(name, price, rating);
     }
-
 }
