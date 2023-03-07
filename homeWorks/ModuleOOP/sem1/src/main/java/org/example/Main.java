@@ -39,16 +39,22 @@ public class Main {
             System.out.println(item);
         }
 
-        ArrayList<Product> basketList = new ArrayList<>();
-
-
-
 
         User user1 = new User("123", "Roman");
-        user1.clearBasket();
-        user1.PutBasket(basketball[0]);
-        user1.PutBasket(basketball[1]);
+        user1.putBasket(0, basketball);
+        user1.putBasket(1, basketball);
+
         user1.checkBasket();
+
+
+//        User user1 = new User("123", "Roman");
+//        user1.clearBasket();
+//        user1.PutBasket(basketball[0]);
+//        user1.PutBasket(basketball[1]);
+//        user1.checkBasket();
+//
+//
+        System.out.println(shopList[0]);
 
 
 

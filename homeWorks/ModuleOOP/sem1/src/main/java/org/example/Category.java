@@ -1,14 +1,12 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Category {
     public String name;
     public Product[] AllProducts;
-
-    public Category(String name) {
-        this.name = name;
-    }
 
     public Category(String name, Product[] allProducts) {
         this.name = name;
@@ -17,12 +15,8 @@ public class Category {
 
     @Override
     public String toString() {
-        StringBuilder list = new StringBuilder();
-        for (Product item : AllProducts) {
-            list.append(item.prodInfo());
-            list.append("\n");
-        }
-        return String.format("%s:\n%s", name, list);
+
+        return String.format("%s:\n%s", name, Arrays.toString(AllProducts));
     }
 
 }
