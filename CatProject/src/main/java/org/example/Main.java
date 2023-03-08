@@ -6,7 +6,7 @@ public class Main {
         Animal[] animal = {
                 new Dog("Рекс"),
                 new HomeCat("Милка"),
-                new Tiger("Шархан", 50)
+                new Tiger("Шархан")
         };
 
         for (Animal item : animal) {

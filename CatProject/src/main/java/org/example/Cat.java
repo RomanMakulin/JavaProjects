@@ -12,7 +12,7 @@ public class Cat extends Animal {
 
     static int catCount;
 
-    public Cat(String name, int maxSwimDist, String type) {
+    public Cat(String name,int maxRunDist, int maxSwimDist, String type) {
         super(name, 200, maxSwimDist, "Кошка");
         catCount++;
     }
