@@ -53,6 +53,8 @@ public class Main {
         user2.putBasket(1, football);
         user2.checkBasket();
 
+        System.out.println("Users count: " + User.usersCount);
+
         System.out.println("=============================");
         System.out.println(" Весь ассортимент магазина: ");
         System.out.println("=============================");
