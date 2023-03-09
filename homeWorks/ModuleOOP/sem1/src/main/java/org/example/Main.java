@@ -43,15 +43,15 @@ public class Main {
         System.out.println("Реализация покупок");
 
         User user1 = new User("123", "Roman");
-        user1.putBasket(0, basketball);
-        user1.putBasket(1, basketball);
-        user1.checkBasket();
+        user1.put(0, basketball);
+        user1.put(1, basketball);
+        user1.showBasket();
 
         System.out.println();
         User user2 = new User("21", "Max");
-        user2.putBasket(0, football);
-        user2.putBasket(1, football);
-        user2.checkBasket();
+        user2.put(0, football);
+        user2.put(1, football);
+        user2.showBasket();
 
         System.out.println("Users count: " + User.usersCount);
 

@@ -12,7 +12,7 @@ public class Contest {
     public void ContestFight() {
         for (int i = 0; i < barriers.length; i++) {
             for (int j = 0; j < athletes.length; j++) {
-                if (barriers[i].type == "run" && athletes[j] != null) {
+                if (barriers[i] instanceof Runroad && athletes[j] != null) {
                     if (athletes[j].maxRunDistance >= barriers[i].getVal()) {
                         athletes[j].run();
                         athletes[j].maxRunDistance -= barriers[i].getVal();

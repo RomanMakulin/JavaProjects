@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Category {
-    public String name;
+public class Category extends Product {
+//    public String name;
     public Product[] AllProducts;
 
     public Category(String name, Product[] allProducts) {
-        this.name = name;
+        super(name, 0, 0);
         AllProducts = allProducts;
     }
 
@@ -24,5 +24,4 @@ public class Category {
         }
         return String.format("%s:\n%s", name, m_list);
     }
-
 }

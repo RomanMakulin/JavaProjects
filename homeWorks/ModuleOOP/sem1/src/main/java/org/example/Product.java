@@ -16,14 +16,9 @@ public class Product {
     public String prodInfo() {
         return String.format("Название товара: %s, стоимость: %d р., рейтинг: %d/5.", name, price, rating);
     }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-
     @Override
     public int hashCode() {
         return Objects.hash(name, price, rating);
     }
+
 }
