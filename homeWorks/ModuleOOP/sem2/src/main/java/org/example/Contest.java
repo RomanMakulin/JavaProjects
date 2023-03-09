@@ -9,37 +9,56 @@ public class Contest {
         this.athletes = athletes;
     }
 
-    public void ContestFight() {
-        for (int i = 0; i < barriers.length; i++) {
-            for (int j = 0; j < athletes.length; j++) {
-                if (barriers[i] instanceof Runroad && athletes[j] != null) {
-                    if (athletes[j].maxRunDistance >= barriers[i].getVal()) {
-                        athletes[j].run();
-                        athletes[j].maxRunDistance -= barriers[i].getVal();
-                        System.out.println("Остались силы пробюежать ещё " + athletes[j].maxRunDistance + " м.");
-                        System.out.println();
-                    } else {
-                        System.out.println("[" + athletes[j].type + "] " + athletes[j].name + " выбывает!");
-                        athletes[j] = null;
-                    }
-                } else if (athletes[j] != null) {
-                    if (athletes[j].maxJumpHight >= barriers[i].getVal()) {
-                        athletes[j].jump();
-                        athletes[j].maxJumpHight -= barriers[i].getVal();
-                        System.out.println("Остались силы прыгнуть на " + athletes[j].maxJumpHight + " м.");
-                        System.out.println();
-                    } else {
-                        System.out.println("[" + athletes[j].type + "] " + athletes[j].name + " выбывает!");
-                        athletes[j] = null;
-                    }
-                }
-            }
-            System.out.println();
+    public void checkRun(int i, int j) {
+        if (athletes[j].maxRunDistance >= barriers[i].getVal()) {
+            athletes[j].run();
+            updCurrentValRun(i, j);
+        } else {
+            System.out.println("[" + athletes[j].type + "] " + athletes[j].name + " выбывает!");
+            athletes[j] = null;
         }
+    }
+
+    public void checkJump(int i, int j) {
+        if (athletes[j].maxJumpHight >= barriers[i].getVal()) {
+            athletes[j].jump();
+            updCurrentValJump(i, j);
+        } else {
+            System.out.println("[" + athletes[j].type + "] " + athletes[j].name + " выбывает!");
+            athletes[j] = null;
+        }
+    }
+
+    public void updCurrentValRun(int i, int j) {
+        athletes[j].maxRunDistance -= barriers[i].getVal();
+        System.out.println("Остались силы пробежать ещё " + athletes[j].maxRunDistance + " м.");
+    }
+
+    public void updCurrentValJump(int i, int j) {
+        athletes[j].maxJumpHight -= barriers[i].getVal();
+        System.out.println("Остались силы прыгнуть на " + athletes[j].maxJumpHight + " м.");
+    }
+
+    public void checkWinner() {
         for (int i = 0; i < athletes.length; i++) {
             if (athletes[i] != null) {
                 System.out.println(athletes[i].name + " победитель!");
             }
         }
     }
+
+    public void ContestFight() {
+        for (int i = 0; i < barriers.length; i++) {
+            for (int j = 0; j < athletes.length; j++) {
+                if (barriers[i] instanceof Runroad && athletes[j] != null) {
+                    checkRun(i, j);
+                } else if (athletes[j] != null) {
+                    checkJump(i, j);
+                }
+            }
+        }
+    }
+
 }
+
+

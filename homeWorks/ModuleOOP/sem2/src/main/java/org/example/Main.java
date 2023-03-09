@@ -28,6 +28,7 @@ public class Main {
 
         Contest contest = new Contest(barriers, athlete);
         contest.ContestFight();
+        contest.checkWinner();
 
     }
 }

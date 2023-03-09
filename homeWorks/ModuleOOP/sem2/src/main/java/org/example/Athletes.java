@@ -1,6 +1,6 @@
 package org.example;
 
-public class Athletes{
+public class Athletes implements Move{
 
     protected String name;
     protected int maxRunDistance;
@@ -22,13 +22,13 @@ public class Athletes{
         return String.format("Name: %s, maxDist: %d, maxJumpHight: %d, Type: %s", name, maxRunDistance, maxJumpHight, type);
     }
 
+    @Override
     public void run() {
-        System.out.println(String.format("[%s] %s пробегает ...", type, name));
+        System.out.printf("%s бежит дальше ...", name);
     }
 
+    @Override
     public void jump() {
-        System.out.println(String.format("[%s] %s перепрыгивает ...", type, name));
+        System.out.printf("%s перепрыгнул ...", name);
     }
-
-
 }
