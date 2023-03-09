@@ -47,14 +47,11 @@ public class Contest {
         }
     }
 
-    public void ContestFight() {
+    public void contestFight() {
         for (int i = 0; i < barriers.length; i++) {
             for (int j = 0; j < athletes.length; j++) {
-                if (barriers[i] instanceof Runroad && athletes[j] != null) {
-                    checkRun(i, j);
-                } else if (athletes[j] != null) {
-                    checkJump(i, j);
-                }
+                if (barriers[i] instanceof Runroad && athletes[j] != null) checkRun(i, j);
+                else if (athletes[j] != null) checkJump(i, j);
             }
         }
     }

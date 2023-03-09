@@ -27,7 +27,7 @@ public class Main {
         System.out.println();
 
         Contest contest = new Contest(barriers, athlete);
-        contest.ContestFight();
+        contest.contestFight();
         contest.checkWinner();
 
     }
