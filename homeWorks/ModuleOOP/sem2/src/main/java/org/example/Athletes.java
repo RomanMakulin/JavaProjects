@@ -23,11 +23,12 @@ public class Athletes{
     }
 
     public void run() {
-        System.out.println(String.format("[%s] %s бежит ...", type, name));
+        System.out.println(String.format("[%s] %s пробегает ...", type, name));
     }
 
     public void jump() {
-        System.out.println(String.format("[%s] %s прыгает ...", type, name));
+        System.out.println(String.format("[%s] %s перепрыгивает ...", type, name));
     }
+
 
 }
