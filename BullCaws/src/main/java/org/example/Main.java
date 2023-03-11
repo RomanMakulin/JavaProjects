@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Меню:");
         Scanner scanner = new Scanner(System.in);
 
         Game game = null;
@@ -21,7 +20,7 @@ public class Main {
                 System.out.println("Такой игры ещё нет");
         }
 
-        game.startGame(4, 10);
+        game.startGame(4, 0);
         game.inputAnswer(scanner.nextLine());
 
         System.out.println(game.getGameStatus());

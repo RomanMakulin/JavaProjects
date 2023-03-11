@@ -14,8 +14,4 @@ public class NumGame extends AbstractGame{
         return charList;
     }
 
-    @Override
-    public GameStatus getGameStatus() {
-        return status;
-    }
 }

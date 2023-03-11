@@ -19,6 +19,11 @@ public abstract class AbstractGame implements Game {
     static int countTry;
     GameStatus status = GameStatus.OFF;
 
+    @Override
+    public GameStatus getGameStatus() {
+        return status;
+    }
+
     private String generateWord() {
         List<String> charList = generateCharList();
         SecureRandom random = new SecureRandom();
