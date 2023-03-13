@@ -31,6 +31,10 @@ public abstract class AbstractGame implements Game {
         return res;
     }
 
+    public String getGeneratedWord(){
+        return generateWord();
+    }
+
     @Override
     public void start(Integer sizeWord, Integer maxTry) {
         this.maxTry = maxTry;
@@ -44,12 +48,8 @@ public abstract class AbstractGame implements Game {
         int bull = 0;
         int cow = 0;
         for (int i = 0; i < value.length(); i++) {
-            if (word.contains(Character.toString(value.charAt(i)))) {
-                cow++;
-            }
-            if (word.charAt(i) == value.charAt(i)) {
-                bull++;
-            }
+            if (word.contains(Character.toString(value.charAt(i)))) cow++;
+            if (word.charAt(i) == value.charAt(i)) bull++;
         }
         countTry++;
         Answer answer = new Answer(cow, bull, value);
@@ -61,15 +61,10 @@ public abstract class AbstractGame implements Game {
         if (value.equals(word)) {
             return gameStatus = GameStatus.WIN;
         } else {
-            if (countTry >= maxTry) {
-                return gameStatus = GameStatus.LOSE;
-            } else {
-                return gameStatus = GameStatus.START;
-            }
+            if (countTry >= maxTry) return gameStatus = GameStatus.LOSE;
+            else return gameStatus = GameStatus.START;
         }
-
     }
 
     abstract List<String> generateCharList();
 }
-
