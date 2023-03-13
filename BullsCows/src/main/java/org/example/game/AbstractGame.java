@@ -14,8 +14,7 @@ import java.util.List;
 public abstract class AbstractGame implements Game {
     Integer sizeWord;
     String word;
-    Integer maxTry;
-
+    static int maxTry;
     static int countTry;
     GameStatus gameStatus = GameStatus.INIT;
 
@@ -23,6 +22,7 @@ public abstract class AbstractGame implements Game {
         List<String> charList = generateCharList();
         SecureRandom random = new SecureRandom();
         String res = "";
+
         for (int i = 0; i < sizeWord; i++) {
             int randomeIndex = random.nextInt(charList.size());
             res += charList.get(randomeIndex);
