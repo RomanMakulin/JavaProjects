@@ -1,4 +1,4 @@
-package org.example.game;
+package org.example;
 
 public interface Game {
     void start( Integer sizeWord, Integer maxTry);

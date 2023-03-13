@@ -1,11 +1,10 @@
-package org.example.game;
+package org.example;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data

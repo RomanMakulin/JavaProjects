@@ -1,4 +1,4 @@
-package org.example.game;
+package org.example;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -46,15 +46,9 @@ public class Menu {
     public Game gameMod(Game game, Scanner in) {
         int num = in.nextInt();
         switch (num) {
-            case 1:
-                game = new NumberGame();
-                break;
-            case 2:
-                game = new EngWordGame();
-                break;
-            case 3:
-                game = new RuWordGame();
-                break;
+            case 1: game = new NumberGame(); break;
+            case 2: game = new EngWordGame(); break;
+            case 3: game = new RuWordGame(); break;
             default: System.out.println("Такой игры еще не существует!");
         }
         return game;

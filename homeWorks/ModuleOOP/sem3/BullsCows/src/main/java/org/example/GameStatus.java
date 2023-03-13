@@ -1,4 +1,4 @@
-package org.example.game;
+package org.example;
 
 public enum GameStatus {
     INIT,START,WIN,LOSE
