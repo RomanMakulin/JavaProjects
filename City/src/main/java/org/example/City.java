@@ -2,77 +2,29 @@ package org.example;
 
 public class City {
     protected int id;
-    protected String cityName;
-    protected String regionName;
-    protected String federalName;
-    protected int peopleNumber;
-    protected String createDate;
+    protected String name;
+    protected String region;
+    protected String district;
+    protected int population;
+    protected String foundation;
 
-    public City(int id, String cityName, String regionName, String federalName, int peopleNumber, String createDate) {
+    public City(int id, String name, String region, String district, int population, String foundation) {
         this.id = id;
-        this.cityName = cityName;
-        this.regionName = regionName;
-        this.federalName = federalName;
-        this.peopleNumber = peopleNumber;
-        this.createDate = createDate;
+        this.name = name;
+        this.region = region;
+        this.district = district;
+        this.population = population;
+        this.foundation = foundation;
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "City{" +
+                "name='" + name + '\'' +
+                ", region='" + region + '\'' +
+                ", district='" + district + '\'' +
+                ", population=" + population +
+                ", foundation='" + foundation + '\'' +
+                '}';
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public String getRegionName() {
-        return regionName;
-    }
-
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
-    }
-
-    public String getFederalName() {
-        return federalName;
-    }
-
-    public void setFederalName(String federalName) {
-        this.federalName = federalName;
-    }
-
-    public int getPeopleNumber() {
-        return peopleNumber;
-    }
-
-    public void setPeopleNumber(int peopleNumber) {
-        this.peopleNumber = peopleNumber;
-    }
-
-    public String getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
-
-//    @Override
-//    public String toString() {
-//        return "City{" +
-//                "name='" + cityName + '\'' +
-//                ", region='" + regionName + '\'' +
-//                ", district='" + regionName + '\'' +
-//                ", population=" + peopleNumber +
-//                ", foundation='" + createDate + '\'' +
-//                '}';
-//    }
 }
