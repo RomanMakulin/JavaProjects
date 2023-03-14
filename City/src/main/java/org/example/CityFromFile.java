@@ -16,7 +16,7 @@ public class CityFromFile {
         List<City> cities = new ArrayList<>();
         try {
             Scanner scanner = new Scanner(new File(
-                    "D:\\Road to developer\\IT_WorkPlace\\OriginWorkPlace\\JavaProjects\\City\\src\\main\\java\\org\\example\\sber_city.csv"));
+                    "C:\\Users\\WayWayz\\Work_Place\\JavaProjects\\JavaProjects\\City\\src\\main\\java\\org\\example\\sber_city.csv"));
 
             while (scanner.hasNextLine()) {
                 cities.add(parse(scanner.nextLine()));
