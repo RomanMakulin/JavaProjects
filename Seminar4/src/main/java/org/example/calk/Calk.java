@@ -1,6 +1,7 @@
 package org.example.calk;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Calk {
     public Double sum(List<? extends Number> item) {
@@ -28,4 +29,20 @@ public class Calk {
         }
         return res;
     }
+
+//    public <T> String binaryMethod(T obj) {
+//        if (obj instanceof Double) {
+//            int num = ((Double) obj).intValue();
+//            return Integer.toBinaryString(num);
+//        }else return Integer.toBinaryString(Integer.parseInt(obj.toString()));
+//    }
+
+    public <T> String binaryMethod(T obj) {
+        if (obj instanceof String){
+            int num = (int) obj;
+            return Integer.toBinaryString(num);
+        }
+        return Integer.toBinaryString(Integer.parseInt(obj.toString()));
+    }
+
 }

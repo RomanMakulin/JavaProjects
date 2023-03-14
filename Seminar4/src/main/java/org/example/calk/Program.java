@@ -12,5 +12,8 @@ public class Program {
         System.out.println();
         System.out.println(cal1.division(new ArrayList<>(Arrays.asList(30, 2, 3, 2))));
 
+
+        System.out.println(cal1.binaryMethod("20.5"));
+
     }
 }
