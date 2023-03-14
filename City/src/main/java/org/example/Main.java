@@ -13,10 +13,8 @@ public class Main {
         Menu menu = new Menu();
 
         menu.sortListNameCity(cities);
-        menu.print(cities);
-
         menu.sortListDistrictAndNameCity(cities);
-        menu.print(cities);
+        menu.maxPopulationCity(cities);
 
     }
 }
