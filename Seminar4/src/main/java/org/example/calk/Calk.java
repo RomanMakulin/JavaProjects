@@ -38,11 +38,12 @@ public class Calk {
 //    }
 
     public <T> String binaryMethod(T obj) {
-        if (obj instanceof String){
-            int num = (int) obj;
+
+        if (obj instanceof String || obj instanceof Double) {
+            int num = (int) Double.parseDouble(obj.toString());
             return Integer.toBinaryString(num);
-        }
-        return Integer.toBinaryString(Integer.parseInt(obj.toString()));
+        } else return Integer.toBinaryString(Integer.parseInt(obj.toString()));
+
     }
 
 }
