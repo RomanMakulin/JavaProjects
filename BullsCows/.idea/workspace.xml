@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9585592-f64f-43bb-ad83-6adfb01a8a70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/EngWordGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/game/RuWordGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/AbstractGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/AbstractGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/Application.java" afterDir="false" />
-    </list>
+    <list default="true" id="d9585592-f64f-43bb-ad83-6adfb01a8a70" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Road to developer/IT_WorkPlace/OriginWorkPlace/JavaProjects"
+    "last_opened_file_path": "D:/Road to developer/IT_WorkPlace/OriginWorkPlace/JavaProjects/Calk"
   }
 }]]></component>
   <component name="RunManager">

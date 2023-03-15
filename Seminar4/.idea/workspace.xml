@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="654fdac3-5a81-4aca-b67b-7d32810de85c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/calk/Calk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/calk/Calk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/calk/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/calk/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Calk/src/main/java/org/example/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GameBullsCows/src/main/java/org/example/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BullsCows/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BullsCows/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Road to developer/IT_WorkPlace/OriginWorkPlace/JavaProjects"
+    "last_opened_file_path": "D:/Road to developer/IT_WorkPlace/OriginWorkPlace/JavaProjects/Seminar4"
   }
 }]]></component>
   <component name="RunManager">
