@@ -15,6 +15,7 @@ public class Main {
         menu.sortListNameCity(cities);
         menu.sortListDistrictAndNameCity(cities);
         menu.maxPopulationCity(cities);
+        menu.regionsCount(cities);
 
     }
 }
