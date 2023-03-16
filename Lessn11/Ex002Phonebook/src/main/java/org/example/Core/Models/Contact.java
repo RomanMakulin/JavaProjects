@@ -1,24 +1,24 @@
 package org.example.Core.Models;
 
-import java.time.LocalDate;
+
 
 public class Contact  implements Comparable<Contact> {
-    public LocalDate date;
-    public String firstName;
-    public String lastName;
-    public String company;
+    public String name;
     public String phone;
+    public int salary;
+    public String company;
     //public Email email;
-    //public String email;
-    public String description;
+    public String email;
 
-    public Contact(String firstName, String lastName, String description) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.description = description;
+    public Contact(String name, String phone, int salary, String company, String email) {
+        this.name = name;
+        this.phone = phone;
+        this.salary = salary;
+        this.company = company;
+        this.email = email;
     }
-    
-    // добавить возможность создания объектов с бОльшим
+
+// добавить возможность создания объектов с бОльшим
     // количеством параметров
 
     @Override
@@ -30,9 +30,17 @@ public class Contact  implements Comparable<Contact> {
     @Override
     public boolean equals(Object obj) {
         Contact t = (Contact)obj;
-        return this.firstName == t.firstName
-                && this.lastName == t.lastName
+        return this.name == t.name
+                && this.phone == t.phone
         ;
     }
 
+    @Override
+    public String toString() {
+        return "name: " + name +
+                "phone: " + phone +
+                "salary: " + salary +
+                "company: " + company +
+                "email: " + email;
+    }
 }

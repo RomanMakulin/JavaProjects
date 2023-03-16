@@ -17,9 +17,11 @@ public class Presenter {
             model.setCurrentIndex(0);
             var contact = model.currentContact();
 
-            view.setFirstName(contact.firstName);
-            view.setLastName(contact.lastName);
-            view.setDescription(contact.description);
+            view.setName(contact.name);
+            view.setPhone(contact.phone);
+            view.setSalary(contact.salary);
+            view.setCompanyName(contact.company);
+            view.setEmail(contact.email);
         }
     }
 
@@ -27,6 +29,7 @@ public class Presenter {
         model.currentBook().add(
                 new Contact(view.getFirstName(), view.getLastName(), view.getDescription()));
     }
+
 
     public void remove() {
         Contact contact = new Contact(view.getFirstName(), view.getLastName(), view.getDescription());

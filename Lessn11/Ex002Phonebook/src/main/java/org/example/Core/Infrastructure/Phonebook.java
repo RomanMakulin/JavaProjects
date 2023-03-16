@@ -29,7 +29,15 @@ public class Phonebook {
     }
 
     // update
-    // ???...
+    public boolean updContact(int index, Contact contact) {
+        boolean flag = false;
+        if (contacts.contains(contacts.get(index))) {
+            contacts.remove(contacts.get(index));
+            contacts.add(contact);
+            flag = true;
+        }
+        return flag;
+    }
 
     // delete
     public boolean remove(Contact contact) {
@@ -48,7 +56,7 @@ public class Phonebook {
     }
 
     public List<Contact> getContacts() {
-        // if ???...
+
         return contacts;
     }
 

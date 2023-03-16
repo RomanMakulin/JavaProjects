@@ -1,11 +1,14 @@
 package org.example.Core.MVP;
 
 public interface View {
-    String getFirstName();
-    void setFirstName(String value);
-    String getLastName();
-    void setLastName(String value);
-    String getDescription();
-    void setDescription(String value);
-    //
+    String getName();
+    void setName(String value);
+    String getPhone();
+    void setPhone(String value);
+    int getSalary();
+    void setSalary(int value);
+    String getCompanyName();
+    void setCompanyName(String value);
+    String getEmail();
+    void setEmail(String value);
 }

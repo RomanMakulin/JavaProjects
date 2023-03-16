@@ -35,12 +35,14 @@ public class Model {
             File file = new File(path);
             FileReader fr = new FileReader(file);
             BufferedReader reader = new BufferedReader(fr);
-            String fname = reader.readLine();
-            while (fname != null) {
-                String lname = reader.readLine();
-                String description = reader.readLine();
-                this.currentBook.add(new Contact(fname, lname, description));
-                fname = reader.readLine();
+            String name = reader.readLine();
+            while (name != null) {
+                String phone = reader.readLine();
+                int salary = Integer.parseInt(reader.readLine());
+                String company = reader.readLine();
+                String email = reader.readLine();
+                this.currentBook.add(new Contact(name, phone, salary, company, email));
+                name = reader.readLine();
             }
             reader.close();
             fr.close();
@@ -54,9 +56,11 @@ public class Model {
         try (FileWriter writer = new FileWriter(path, false)) {
             for (int i = 0; i < currentBook.count(); i++) {
                 Contact contact = currentBook.getCotact(i);
-                writer.append(String.format("%s\n", contact.firstName));
-                writer.append(String.format("%s\n", contact.lastName));
-                writer.append(String.format("%s\n", contact.description));
+                writer.append(String.format("%s\n", contact.name));
+                writer.append(String.format("%s\n", contact.phone));
+                writer.append(String.format("%d\n", contact.salary));
+                writer.append(String.format("%s\n", contact.company));
+                writer.append(String.format("%s\n", contact.email));
             }
             writer.flush();
             writer.close();
