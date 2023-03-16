@@ -35,12 +35,4 @@ public class Contact  implements Comparable<Contact> {
         ;
     }
 
-    @Override
-    public String toString() {
-        return "name: " + name +
-                "phone: " + phone +
-                "salary: " + salary +
-                "company: " + company +
-                "email: " + email;
-    }
 }

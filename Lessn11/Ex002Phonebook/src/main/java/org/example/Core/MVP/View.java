@@ -11,4 +11,6 @@ public interface View {
     void setCompanyName(String value);
     String getEmail();
     void setEmail(String value);
+
+    void setSalary(String value);
 }

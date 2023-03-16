@@ -27,30 +27,12 @@ public class Presenter {
 
     public void add() {
         model.currentBook().add(
-                new Contact(view.getFirstName(), view.getLastName(), view.getDescription()));
+                new Contact(view.getName(), view.getPhone(), view.getSalary(), view.getCompanyName(), view.getEmail()));
     }
 
 
     public void remove() {
-        Contact contact = new Contact(view.getFirstName(), view.getLastName(), view.getDescription());
-        model.currentBook().remove(contact);
-
-        if (model.currentBook().count() < 1) {
-            model.setCurrentIndex(-1);
-
-            view.setFirstName("");
-            view.setLastName("");
-            view.setDescription("");
-        } else {
-            model.setCurrentIndex(model.getCurrentIndex() - 1);
-            if (model.getCurrentIndex() < 0)
-                model.setCurrentIndex(0);
-
-            Contact temp = model.currentContact();
-            view.setFirstName(temp.firstName);
-            view.setLastName(temp.lastName);
-            view.setDescription(temp.description);
-        }
+        model.currentBook().remove(model.currentBook.getCotact(model.getCurrentIndex()));
     }
 
     public void saveToFile() {
@@ -62,9 +44,12 @@ public class Presenter {
             if (model.getCurrentIndex() + 1 < model.currentBook().count()) {
                 model.setCurrentIndex(model.getCurrentIndex() + 1);
                 Contact contact = model.currentContact();
-                view.setFirstName(contact.firstName);
-                view.setLastName(contact.lastName);
-                view.setDescription(contact.description);                
+
+                view.setName(contact.name);
+                view.setPhone(contact.phone);
+                view.setSalary(contact.salary);
+                view.setCompanyName(contact.company);
+                view.setEmail(contact.email);
             }
         }
     }
@@ -74,10 +59,13 @@ public class Presenter {
             if (model.getCurrentIndex() - 1 > -1) {
                 model.setCurrentIndex(model.getCurrentIndex() - 1);
                 Contact contact = model.currentContact();
-                view.setFirstName(contact.firstName);
-                view.setLastName(contact.lastName);
-                view.setDescription(contact.description);  
+                view.setName(contact.name);
+                view.setPhone(contact.phone);
+                view.setSalary(contact.salary);
+                view.setCompanyName(contact.company);
+                view.setEmail(contact.email);
             }
         }
     }
+
 }

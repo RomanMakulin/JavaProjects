@@ -10,36 +10,65 @@ public class ConsoleView implements View {
         in = new Scanner(System.in);
     }
     @Override
-    public String getFirstName() {
-        System.out.printf("FirstName: ");
+    public String getName() {
+        System.out.printf("Name: ");
         return in.nextLine();
     }
 
     @Override
-    public void setFirstName(String value) {
-        System.out.printf("FirstName: %s\n", value);
+    public void setName(String value) {
+        System.out.printf("Name: %s\n", value);
     }
 
     @Override
-    public String getLastName() {
-        System.out.printf("LastName: ");
+    public String getPhone() {
+        System.out.printf("Phone: ");
         return in.nextLine();
     }
 
     @Override
-    public void setLastName(String value) {
-        System.out.printf("LastName: %s\n", value);
+    public void setPhone(String value) {
+        System.out.printf("Phone: %s\n", value);
     }
 
     @Override
-    public String getDescription() {
-        System.out.printf("Description: ");
+    public int getSalary() {
+        System.out.printf("Salary: ");
+        return Integer.parseInt(in.nextLine());
+    }
+
+    @Override
+    public void setSalary(int value) {
+        System.out.printf("Salary: %d\n", value);
+    }
+
+
+    @Override
+    public String getCompanyName() {
+        System.out.printf("Company: ");
         return in.nextLine();
     }
 
     @Override
-    public void setDescription(String value) {
-        System.out.printf("Description: %s\n", value);        
+    public void setCompanyName(String value) {
+        System.out.printf("Company: %s\n", value);
     }
-    
+
+    @Override
+    public String getEmail() {
+        System.out.printf("Email: ");
+        return in.nextLine();
+    }
+
+    @Override
+    public void setEmail(String value) {
+        System.out.printf("Email: %s\n", value);
+    }
+
+    @Override
+    public void setSalary(String value) {
+        System.out.printf("Salary: %s\n", value);
+    }
+
+
 }

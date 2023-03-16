@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.example.Config;
 import org.example.Core.Infrastructure.Phonebook;
 import org.example.Core.Models.Contact;
 
@@ -14,6 +15,7 @@ public class Model {
     Phonebook currentBook;
     private int currentIndex;
     private String path;
+
 
     public Model(String path) {
         currentBook = new Phonebook();
@@ -33,7 +35,7 @@ public class Model {
     public void load() {
         try {
             File file = new File(path);
-            FileReader fr = new FileReader(file);
+            FileReader fr = new FileReader("D:\\Road to developer\\IT_WorkPlace\\OriginWorkPlace\\JavaProjects\\Lessn11\\Ex002Phonebook\\src\\main\\java\\org\\example\\data.db");
             BufferedReader reader = new BufferedReader(fr);
             String name = reader.readLine();
             while (name != null) {
