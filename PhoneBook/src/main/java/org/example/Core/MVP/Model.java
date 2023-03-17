@@ -34,18 +34,10 @@ public class Model {
 
     public void load() {
         try {
-            File file = new File(path);
-            FileReader fr = new FileReader("D:\\Road to developer\\IT_WorkPlace\\OriginWorkPlace\\JavaProjects\\Lessn11\\Ex002Phonebook\\src\\main\\java\\org\\example\\data.db");
+            FileReader fr = new FileReader("D:\\Road to developer\\IT_WorkPlace\\OriginWorkPlace\\JavaProjects\\PhoneBook\\src\\main\\java\\org\\example\\data.db");
             BufferedReader reader = new BufferedReader(fr);
-            String name = reader.readLine();
-            while (name != null) {
-                String phone = reader.readLine();
-                int salary = Integer.parseInt(reader.readLine());
-                String company = reader.readLine();
-                String email = reader.readLine();
-                this.currentBook.add(new Contact(name, phone, salary, company, email));
-                name = reader.readLine();
-            }
+            String[] contacts = reader.readLine().split(";");
+            this.currentBook.add(new Contact(contacts[0], contacts[1], Integer.parseInt(contacts[2]), contacts[3], contacts[4]));
             reader.close();
             fr.close();
         } catch (Exception e) {
