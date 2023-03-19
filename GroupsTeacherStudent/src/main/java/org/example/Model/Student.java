@@ -11,8 +11,6 @@ public class Student extends User {
         super(fio, dateBirth);
     }
 
-
-
     @Override
     public String toString() {
         return "Student{" +

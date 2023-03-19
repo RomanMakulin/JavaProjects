@@ -4,16 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class StudyGroupService extends StudyGroup{
+public class StudyGroupService implements DataServiceGroup{
 
-    List<StudyGroup> studyGroups;
-
-    public StudyGroupService(Teacher teacher, List<Student> students) {
-        super(teacher, students);
+    @Override
+    public StudyGroup createGroup(Teacher teacher, List<Student> studentList) {
+        StudyGroup group = new StudyGroup(teacher, studentList);
+        return group;
     }
 
-    List<StudyGroup> generate(Teacher teacher, List<Student> students) {
-        studyGroups = new ArrayList<>();
-        return studyGroups;
-    }
+
+
 }
