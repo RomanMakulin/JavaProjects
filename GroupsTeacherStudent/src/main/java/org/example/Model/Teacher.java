@@ -7,8 +7,8 @@ public class Teacher extends User {
     int exp;
     List<Integer> group;
 
-    public Teacher(int ID, String fio, Date dateBirth) {
-        super(ID, fio, dateBirth);
+    public Teacher(String fio, Date dateBirth) {
+        super(fio, dateBirth);
     }
 
     public Teacher() {

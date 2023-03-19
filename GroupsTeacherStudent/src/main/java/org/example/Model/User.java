@@ -3,12 +3,11 @@ package org.example.Model;
 import java.util.Date;
 
 public abstract class User {
-    int ID;
+    static int ID = 0;
     String fio;
     Date dateBirth;
 
-    public User(int ID, String fio, Date dateBirth) {
-        this.ID = ID;
+    public User(String fio, Date dateBirth) {
         this.fio = fio;
         this.dateBirth = dateBirth;
     }
