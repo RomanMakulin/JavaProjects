@@ -15,26 +15,23 @@ public class Controller {
 
 
         List<User> users = new ArrayList<>();
-        List<Student> students = new ArrayList<>();
-
         List<StudyGroup> group = new ArrayList<>();
 
-        Teacher teacher1 = new Teacher("11", new Date());
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("dasd", new Date()));
+        students.add(new Student("dhc", new Date()));
 
-        List<Student> studs = Arrays.asList(new Student("11", new Date()), new Student("15", new Date()));
+        StudyGroup group1 = new StudyGroupService().createGroup(new Teacher("sda", new Date()), students);
+        System.out.println(group1);
 
 
-        for (int i = 0; i < studs.size(); i++) {
-            System.out.println(studs.get(i));
-        }
-        group.add(teacher1, studs);
 
-//
+
 //        users.add(userService.create(new Student("Roman", new Date())));
 //        users.add(userService.create(new Student("Vasya", new Date())));
 //        users.add(userService.create(new Student("Igor", new Date())));
 //        users.add(userService.create(new Teacher("Olga", new Date())));
-//
+
 //        System.out.println(view.usersView(users));
 
 
