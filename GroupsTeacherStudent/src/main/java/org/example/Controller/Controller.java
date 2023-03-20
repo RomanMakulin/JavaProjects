@@ -1,12 +1,25 @@
 package org.example.Controller;
 
+import org.example.Model.Student;
+import org.example.Model.StudyGroup;
+import org.example.Model.UserService;
+import org.example.View.View;
+
+import java.util.*;
+
 public class Controller {
-    public static void main(String[] args) {
+    public StudyGroup buttonClick(int maxGroupValue) {
 
-        InitMenu menu = new InitMenu();
+        UserService userService = new UserService();
+        View view = new View();
+        List<Student> students = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
-        menu.buttonClick(4);
-        menu.buttonClick(2);
+        view.generateStudents(maxGroupValue, students, userService, scanner);
+        StudyGroup group = view.groupGenerate(userService, scanner, students);
+
+        System.out.println(view.usersView(Arrays.asList(group)));
+        return group;
 
     }
 
