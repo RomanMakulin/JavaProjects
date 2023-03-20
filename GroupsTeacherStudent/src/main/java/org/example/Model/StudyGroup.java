@@ -3,12 +3,14 @@ package org.example.Model;
 import java.util.List;
 
 public class StudyGroup {
-    public Teacher teacher;
-    public List<Student> students;
+    public User teacher;
+    public List<User> students;
+    static int ID;
 
-    public StudyGroup(Teacher teacher, List<Student> students) {
+    public StudyGroup(User teacher, List<User> students) {
         this.teacher = teacher;
         this.students = students;
+        ID++;
     }
 
     @Override
@@ -17,7 +19,7 @@ public class StudyGroup {
         for (int i = 0; i < students.size(); i++) {
             str.append(students.get(i) + "\n");
         }
-        return String.format("Group: \n%s\n%s", teacher, str);
+        return String.format("Group #%d: \n%s\n%s",ID, teacher, str);
 
     }
 }

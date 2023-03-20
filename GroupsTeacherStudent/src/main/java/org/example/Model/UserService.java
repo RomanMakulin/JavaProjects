@@ -7,12 +7,12 @@ import java.util.List;
 public class UserService implements DataService {
 
     @Override
-    public User create(Student student) {
+    public Student create(Student student) {
         return student;
     }
 
     @Override
-    public User create(Teacher teacher) {
+    public Teacher create(Teacher teacher) {
         return teacher;
     }
 

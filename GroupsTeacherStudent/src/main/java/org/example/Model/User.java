@@ -3,17 +3,17 @@ package org.example.Model;
 import java.util.Date;
 
 public abstract class User {
-    static int ID = 0;
+    final int ID;
+    static int count = 0;
     String fio;
     Date dateBirth;
 
     public User(String fio, Date dateBirth) {
         this.fio = fio;
         this.dateBirth = dateBirth;
+        ID = count;
     }
 
-    public User() {
-    }
 
     @Override
     public String toString() {
@@ -22,5 +22,21 @@ public abstract class User {
                 ", fio='" + fio + '\'' +
                 ", dateBirth=" + dateBirth +
                 '}';
+    }
+
+    public String getFio() {
+        return fio;
+    }
+
+    public void setFio(String fio) {
+        this.fio = fio;
+    }
+
+    public Date getDateBirth() {
+        return dateBirth;
+    }
+
+    public void setDateBirth(Date dateBirth) {
+        this.dateBirth = dateBirth;
     }
 }
