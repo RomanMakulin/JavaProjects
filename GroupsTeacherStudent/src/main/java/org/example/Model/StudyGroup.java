@@ -13,6 +13,9 @@ public class StudyGroup {
         ID++;
     }
 
+    public StudyGroup() {
+    }
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
