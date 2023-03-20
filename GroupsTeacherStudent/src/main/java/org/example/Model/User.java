@@ -3,22 +3,23 @@ package org.example.Model;
 import java.util.Date;
 
 public abstract class User {
-    final int ID;
-    static int count = 0;
+    static int counterID;
+    int id;
     String fio;
     Date dateBirth;
 
     public User(String fio, Date dateBirth) {
         this.fio = fio;
         this.dateBirth = dateBirth;
-        ID = count;
+        counterID += 1;
+        id = counterID;
     }
 
 
     @Override
     public String toString() {
         return "User{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", fio='" + fio + '\'' +
                 ", dateBirth=" + dateBirth +
                 '}';

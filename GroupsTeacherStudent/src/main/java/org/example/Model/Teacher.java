@@ -5,12 +5,9 @@ import java.util.List;
 
 public class Teacher extends User {
     int exp;
-    static int count = 0;
     List<Integer> group;
-    final int ID;
     public Teacher(String fio, Date dateBirth) {
         super(fio, dateBirth);
-        ID = count++;
     }
 
 
@@ -18,7 +15,7 @@ public class Teacher extends User {
     public String toString() {
         return "Teacher{" +
                 "group=" + StudyGroup.ID +
-                ", ID=" + ID +
+                ", ID=" + id +
                 ", fio='" + fio + '\'' +
                 ", dateBirth=" + dateBirth +
                 '}';
