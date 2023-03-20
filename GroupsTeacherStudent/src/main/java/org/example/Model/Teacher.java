@@ -10,7 +10,6 @@ public class Teacher extends User {
         super(fio, dateBirth);
     }
 
-
     @Override
     public String toString() {
         return "Teacher{" +

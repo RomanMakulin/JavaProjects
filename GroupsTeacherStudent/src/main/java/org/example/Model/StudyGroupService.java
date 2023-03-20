@@ -12,6 +12,4 @@ public class StudyGroupService implements DataServiceGroup{
         return group;
     }
 
-
-
 }

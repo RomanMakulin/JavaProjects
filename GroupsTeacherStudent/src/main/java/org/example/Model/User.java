@@ -15,7 +15,6 @@ public abstract class User {
         id = counterID;
     }
 
-
     @Override
     public String toString() {
         return "User{" +
