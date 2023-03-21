@@ -1,7 +1,6 @@
 package org.example.Model.StudGroup;
 
 import org.example.Model.User.User;
-
 import java.util.List;
 
 public class StudyGroup {

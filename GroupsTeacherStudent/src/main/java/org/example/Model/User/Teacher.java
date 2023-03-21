@@ -1,8 +1,6 @@
 package org.example.Model.User;
 
 import org.example.Model.StudGroup.StudyGroup;
-import org.example.Model.User.User;
-
 import java.util.Date;
 
 public class Teacher extends User {
