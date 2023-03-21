@@ -1,4 +1,7 @@
-package org.example.Model;
+package org.example.Model.Interface;
+
+import org.example.Model.StudGroup.StudyGroup;
+import org.example.Model.User.User;
 
 import java.util.List;
 

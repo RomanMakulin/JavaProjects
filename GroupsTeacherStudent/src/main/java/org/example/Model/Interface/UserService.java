@@ -1,10 +1,9 @@
-package org.example.Model;
+package org.example.Model.Interface;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import org.example.Model.User.Teacher;
+import org.example.Model.User.Student;
 
-public class UserService implements DataService {
+public class UserService implements DataServiceUser {
 
     @Override
     public Student create(Student student) {
@@ -15,5 +14,4 @@ public class UserService implements DataService {
     public Teacher create(Teacher teacher) {
         return teacher;
     }
-
 }

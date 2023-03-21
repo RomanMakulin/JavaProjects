@@ -1,10 +1,11 @@
-package org.example.Model;
+package org.example.Model.Interface;
 
-import java.util.ArrayList;
-import java.util.Date;
+import org.example.Model.StudGroup.StudyGroup;
+import org.example.Model.User.User;
+
 import java.util.List;
 
-public class StudyGroupService implements DataServiceGroup{
+public class StudyGroupService implements DataServiceGroup {
 
     @Override
     public StudyGroup createGroup(User teacher, List studentList) {

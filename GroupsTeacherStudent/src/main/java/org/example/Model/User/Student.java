@@ -1,10 +1,10 @@
-package org.example.Model;
+package org.example.Model.User;
 
 import java.util.Date;
 import java.util.List;
 
 public class Student extends User {
-    List<Integer> grade;
+    private List<Integer> grade;
     public Student(String fio, Date dateBirth) {
         super(fio, dateBirth);
     }
@@ -13,9 +13,9 @@ public class Student extends User {
     public String toString() {
         return "Student{" +
                 "grade=" + grade +
-                ", ID=" + id +
-                ", fio='" + fio + '\'' +
-                ", dateBirth=" + dateBirth +
+                ", ID=" + getId() +
+                ", fio='" + getFio() + '\'' +
+                ", dateBirth=" + getDateBirth() +
                 '}';
     }
 }
