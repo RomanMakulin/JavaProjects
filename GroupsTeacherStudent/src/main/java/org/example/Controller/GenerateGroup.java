@@ -13,7 +13,7 @@ import java.util.List;
 
 public class GenerateGroup {
     public StudyGroup groupGenerate(UserService userService, List<Student> students, GetInf input) {
-        StudyGroup group = new StudyGroupService().createGroup(userService.create(
+        StudyGroup group = new StudyGroupService().createGroup((Teacher) userService.create(
                 new Teacher(input.inputName("Введите имя учителя:"), new Date())), students);
         new View().usersView(Arrays.asList(group));
         return group;

@@ -1,9 +1,7 @@
 package org.example.Model.Interface;
 
-import org.example.Model.User.Teacher;
-import org.example.Model.User.Student;
+import org.example.Model.User.User;
 
 public interface DataServiceUser {
-    Student create(Student student);
-    Teacher create(Teacher teacher);
+    User create(User student);
 }

@@ -1,17 +1,10 @@
 package org.example.Model.Interface;
 
-import org.example.Model.User.Teacher;
-import org.example.Model.User.Student;
+import org.example.Model.User.User;
 
 public class UserService implements DataServiceUser {
-
     @Override
-    public Student create(Student student) {
+    public User create(User student) {
         return student;
-    }
-
-    @Override
-    public Teacher create(Teacher teacher) {
-        return teacher;
     }
 }
