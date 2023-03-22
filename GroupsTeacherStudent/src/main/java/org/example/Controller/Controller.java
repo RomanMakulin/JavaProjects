@@ -14,9 +14,8 @@ public class Controller {
     public StudyGroup buttonClick(int maxGroupValue) {
 
         List<Student> students = new ArrayList<>();
-
         new GenerateStudents().generateStudents(maxGroupValue, students, new UserService(), new GetInf());
         return new GenerateGroup().groupGenerate(new UserService(), students, new GetInf());
-    }
 
+    }
 }
