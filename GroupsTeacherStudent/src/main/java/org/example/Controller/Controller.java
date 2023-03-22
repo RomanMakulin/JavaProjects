@@ -13,12 +13,10 @@ import java.util.List;
 public class Controller {
     public StudyGroup buttonClick(int maxGroupValue) {
 
-        GenerateStudents generateS = new GenerateStudents();
-        GenerateGroup generateG = new GenerateGroup();
         List<Student> students = new ArrayList<>();
 
-        generateS.generateStudents(maxGroupValue, students, new UserService(), new GetInf());
-        return generateG.groupGenerate(new UserService(), students, new GetInf());
+        new GenerateStudents().generateStudents(maxGroupValue, students, new UserService(), new GetInf());
+        return new GenerateGroup().groupGenerate(new UserService(), students, new GetInf());
     }
 
 }
