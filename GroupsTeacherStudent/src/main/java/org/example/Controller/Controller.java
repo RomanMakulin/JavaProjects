@@ -3,10 +3,8 @@ package org.example.Controller;
 import org.example.Model.StudGroup.StudyGroup;
 import org.example.Model.Interface.UserService;
 import org.example.View.GetInf;
-import org.example.View.View;
 import org.example.Model.User.Student;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 

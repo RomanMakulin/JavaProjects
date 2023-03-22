@@ -7,7 +7,6 @@ import org.example.Model.User.Student;
 import org.example.Model.User.Teacher;
 import org.example.View.GetInf;
 import org.example.View.View;
-
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
