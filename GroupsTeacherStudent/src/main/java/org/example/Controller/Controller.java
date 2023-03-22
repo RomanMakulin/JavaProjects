@@ -18,10 +18,7 @@ public class Controller {
         List<Student> students = new ArrayList<>();
 
         generateS.generateStudents(maxGroupValue, students, new UserService(), new GetInf());
-        StudyGroup group = generateG.groupGenerate(new UserService(), students, new GetInf());
-
-        System.out.println(new View().usersView(Arrays.asList(group)));
-        return group;
+        return generateG.groupGenerate(new UserService(), students, new GetInf());
     }
 
 }
