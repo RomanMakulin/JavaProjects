@@ -9,8 +9,7 @@ public class StudyGroupService implements DataServiceGroup {
 
     @Override
     public StudyGroup createGroup(Teacher teacher, List studentList) {
-        StudyGroup group = new StudyGroup(teacher, studentList);
-        return group;
+        return new StudyGroup(teacher, studentList);
     }
 
 }
