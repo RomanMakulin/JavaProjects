@@ -11,7 +11,7 @@ public class Teacher extends User {
     @Override
     public String toString() {
         return "Teacher{" +
-                "group=" + StudyGroup.getID() +
+                "group=" + StudyGroup.getCounterID() +
                 ", ID=" + getId() +
                 ", fio='" + getFio() + '\'' +
                 ", dateBirth=" + getDateBirth() +

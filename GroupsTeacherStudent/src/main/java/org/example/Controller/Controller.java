@@ -7,7 +7,6 @@ import org.example.Model.User.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Controller {
     public StudyGroup buttonClick(int maxGroupValue) {
         List<Student> students = new ArrayList<>();

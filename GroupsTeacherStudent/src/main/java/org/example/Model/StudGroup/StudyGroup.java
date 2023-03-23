@@ -6,12 +6,30 @@ import java.util.List;
 public class StudyGroup {
     private User teacher;
     private List<User> students;
-    private static int ID;
+    private static int counterID;
+    private int id;
 
     public StudyGroup(User teacher, List<User> students) {
         this.teacher = teacher;
         this.students = students;
-        ID++;
+        counterID += 1;
+        id = counterID;
+    }
+
+    public static int getCounterID() {
+        return counterID;
+    }
+
+    public static void setCounterID(int counterID) {
+        StudyGroup.counterID = counterID;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
@@ -20,7 +38,7 @@ public class StudyGroup {
         for (int i = 0; i < students.size(); i++) {
             str.append(students.get(i) + "\n");
         }
-        return String.format("Group #%d: \n%s\n%s",ID, teacher, str);
+        return String.format("Group #%d: \n%s\n%s",getId(), teacher, str);
 
     }
 
@@ -40,11 +58,4 @@ public class StudyGroup {
         this.students = students;
     }
 
-    public static int getID() {
-        return ID;
-    }
-
-    public static void setID(int ID) {
-        StudyGroup.ID = ID;
-    }
 }
