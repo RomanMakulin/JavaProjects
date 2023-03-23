@@ -8,9 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
-    public StudyGroup buttonClick(int maxGroupValue) {
+    public StudyGroup completeGroup(GetInf input) {
         List<Student> students = new ArrayList<>();
-        new GenerateStudents().generateStudents(maxGroupValue, students, new UserService(), new GetInf());
+
+        new GenerateStudents().generateStudents(
+                Integer.parseInt(input.inputName("Введите кол-во студентов в группе: ")),
+                students, new UserService(), new GetInf());
+
         return new GenerateGroup().groupGenerate(new UserService(), students, new GetInf());
     }
 }
