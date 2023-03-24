@@ -17,6 +17,9 @@ public class Phonebook {
     public void delete(Contact contact){
         contactList.remove(contact);
     }
+    public int size(){
+        return contactList.size();
+    }
 
     public Contact get(int index){
         return contactList.get(index);
