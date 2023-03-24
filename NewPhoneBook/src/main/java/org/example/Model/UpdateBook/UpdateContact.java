@@ -16,7 +16,7 @@ public class UpdateContact implements ServiceBook {
     public void updateBook(Phonebook book) {
 
         int needId = Integer.parseInt(new Input().input("Введите ID контакта: "));
-        new MenuUpdate().menu();
+        new MenuUpdate().menu(book);
         switch (new Scanner(System.in).nextLine()) {
             case "1":
                 new Name().setInfo(book, needId);
