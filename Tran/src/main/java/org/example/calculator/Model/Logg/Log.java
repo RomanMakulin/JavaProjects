@@ -1,6 +1,8 @@
-package org.example.calculator;
+package org.example.calculator.Model.Logg;
 
-public class Log implements Logger{
+import org.example.calculator.Model.Logg.Logger;
+
+public class Log implements Logger {
     public Log() {
     }
 

@@ -1,4 +1,6 @@
-package org.example.calculator;
+package org.example.calculator.Model.Calk;
+
+import org.example.calculator.Model.Calk.Calculable;
 
 public final class Calculator implements Calculable {
 

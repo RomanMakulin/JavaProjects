@@ -1,4 +1,7 @@
-package org.example.calculator;
+package org.example.calculator.View;
+
+import org.example.calculator.Model.Calk.Calculable;
+import org.example.calculator.Model.Calk.ICalculableFactory;
 
 import java.util.Scanner;
 

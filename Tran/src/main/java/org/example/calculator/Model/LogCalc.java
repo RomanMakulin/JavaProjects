@@ -1,6 +1,9 @@
-package org.example.calculator;
+package org.example.calculator.Model;
 
-public class LogCalc implements Calculable{
+import org.example.calculator.Model.Calk.Calculable;
+import org.example.calculator.Model.Logg.Log;
+
+public class LogCalc implements Calculable {
 
     private int primaryArg;
     private Log logger;

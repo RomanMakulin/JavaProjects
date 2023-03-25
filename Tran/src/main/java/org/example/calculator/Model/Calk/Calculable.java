@@ -1,4 +1,4 @@
-package org.example.calculator;
+package org.example.calculator.Model.Calk;
 
 public interface Calculable {
     Calculable sum(int arg);
