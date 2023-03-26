@@ -1,5 +1,7 @@
 package org.example.Controller;
 
+import org.example.Model.Calk;
+import org.example.Model.CalkImpl;
 import org.example.Model.Logger.LogCalk;
 import org.example.View.InputAction;
 import org.example.View.InputInt;
@@ -8,30 +10,29 @@ import org.example.View.ViewResult;
 public class Controller {
     public void startCalk() {
 
-        LogCalk arg = new LogCalk(new InputInt().input());
-        int result = 0;
+        Calk arg = new LogCalk(new InputInt().input());
 
         while (true) {
 
             String cmd = new InputAction().input();
 
             if (cmd.equals("+")) {
-                result = arg.sum(new InputInt().input());
+                arg.sum(new InputInt().input());
                 continue;
             }
 
             if (cmd.equals("-")) {
-                result = arg.minus(new InputInt().input());
+                arg.minus(new InputInt().input());
                 continue;
             }
 
             if (cmd.equals("*")) {
-                result = arg.milti(new InputInt().input());
+                arg.milti(new InputInt().input());
                 continue;
             }
 
             if (cmd.equals("/")) {
-                result = arg.div(new InputInt().input());
+                arg.div(new InputInt().input());
                 continue;
             }
 
