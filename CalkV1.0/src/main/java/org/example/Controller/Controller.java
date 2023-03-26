@@ -1,8 +1,7 @@
 package org.example.Controller;
 
 import org.example.Model.Calk;
-import org.example.Model.CalkImpl;
-import org.example.Model.Logger.LogCalk;
+import org.example.Model.Logger.CalkLogImpl;
 import org.example.View.InputAction;
 import org.example.View.InputInt;
 import org.example.View.ViewResult;
@@ -10,7 +9,7 @@ import org.example.View.ViewResult;
 public class Controller {
     public void startCalk() {
 
-        Calk arg = new LogCalk(new InputInt().input());
+        Calk arg = new CalkLogImpl(new InputInt().input());
 
         while (true) {
 
