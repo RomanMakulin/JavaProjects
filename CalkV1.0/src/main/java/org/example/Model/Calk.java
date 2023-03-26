@@ -5,4 +5,5 @@ public interface Calk {
     int minus(int arg);
     int milti(int arg);
     int div(int arg);
+    int result();
 }
