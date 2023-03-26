@@ -18,7 +18,7 @@ public class ViewCalculator {
             int primaryArg = promptInt("Введите первый аргумент: ");
             Calculable calculator = calculableFactory.create(primaryArg);
             while (true) {
-                String cmd = prompt("Введите команду (*, +, =) : ");
+                String cmd = prompt("Введите команду (*, +, /, =) : ");
                 if (cmd.equals("*")) {
                     int arg = promptInt("Введите второй аргумент: ");
                     calculator.multi(arg);
@@ -29,11 +29,17 @@ public class ViewCalculator {
                     calculator.sum(arg);
                     continue;
                 }
+                if (cmd.equals("/")) {
+                    int arg = promptInt("Введите второй аргумент: ");
+                    calculator.div(arg);
+                    continue;
+                }
                 if (cmd.equals("=")) {
                     int result = calculator.getResult();
                     System.out.printf("Результат %d\n", result);
                     break;
                 }
+
             }
             String cmd = prompt("Еще посчитать (Y/N)?");
             if (cmd.equals("Y")) {

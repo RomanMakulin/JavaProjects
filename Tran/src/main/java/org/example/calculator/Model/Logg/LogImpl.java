@@ -1,9 +1,7 @@
 package org.example.calculator.Model.Logg;
 
-import org.example.calculator.Model.Logg.Logger;
-
-public class Log implements Logger {
-    public Log() {
+public class LogImpl implements Logger {
+    public LogImpl() {
     }
 
     @Override
