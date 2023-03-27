@@ -1,4 +1,6 @@
-package org.example.Model;
+package org.example.Model.Models;
+
+import org.example.Model.Models.Contact;
 
 import java.util.ArrayList;
 import java.util.List;

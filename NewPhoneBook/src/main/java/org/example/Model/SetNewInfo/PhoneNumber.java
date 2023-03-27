@@ -1,7 +1,7 @@
 package org.example.Model.SetNewInfo;
 
 import org.example.Model.Interfaces.SetInfo;
-import org.example.Model.Phonebook;
+import org.example.Model.Models.Phonebook;
 import org.example.View.Input;
 
 public class PhoneNumber implements SetInfo {

@@ -1,7 +1,7 @@
 package org.example.Model.Interfaces;
 
-import org.example.Model.Phonebook;
+import org.example.Model.Models.Phonebook;
 
 public interface ServiceBook {
-    void updateBook(Phonebook book);
+    void serviceBook(Phonebook book);
 }

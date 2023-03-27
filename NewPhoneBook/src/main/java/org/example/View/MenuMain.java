@@ -1,11 +1,11 @@
 package org.example.View;
 
-import org.example.Model.Interfaces.ViewMenu;
-import org.example.Model.Phonebook;
+import org.example.Model.Interfaces.ServiceBook;
+import org.example.Model.Models.Phonebook;
 
-public class MenuMain implements ViewMenu {
+public class MenuMain implements ServiceBook {
     @Override
-    public void menu(Phonebook book) {
+    public void serviceBook(Phonebook book) {
         System.out.println(book);
         System.out.println("1 - добавить новый контакт;\n2 - удалить контакт;\n3 - обновить контакт;\n" +
                 "4 - получить данные о контакте по персональному ID;\n5 - выборка контактов по категории\n" +

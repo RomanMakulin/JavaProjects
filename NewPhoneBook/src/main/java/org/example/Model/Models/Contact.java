@@ -1,4 +1,4 @@
-package org.example.Model;
+package org.example.Model.Models;
 
 public class Contact {
     private int id;

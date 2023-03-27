@@ -1,37 +1,46 @@
 package org.example.Controller;
 
 import org.example.Model.GetContactInfo;
-import org.example.Model.Phonebook;
+import org.example.Model.Models.Phonebook;
+import org.example.Model.FileWorkPack.SaveAsFile;
 import org.example.Model.UpdateBook.AddContactBook;
 import org.example.Model.UpdateBook.DelContactBook;
+import org.example.Model.FilterContacts.SearchContacts;
 import org.example.Model.UpdateBook.UpdateContact;
-import org.example.View.Input;
 import org.example.View.MenuMain;
-
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    public void menu(Phonebook book) {
-        new MenuMain().menu(book);
+    public void menu(Phonebook book) throws IOException {
+        new MenuMain().serviceBook(book);
         boolean progress = true;
 
         while (progress) {
             switch (new Scanner(System.in).nextLine()) {
 
                 case "1":
-                    new AddContactBook().updateBook(book);
+                    new AddContactBook().serviceBook(book);
                     break;
 
                 case "2":
-                    new DelContactBook().updateBook(book);
+                    new DelContactBook().serviceBook(book);
                     break;
 
                 case "3":
-                    new UpdateContact().updateBook(book);
+                    new UpdateContact().serviceBook(book);
                     break;
 
                 case "4":
-                    new GetContactInfo().updateBook(book);
+                    new GetContactInfo().serviceBook(book);
+                    break;
+
+                case "5":
+                    new SearchContacts().serviceBook(book);
+                    break;
+
+                case "6":
+                    new SaveAsFile().save(book);
                     break;
 
                 case "7":
@@ -41,7 +50,7 @@ public class Menu {
 
 
             }
-            if (progress == true) new MenuMain().menu(book);
+            if (progress == true) new MenuMain().serviceBook(book);
         }
 
     }
