@@ -1,4 +1,4 @@
-package org.example.Model.Logger;
+package org.example.Calk.Model.Logger;
 
 public class CalkLoggerImpl implements CalkLogger {
     @Override

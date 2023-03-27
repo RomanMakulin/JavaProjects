@@ -1,4 +1,4 @@
-package org.example.Model;
+package org.example.Calk.Model.Calk;
 
 public interface Calk {
     int sum(int arg);

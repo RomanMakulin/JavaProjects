@@ -1,10 +1,10 @@
-package org.example.Controller;
+package org.example.Calk.Controller;
 
-import org.example.Model.Calk;
-import org.example.Model.Logger.CalkLogImpl;
-import org.example.View.InputAction;
-import org.example.View.InputInt;
-import org.example.View.ViewResult;
+import org.example.Calk.Model.Calk.Calk;
+import org.example.Calk.Model.Logger.CalkLogImpl;
+import org.example.Calk.View.InputAction;
+import org.example.Calk.View.InputInt;
+import org.example.Calk.View.ViewResult;
 
 public class Controller {
     public void startCalk() {

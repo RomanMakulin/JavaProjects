@@ -1,4 +1,4 @@
-package org.example.View;
+package org.example.Calk.View;
 
 public class ViewResult {
     public void result(int arg){
