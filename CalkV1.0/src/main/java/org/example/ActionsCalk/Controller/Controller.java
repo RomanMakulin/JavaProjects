@@ -7,11 +7,9 @@ import org.example.ActionsCalk.Model.Logger.ActionsLogg.SumLog;
 import org.example.ActionsCalk.View.InputString;
 import org.example.ActionsCalk.View.ViewResult;
 import org.example.ActionsCalk.View.InputInt;
-import java.io.IOException;
-
 
 public class Controller {
-    public void startCalk() throws IOException {
+    public void startCalk(){
 
         int result = new InputInt().inp();
 
