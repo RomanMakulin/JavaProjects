@@ -8,11 +8,10 @@ import org.example.Model.UpdateBook.DelContactBook;
 import org.example.Model.FilterContacts.SearchContacts;
 import org.example.Model.UpdateBook.UpdateContact;
 import org.example.View.MenuMain;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    public void menu(Phonebook book) throws IOException {
+    public void menu(Phonebook book){
         new MenuMain().serviceBook(book);
         boolean progress = true;
 
@@ -40,7 +39,7 @@ public class Menu {
                     break;
 
                 case "6":
-                    new SaveAsFile().save(book);
+                    new SaveAsFile().serviceBook(book);
                     break;
 
                 case "7":

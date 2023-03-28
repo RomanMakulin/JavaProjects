@@ -7,17 +7,18 @@ import org.example.View.FilterMenu;
 import java.util.Scanner;
 
 public class SearchContacts implements ServiceBook {
+
     @Override
     public void serviceBook(Phonebook book) {
         new FilterMenu().menu();
         switch (new Scanner(System.in).nextLine()) {
 
             case "1":
-                new SalaryFilter().salarySearch(book);
+                new SalaryFilter().serviceBook(book);
                 break;
 
             case "2":
-                new CommentFilter().commentSearch(book);
+                new CommentFilter().serviceBook(book);
                 break;
         }
     }
