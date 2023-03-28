@@ -6,12 +6,12 @@ import org.example.ActionsCalk.Model.Logger.ActionsLogg.MultLog;
 import org.example.ActionsCalk.Model.Logger.ActionsLogg.SumLog;
 import org.example.ActionsCalk.View.InputString;
 import org.example.ActionsCalk.View.ViewResult;
-import org.example.ActionsCalk.View.InputInt;;
-
+import org.example.ActionsCalk.View.InputInt;
+import java.io.IOException;
 
 
 public class Controller {
-    public void startCalk() {
+    public void startCalk() throws IOException {
 
         int result = new InputInt().inp();
 

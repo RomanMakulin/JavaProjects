@@ -6,8 +6,10 @@ import org.example.Calk.View.InputAction;
 import org.example.Calk.View.InputInt;
 import org.example.Calk.View.ViewResult;
 
+import java.io.IOException;
+
 public class Controller {
-    public void startCalk() {
+    public void startCalk() throws IOException {
 
         Calk arg = new CalkLogImpl(new InputInt().input());
 
