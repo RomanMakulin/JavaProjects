@@ -1,4 +1,4 @@
-package org.example.example.View;
+package org.example.example.View.Input;
 
 import java.util.Scanner;
 

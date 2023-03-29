@@ -1,25 +1,25 @@
-package org.example.example.Controller.CreateAthelets;
+package org.example.example.Controller.AddAthelets;
 
 import org.example.example.Model.Athletes.Athletes;
-import org.example.example.View.CreateAtheletsMenu;
-import org.example.example.View.InputInt;
-
+import org.example.example.View.Menu.CreateAtheletsMenu;
+import org.example.example.View.Input.InputInt;
+import org.example.example.Model.Interfaces.Add;
 import java.util.List;
 
-public class AtheletsAdd implements Create {
+public class AddAthelets implements Add{
     @Override
-    public void add(List<Athletes> athletes) {
+    public List<Athletes> add() {
         int size = new InputInt().input("Задайте количество атлетов соревнования: ");
         for (int i = 0; i < size; i++) {
             switch (new CreateAtheletsMenu().input()) {
                 case "1":
-                    new HumanAdd().add(athletes);
+                    new HumanAdd().add();
                     break;
                 case "2":
-                    new CatAdd().add(athletes);
+                    new CatAdd().add();
                     break;
                 case "3":
-                    new BotAdd().add(athletes);
+                    new BotAdd().add();
                     break;
                 default:
                     System.out.println("Wrong input!");
@@ -27,5 +27,6 @@ public class AtheletsAdd implements Create {
                     break;
             }
         }
+        return athletes;
     }
 }

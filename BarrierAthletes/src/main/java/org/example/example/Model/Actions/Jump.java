@@ -1,8 +1,9 @@
-package org.example.example.Model;
+package org.example.example.Model.Actions;
 
 import org.example.example.Model.Athletes.Athletes;
+import org.example.example.Model.Interfaces.Actions;
 
-public class Jump implements Actions{
+public class Jump implements Actions {
     Athletes athletes;
     @Override
     public void action() {

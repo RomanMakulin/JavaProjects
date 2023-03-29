@@ -1,28 +1,21 @@
 package org.example.example.Controller;
 
-import org.example.example.Barrier;
-import org.example.example.Controller.CreateAthelets.AtheletsAdd;
-import org.example.example.Controller.CreateAthelets.BotAdd;
-import org.example.example.Controller.CreateAthelets.CatAdd;
-import org.example.example.Controller.CreateAthelets.HumanAdd;
+import org.example.example.Controller.AddAthelets.AddAthelets;
+import org.example.example.Controller.AddBarriers.AddBarriersImpl;
 import org.example.example.Model.Athletes.Athletes;
-import org.example.example.Model.Athletes.Bot;
-import org.example.example.Model.Athletes.Human;
-import org.example.example.View.CreateAtheletsMenu;
-import org.example.example.View.InputInt;
-import org.example.example.View.InputStr;
-import org.example.example.View.ShowAthletes;
+import org.example.example.Model.Barrier.Barriers;
+import org.example.example.View.Show;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
     public void buttonStart(){
-        List<Athletes> athletes = new ArrayList<>();
-        List<Barrier> barriers = new ArrayList<>();
+        List<Athletes> athletes = new AddAthelets().add();
+        List<Barriers> barriers = new AddBarriersImpl().add();
 
-        new AtheletsAdd().add(athletes);
-        new ShowAthletes().print(athletes);
+        new Show().print(athletes);
+        new Show().print(barriers);
 
 
     }
