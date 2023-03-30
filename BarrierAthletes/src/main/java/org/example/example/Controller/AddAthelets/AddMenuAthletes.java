@@ -6,7 +6,7 @@ import org.example.example.View.Input.InputInt;
 import org.example.example.Model.Interfaces.Add;
 import java.util.List;
 
-public class AddAthelets implements Add{
+public class AddMenuAthletes implements Add{
     @Override
     public List<Athletes> add() {
         int size = new InputInt().input("Задайте количество атлетов соревнования: ");

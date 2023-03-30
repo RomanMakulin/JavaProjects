@@ -6,7 +6,7 @@ import org.example.example.View.Menu.CreateBarriersMenu;
 import org.example.example.View.Input.InputInt;
 import java.util.List;
 
-public class AddBarriersImpl implements Add {
+public class AddMenuBarriers implements Add {
     @Override
     public List<Barriers> add() {
         int size = new InputInt().input("Задайте количество барьеров: ");

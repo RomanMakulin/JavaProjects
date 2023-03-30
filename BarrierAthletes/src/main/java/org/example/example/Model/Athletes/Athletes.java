@@ -8,7 +8,7 @@ public abstract class Athletes {
     private int maxJumpHight;
     private String type;
     static int athletesCount;
-    Status status = Status.INIT;
+    Status status;
 
     public Athletes(String name, int maxRunDistance, int maxJumpHight, String type) {
         this.name = name;
@@ -58,7 +58,6 @@ public abstract class Athletes {
                 ", maxJumpHight: " + maxJumpHight +
                 ", type: " + type;
     }
-
 
     public Status getStat() {
         return status;

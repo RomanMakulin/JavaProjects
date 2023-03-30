@@ -5,6 +5,6 @@ import org.example.example.Model.Barrier.Barriers;
 
 import java.util.List;
 
-public interface Check {
+public interface ContestCheck {
     void service(Athletes athletes, Barriers barriers, List<Athletes> athletesList);
 }
