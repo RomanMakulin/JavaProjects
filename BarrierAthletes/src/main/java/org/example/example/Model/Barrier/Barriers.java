@@ -27,9 +27,7 @@ public abstract class Barriers {
 
     @Override
     public String toString() {
-        return "Barriers{" +
-                "typeName='" + typeName + '\'' +
-                ", valueBarrier=" + valueBarrier +
-                '}';
+        return "typeName: " + typeName +
+                ", valueBarrier: " + valueBarrier;
     }
 }

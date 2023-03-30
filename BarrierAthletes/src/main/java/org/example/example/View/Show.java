@@ -7,5 +7,6 @@ public class Show {
         for (int i = 0; i < item.size(); i++) {
             System.out.println(item.get(i));
         }
+        System.out.println();
     }
 }

@@ -1,4 +1,4 @@
-package org.example.example.Controller.Contests.CheckAction;
+package org.example.example.Model.Interfaces;
 
 import org.example.example.Model.Athletes.Athletes;
 import org.example.example.Model.Barrier.Barriers;

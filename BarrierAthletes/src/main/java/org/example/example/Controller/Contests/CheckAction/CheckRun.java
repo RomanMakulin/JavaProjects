@@ -3,6 +3,8 @@ package org.example.example.Controller.Contests.CheckAction;
 import org.example.example.Model.Actions.Run;
 import org.example.example.Model.Athletes.Athletes;
 import org.example.example.Model.Barrier.Barriers;
+import org.example.example.Model.Interfaces.Check;
+import org.example.example.View.Status.LossPlayer;
 
 import java.util.List;
 
@@ -13,8 +15,7 @@ public class CheckRun implements Check {
             new Run().action(athletes);
             new CurrentValRun().service(athletes, barriers, players);
         } else {
-            System.out.println(athletes.getName() + " выбывает!");
-            players.remove(athletes);
+            new LossPlayer().action(athletes);
         }
     }
 }
