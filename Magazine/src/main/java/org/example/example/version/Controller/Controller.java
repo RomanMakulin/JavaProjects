@@ -27,24 +27,9 @@ public class Controller {
         categoryList.add(new Category("Hockey", hockey));
 
         new Show().print(categoryList);
+        User user = new Registration().newUser();
+        new Menu().showMenu(user, basketball, football, hockey, categoryList);
 
-//        User user = new User("Roman", "123");
-
-        User user = new User("1", "1");
-
-        switch (new InputStr().input("1 - регистрация\n2 - вход")){
-            case "1":
-                String login = new InputStr().input("Придумайте логин: ");
-                String password = new InputStr().input("Придумайте пароль: ");
-                if (password.equals(new InputStr().input("Повторите пароль: "))){
-                    user = new User(login, password);
-                }
-                break;
-            case "2":
-                new Menu().showMenu(user, basketball, football, hockey, categoryList);
-                new Show().print(categoryList);
-                break;
-        }
 
     }
 
