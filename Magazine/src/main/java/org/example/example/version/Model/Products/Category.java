@@ -1,4 +1,4 @@
-package org.example.example.version.Model;
+package org.example.example.version.Model.Products;
 
 import java.util.List;
 
@@ -15,11 +15,13 @@ public class Category extends Product {
         return this.productList.get(i);
     }
 
+    public int size(){
+        return this.productList.size();
+    }
+
     @Override
     public String toString() {
-        return catName + " {" +
-                "productList=" + productList +
-                '}';
+        return catName + ": "+ productList;
     }
 
     public String getCatName() {

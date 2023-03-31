@@ -1,9 +1,7 @@
 package org.example.example.version;
 
-import org.example.example.version.Model.Basket;
-import org.example.example.version.Model.Product;
-import org.example.example.version.Model.AddProdList;
-import org.example.example.version.Model.Category;
+import org.example.example.version.Controller.Controller;
+import org.example.example.version.Model.Products.Product;
 import org.example.example.version.VIew.InputInt;
 import org.example.example.version.VIew.InputStr;
 
@@ -13,26 +11,27 @@ import java.util.List;
 public class Program {
     public static void main(String[] args) {
 
-        List<Category> categoryList = new ArrayList<>();
-        categoryList.add(new Category(new InputStr().input("Введите название категории: "), new AddProdList().add()));
-        categoryList.add(new Category(new InputStr().input("Введите название категории: "), new AddProdList().add()));
+        new Controller().start();
 
-        for (int i = 0; i < categoryList.size(); i++) {
-            System.out.println(categoryList.get(i));
-        }
-
-        List<Product> buyList = new ArrayList<>();
-
-        switch (new InputStr().input("Выберите категорию для добавления товара в корзину:\n" +
-                "1 - Basketball\n2 - Football\n3 - Hockey")){
-            case "1":
-                for (int i = 0; i < categoryList.size(); i++) {
-                    if (categoryList.get(i).getCatName().equals("Basketball"))
-                        buyList.add(categoryList.get(i).get(new InputInt().input("Введите айди: ")));
-                }
-        }
-
-        System.out.println(buyList);
+//        List<Product> buyList = new ArrayList<>();
+//
+//        switch (new InputStr().input()){
+//            case "1":
+//
+//                for (int i = 0; i < categoryList.size(); i++) {
+//                    if (categoryList.get(i).getCatName().equals("Basketball")){
+//                        int needID = new InputInt().input("Введите айди: ");
+//                        buyList.add(categoryList.get(i).get(needID));
+//                        basketball.remove(basketball.get(needID));
+//                    }
+//                }
+//        }
+//
+//        System.out.println(buyList);
+//        System.out.println();
+//        for (int i = 0; i < categoryList.size(); i++) {
+//            System.out.println(categoryList.get(i));
+//        }
 
 
 
