@@ -13,6 +13,7 @@ public class Menu {
     public void showMenu(User user, List<Product> basketball, List<Product> football, List<Product> hockey, List<Category> categoryList){
         int count = 0;
         int maxTry = 5;
+        System.out.println("Вход в систему: ");
 
         while (count < maxTry) {
             if (new Login().tryLog(user)) {
@@ -33,6 +34,7 @@ public class Menu {
                             break;
                         case "5":
                             cmd = false;
+                            System.out.println("Cia");
                             break;
                         case "6":
                             new Show().print(categoryList);
@@ -44,7 +46,10 @@ public class Menu {
                 }
                 break;
             }
-            count++;
+            else{
+                maxTry--;
+                System.out.printf("Неверный логин или пароль!\nПопыток осталось: %d\n", maxTry);
+            }
         }
     }
 }

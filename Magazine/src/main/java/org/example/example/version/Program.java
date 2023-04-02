@@ -13,28 +13,5 @@ public class Program {
 
         new Controller().start();
 
-//        List<Product> buyList = new ArrayList<>();
-//
-//        switch (new InputStr().input()){
-//            case "1":
-//
-//                for (int i = 0; i < categoryList.size(); i++) {
-//                    if (categoryList.get(i).getCatName().equals("Basketball")){
-//                        int needID = new InputInt().input("Введите айди: ");
-//                        buyList.add(categoryList.get(i).get(needID));
-//                        basketball.remove(basketball.get(needID));
-//                    }
-//                }
-//        }
-//
-//        System.out.println(buyList);
-//        System.out.println();
-//        for (int i = 0; i < categoryList.size(); i++) {
-//            System.out.println(categoryList.get(i));
-//        }
-
-
-
-
     }
 }

@@ -26,7 +26,6 @@ public class Controller {
         categoryList.add(new Category("Football", football));
         categoryList.add(new Category("Hockey", hockey));
 
-        new Show().print(categoryList);
         User user = new Registration().newUser();
         new Menu().showMenu(user, basketball, football, hockey, categoryList);
 
