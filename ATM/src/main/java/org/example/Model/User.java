@@ -2,11 +2,15 @@ package org.example.Model;
 
 public class User {
     private String login;
+    private long cardID;
+    private static long countID;
     private int pin;
     private int money;
     private int cash;
 
     public User(String login, int pin, int money, int cash) {
+        this.cardID = countID;
+        this.countID++;
         this.login = login;
         this.pin = pin;
         this.money = money;
@@ -47,11 +51,14 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "login='" + login + '\'' +
-                ", pin=" + pin +
-                ", money=" + money +
-                ", cash=" + cash +
-                '}';
+        return "User: " + login + ", card ID: " + cardID + ", pin: " + pin + ", money: " + money + ", cash: " + cash;
+    }
+
+    public long getCardID() {
+        return cardID;
+    }
+
+    public void setCardID(long cardID) {
+        this.cardID = cardID;
     }
 }
