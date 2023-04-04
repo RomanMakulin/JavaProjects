@@ -1,6 +1,6 @@
 package org.example.example.Controller.Contests.CheckAction;
 
-import org.example.example.Model.Actions.Jump;
+import org.example.example.Controller.Actions.Jump;
 import org.example.example.Model.Athletes.Athletes;
 import org.example.example.Model.Barrier.Barriers;
 import org.example.example.Model.Interfaces.ContestCheck;

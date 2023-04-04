@@ -4,6 +4,7 @@ import org.example.example.Model.Athletes.Athletes;
 import org.example.example.View.Menu.CreateAtheletsMenu;
 import org.example.example.View.Input.InputInt;
 import org.example.example.Model.Interfaces.Add;
+import org.example.example.View.SimpleView.WrongInput;
 import java.util.List;
 
 public class AddMenuAthletes implements Add{
@@ -22,7 +23,7 @@ public class AddMenuAthletes implements Add{
                     new BotAdd().add();
                     break;
                 default:
-                    System.out.println("Wrong input!");
+                    new WrongInput().print();
                     size++;
                     break;
             }

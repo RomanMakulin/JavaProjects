@@ -4,6 +4,8 @@ import org.example.example.Model.Interfaces.Add;
 import org.example.example.Model.Barrier.Barriers;
 import org.example.example.View.Menu.CreateBarriersMenu;
 import org.example.example.View.Input.InputInt;
+import org.example.example.View.SimpleView.WrongInput;
+
 import java.util.List;
 
 public class AddMenuBarriers implements Add {
@@ -19,7 +21,7 @@ public class AddMenuBarriers implements Add {
                     new AddRunroad().add();
                     break;
                 default:
-                    System.out.println("Wrong input!");
+                    new WrongInput().print();
                     size++;
                     break;
             }

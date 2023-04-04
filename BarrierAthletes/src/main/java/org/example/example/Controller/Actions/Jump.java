@@ -1,11 +1,12 @@
-package org.example.example.Model.Actions;
+package org.example.example.Controller.Actions;
 
 import org.example.example.Model.Athletes.Athletes;
 import org.example.example.Model.Interfaces.Actions;
+import org.example.example.View.Actions.PrintJump;
 
 public class Jump implements Actions {
     @Override
     public void action(Athletes athletes) {
-        System.out.printf("[%s] %s: прыгает ...", athletes.getType(), athletes.getName());
+        new PrintJump().action(athletes);
     }
 }
