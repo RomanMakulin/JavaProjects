@@ -7,6 +7,8 @@ import org.example.Controller.UserService.NewPin;
 import org.example.Model.Interfaces.UserService;
 import org.example.Model.User;
 import org.example.View.Input;
+import org.example.View.Print.MoneyInfo;
+import org.example.View.Print.SystemExit;
 import org.example.View.ViewMenu;
 
 public class Menu implements UserService {
@@ -34,7 +36,7 @@ public class Menu implements UserService {
                     break;
 
                 case "5":
-                    System.out.printf("Денюшки: %d", user.getMoney());
+                    new MoneyInfo().print(user);
                     break;
 
                 case "6":
@@ -42,7 +44,7 @@ public class Menu implements UserService {
                     break;
 
                 case "7":
-                    System.out.println("Bye");
+                    new SystemExit().print();
                     System.exit(1);
                     break;
             }
