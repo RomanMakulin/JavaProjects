@@ -1,11 +1,12 @@
 package org.example.Controller;
 
+import org.example.Controller.Generate.AtmGenerate;
+import org.example.Controller.Generate.UsersGenerate;
 import org.example.Model.ATM;
 import org.example.Model.User;
 import org.example.View.AtmShow;
 import org.example.View.Input;
 import org.example.View.Print.WrongInput;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +14,8 @@ public class Controller {
     public void buttonClick() {
 
         List<User> userList = new UsersGenerate().service();
+        List<ATM> atmList = new AtmGenerate().service();
 
-        List<ATM> atmList = new ArrayList<>();
-        new AtmGenerate().service(atmList);
         new AtmSettings().service(atmList);
         new AtmShow().print(atmList);
 

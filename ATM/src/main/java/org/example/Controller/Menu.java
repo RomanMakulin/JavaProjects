@@ -36,7 +36,7 @@ public class Menu implements UserService {
                     break;
 
                 case "5":
-                    new MoneyInfo().print(user);
+                    new MoneyInfo().service(user);
                     break;
 
                 case "6":
