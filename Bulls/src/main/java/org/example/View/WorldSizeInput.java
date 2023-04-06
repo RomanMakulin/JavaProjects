@@ -1,10 +1,10 @@
-package org.example.example.verison1.InputInt;
+package org.example.View;
 
 import java.util.Scanner;
 
-public class InputSizeWorld implements InputInt{
+public class WorldSizeInput implements InputInt{
     @Override
-    public int print() {
+    public int print(){
         System.out.println("Введите длину слова: ");
         return new Scanner(System.in).nextInt();
     }

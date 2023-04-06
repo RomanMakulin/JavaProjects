@@ -1,22 +1,16 @@
-package org.example.example.verison1;
+package org.example.Model;
+
+import org.example.View.InputWorld;
 
 public class Answer {
-    private int cows;
     private int bulls;
+    private int cows;
     private String userInput;
 
-    public Answer(int cows, int bulls, String userInput) {
-        this.cows = cows;
-        this.bulls = bulls;
-        this.userInput = userInput;
-    }
-
-    public int getCows() {
-        return cows;
-    }
-
-    public void setCows(int cows) {
-        this.cows = cows;
+    public Answer() {
+        this.bulls = 0;
+        this.cows = 0;
+        this.userInput = new InputWorld().input();
     }
 
     public int getBulls() {
@@ -25,6 +19,14 @@ public class Answer {
 
     public void setBulls(int bulls) {
         this.bulls = bulls;
+    }
+
+    public int getCows() {
+        return cows;
+    }
+
+    public void setCows(int cows) {
+        this.cows = cows;
     }
 
     public String getUserInput() {
