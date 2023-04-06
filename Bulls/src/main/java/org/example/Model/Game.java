@@ -1,7 +1,6 @@
 package org.example.Model;
 
-import org.example.Generate.GenerateWord;
-import org.example.Status;
+import org.example.Controller.Generate.GenerateWord;
 
 public class Game {
     private String word;

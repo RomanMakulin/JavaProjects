@@ -1,4 +1,4 @@
-package org.example.Generate.GameMode;
+package org.example.Model.Interfaces;
 
 import java.util.List;
 
