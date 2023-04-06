@@ -9,7 +9,7 @@ public class RuGame implements GenerateChar {
     @Override
     public List<String> generateCharList() {
         List<String> charList = new ArrayList<>();
-        for (char i = 'а'; i < 'в'; i++) charList.add(String.valueOf(i));
+        for (char i = 'а'; i < 'е'; i++) charList.add(String.valueOf(i));
         return charList;
     }
 }

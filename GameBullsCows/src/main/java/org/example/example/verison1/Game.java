@@ -4,8 +4,8 @@ public class Game {
     private String world;
     private int maxTry;
 
-    public Game(String world, int maxTry) {
-        this.world = world;
+    public Game(int maxTry) {
+        this.world = new GenerateWorld().generateWord();
         this.maxTry = maxTry;
     }
 

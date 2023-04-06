@@ -1,7 +1,7 @@
 package org.example.example.verison1;
 
 import org.example.example.verison1.GameMode.EngGame;
-import org.example.example.verison1.GameMode.InputInt.InputSizeWorld;
+import org.example.example.verison1.InputInt.InputSizeWorld;
 import org.example.example.verison1.GameMode.NumberGame;
 import org.example.example.verison1.GameMode.RuGame;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class GenerateWorld {
     List<String> charList;
-    private String generateWord() {
+    public String generateWord() {
         System.out.println("1 - Ru game\n2 - Eng game\n3 - Numbers game");
         switch (new Scanner(System.in).nextInt()){
             case 1:

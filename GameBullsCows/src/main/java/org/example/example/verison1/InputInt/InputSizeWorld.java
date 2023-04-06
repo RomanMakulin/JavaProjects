@@ -1,4 +1,4 @@
-package org.example.example.verison1.GameMode.InputInt;
+package org.example.example.verison1.InputInt;
 
 import java.util.Scanner;
 
