@@ -4,6 +4,7 @@ import org.example.Model.*;
 import org.example.View.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,16 +24,25 @@ public class Controller {
         medicinesList.add(new Medicines("Vasilin", 500, 10));
 
         // Список аптек
-        List<Pharmacy> pharmacyList = new ArrayList<>();
-        pharmacyList.add(new Pharmacy("Будь здоров", "on", medicinesList));
-        pharmacyList.add(new Pharmacy("Аптека 360", "on", medicinesList2));
+
+        Pharmacy pharmacy1 = new Pharmacy("Будь здоров", "on", medicinesList);
+        Pharmacy pharmacy2 = new Pharmacy("Вторая", "on", medicinesList2);
+
+        List<Pharmacy> pharmacyList = Arrays.asList(pharmacy1, pharmacy2);
+
+        pharmacyList.get(0).getUserList().add(new Administrator("Roman", 123));
+        pharmacyList.get(1).getUserList().add(new SimpleUser("Roman1", 123));
+
 
 
         // вход или регистрация для конкретной аптеки
         while (true) {
 
+            String find = new SwitchPharmacy().input(pharmacyList);
             for (int i = 0; i < pharmacyList.size(); i++) {
-                if (pharmacyList.get(i).getName().equals(new SwitchPharmacy().input(pharmacyList))) {
+                if (pharmacyList.get(i).getName().equals(find)) {
+
+
 
                     switch (new SwitchLoginRegistration().input()) {
                         case "1":
@@ -59,8 +69,6 @@ public class Controller {
 
                                                 System.out.println("1 - изменить цену\n2 - изменить количество\n3 - изменить название");
 
-                                                int switchCmd = new Scanner(System.in).nextInt();
-
                                                 switch (new Scanner(System.in).nextLine()){
                                                     case "1":
                                                         pharmacyList.get(i).getMedicinesList().get(
@@ -75,21 +83,34 @@ public class Controller {
                                                                 new InputIdMedicine().input()).setName(new InputNameMedicine().input());
                                                         break;
                                                     default: new WrongCmd().error();
-
                                                 }
+                                                break;
+                                            case "3":
+                                                for (int k = 0; k < pharmacyList.get(i).getMedicinesList().size(); k++) {
+                                                    System.out.println("ID: " + k + " " + pharmacyList.get(i).getMedicinesList().get(k));
+                                                }
+                                                pharmacyList.get(i).getMedicinesList().remove(new InputIdMedicine().input());
+                                                break;
 
                                         }
 
                                     } else {
                                         System.out.println("compl simple!");
-                                        // simple user profile
+
+                                            System.out.println("Введите ID товара для добавления в корзину: ");
+                                            int id = new Scanner(System.in).nextInt();
+
+                                            for (int i = 0; i < pharmacyList.get(i).getMedicinesList().size(); i++) {
+
+                                            }
+
                                     }
                                 }
                             }
                             break;
 
                         case "2":
-                            pharmacyList.get(i).getUserList().add(new SimpleUser(new InputLogin().input(), new InputPassword().input(), pharmacyList.get(i)));
+                            pharmacyList.get(i).getUserList().add(new SimpleUser(new InputLogin().input(), new InputPassword().input()));
                             break;
 
                         default:

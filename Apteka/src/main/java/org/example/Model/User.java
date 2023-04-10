@@ -1,15 +1,15 @@
 package org.example.Model;
 
-public abstract class User {
+public abstract class User{
     private String name;
     private int password;
-    Pharmacy pharmacy;
+    Basket basket;
 
 
-    public User(String name, int password, Pharmacy pharmacy) {
+    public User(String name, int password) {
         this.name = name;
         this.password = password;
-        this.pharmacy = pharmacy;
+        this.basket = new Basket();
     }
 
     public String getName() {
@@ -28,11 +28,11 @@ public abstract class User {
         this.password = password;
     }
 
-    public Pharmacy getPharmacy() {
-        return pharmacy;
+    public Basket getBasket() {
+        return basket;
     }
 
-    public void setPharmacy(Pharmacy pharmacy) {
-        this.pharmacy = pharmacy;
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }
 }
