@@ -1,16 +1,19 @@
 package org.example.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pharmacy {
     private String name;
     private String status;
     List<Medicines> medicinesList;
+    List<User> userList;
 
     public Pharmacy(String name, String status, List<Medicines> medicinesList) {
         this.name = name;
         this.status = status;
         this.medicinesList = medicinesList;
+        this.userList = new ArrayList<>();
     }
 
     public String getName() {
@@ -35,5 +38,13 @@ public class Pharmacy {
 
     public void setMedicinesList(List<Medicines> medicinesList) {
         this.medicinesList = medicinesList;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 }
