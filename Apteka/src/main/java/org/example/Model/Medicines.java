@@ -34,4 +34,9 @@ public class Medicines {
     public void setCount(int count) {
         this.count = count;
     }
+
+    @Override
+    public String toString() {
+        return name + ", price: " + price + ", count: " + count;
+    }
 }

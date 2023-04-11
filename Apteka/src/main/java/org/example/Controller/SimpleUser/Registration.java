@@ -1,4 +1,4 @@
-package org.example.Controller;
+package org.example.Controller.SimpleUser;
 
 import org.example.Controller.Administrator.UserService;
 import org.example.Model.Pharmacy;

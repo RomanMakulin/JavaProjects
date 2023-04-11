@@ -1,5 +1,8 @@
 package org.example.Controller.Administrator;
 
+import org.example.Controller.Administrator.Actions.SetCountMedicine;
+import org.example.Controller.Administrator.Actions.SetNameMedicine;
+import org.example.Controller.Administrator.Actions.SetPriceMedicine;
 import org.example.Model.Pharmacy;
 import org.example.View.ViewAdmMenu;
 import org.example.View.ViewMedicine;

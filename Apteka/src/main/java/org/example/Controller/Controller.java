@@ -1,11 +1,12 @@
 package org.example.Controller;
 
-import org.example.Controller.Login.LoginMenu;
+import org.example.Controller.Login.ChoicePharmacy;
 import org.example.Controller.MedicinesContent.ForBeHealth;
 import org.example.Controller.MedicinesContent.ForHealthPlus;
 import org.example.Model.Medicines;
 import org.example.Model.Pharmacy;
-import org.example.View.SwitchPharmacy;
+import org.example.Model.SimpleUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,19 +24,14 @@ public class Controller {
         pharmacyList.add(new Pharmacy("Be Health", "on", beHealth));
         pharmacyList.add(new Pharmacy("Health plus", "on", healthPlus));
 
+        pharmacyList.get(0).getUserList().add(new SimpleUser("sky",123));
+
         // назначение администраторов в каждую аптеку
         new AddAdministrator().create(pharmacyList);
 
         // вход или регистрация для конкретной аптеки
-        while (true) {
-            String find = new SwitchPharmacy().input(pharmacyList);
-            for (int i = 0; i < pharmacyList.size(); i++) {
-                if (pharmacyList.get(i).getName().equals(find)) new LoginMenu().service(pharmacyList, i);
-            }
-        }
+        new ChoicePharmacy().log(pharmacyList);
 
     }
-
-
 }
 

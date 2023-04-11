@@ -1,6 +1,6 @@
 package org.example.Model;
 
-public abstract class User{
+public class User{
     private String name;
     private int password;
     Basket basket;

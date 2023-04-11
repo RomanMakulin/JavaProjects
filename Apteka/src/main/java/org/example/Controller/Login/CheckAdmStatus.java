@@ -5,7 +5,8 @@ import org.example.Model.Pharmacy;
 
 import java.util.List;
 
-public class CheckAdmStatus {
+public class CheckAdmStatus implements CheckingUser{
+    @Override
     public boolean check(List<Pharmacy> pharmacyList, int i, int j){
         return pharmacyList.get(i).getUserList().get(j) instanceof Administrator;
     }

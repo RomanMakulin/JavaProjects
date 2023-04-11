@@ -1,5 +1,6 @@
-package org.example.Controller.Administrator;
+package org.example.Controller.Administrator.Actions;
 
+import org.example.Controller.Administrator.UserService;
 import org.example.Model.Pharmacy;
 import org.example.View.InputIdMedicine;
 import org.example.View.InputNameMedicine;

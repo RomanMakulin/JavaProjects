@@ -1,5 +1,7 @@
 package org.example.Controller.Administrator;
 
+import org.example.Controller.Administrator.Actions.AddMedicine;
+import org.example.Controller.Administrator.Actions.RemoveMedicine;
 import org.example.Model.Pharmacy;
 import java.util.List;
 import java.util.Scanner;

@@ -1,23 +1,46 @@
 package org.example.Model;
 
+import org.example.View.InputCountMedicine;
+import org.example.View.InputIdMedicine;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class Basket{
-    List<Medicines> busketList;
+public class Basket {
+    List<Medicines> basketList;
 
     public Basket() {
-        this.busketList = new ArrayList<>();
+        this.basketList = new ArrayList<>();
     }
 
-    public void put(List<Medicines> medicinesList){
-        System.out.println("Введите ID товара для добавления в корзину: ");
-        int id = new Scanner(System.in).nextInt();
+    public void put(List<Medicines> medicinesList) {
 
-        for (int i = 0; i < medicinesList.size(); i++) {
-            busketList.add(medicinesList.get(id));
-            medicinesList.remove(id);
+        int id = new InputIdMedicine().input();
+        int needCount = new InputCountMedicine().input();
+        int currentCountM = medicinesList.get(id).getCount();
+        int newCurrent = currentCountM - needCount;
+
+        if (newCurrent >= 0) {
+            medicinesList.get(id).setCount(newCurrent);
+            basketList.add(new Medicines(medicinesList.get(id).getName(), medicinesList.get(id).getPrice(), needCount));
         }
+
+
+    }
+
+    public void del(List<Medicines> medicinesList) {
+//        int temp = medicinesList.get(id).getCount();
+//        int result = temp - count;
+//        medicinesList.get(id).setCount(result);
+    }
+
+    public void show() {
+
+        System.out.println(basketList);
+    }
+
+    @Override
+    public String toString() {
+        return "Basket: " + basketList;
     }
 }
