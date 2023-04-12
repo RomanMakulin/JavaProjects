@@ -4,14 +4,24 @@ public class User{
     private String name;
     private int password;
     Basket basket;
+    private Card card;
     private int money;
 
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
 
     public User(String name, int password) {
         this.name = name;
         this.password = password;
         this.basket = new Basket();
-        this.money = 2000;
+        this.money = 0;
+        this.card = new Card();
+
     }
 
     public String getName() {

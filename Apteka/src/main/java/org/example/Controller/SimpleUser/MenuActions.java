@@ -20,6 +20,9 @@ public class MenuActions {
                 new ShowMoney().show(pharmacyList, i ,j);
                 break;
             case "4":
+                // прикрепить карту
+                break;
+            case "5":
                 new SystemExit().show();
 
         }
