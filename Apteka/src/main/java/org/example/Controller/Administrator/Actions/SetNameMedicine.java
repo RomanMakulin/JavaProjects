@@ -1,9 +1,9 @@
 package org.example.Controller.Administrator.Actions;
 
-import org.example.Controller.Administrator.UserService;
+import org.example.Model.Interfaces.UserService;
 import org.example.Model.Pharmacy;
-import org.example.View.InputIdMedicine;
-import org.example.View.InputNameMedicine;
+import org.example.View.Input.InputIdMedicine;
+import org.example.View.Input.InputNameMedicine;
 
 import java.util.List;
 

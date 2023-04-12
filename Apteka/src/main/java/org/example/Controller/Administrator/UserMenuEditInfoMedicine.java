@@ -3,8 +3,10 @@ package org.example.Controller.Administrator;
 import org.example.Controller.Administrator.Actions.SetCountMedicine;
 import org.example.Controller.Administrator.Actions.SetNameMedicine;
 import org.example.Controller.Administrator.Actions.SetPriceMedicine;
+import org.example.Model.Interfaces.UserService;
 import org.example.Model.Pharmacy;
-import org.example.View.ViewAdmMenu;
+import org.example.View.Menu.ViewAdmEditMenu;
+import org.example.View.Menu.ViewAdmMainMenu;
 import org.example.View.ViewMedicine;
 import org.example.View.WrongCmd;
 import java.util.List;
@@ -13,8 +15,8 @@ import java.util.Scanner;
 public class UserMenuEditInfoMedicine implements UserService {
     @Override
     public void service(List<Pharmacy> pharmacyList, int i){
-        new ViewMedicine().show(pharmacyList, i);
-        new ViewAdmMenu().editInfoMedicine();
+        new ViewMedicine().service(pharmacyList, i);
+        new ViewAdmEditMenu().show();
         switch (new Scanner(System.in).nextLine()){
             case "1":
                 new SetPriceMedicine().service(pharmacyList, i);
@@ -25,8 +27,11 @@ public class UserMenuEditInfoMedicine implements UserService {
             case "3":
                 new SetNameMedicine().service(pharmacyList, i);
                 break;
+            case "4":
+                new UserMenuMain().service(pharmacyList, i);
+                break;
             default:
-                new WrongCmd().error();
+                new WrongCmd().show();
                 break;
         }
     }

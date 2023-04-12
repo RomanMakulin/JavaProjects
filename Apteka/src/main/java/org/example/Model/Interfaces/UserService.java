@@ -1,4 +1,4 @@
-package org.example.Controller.Administrator;
+package org.example.Model.Interfaces;
 
 import org.example.Model.Pharmacy;
 

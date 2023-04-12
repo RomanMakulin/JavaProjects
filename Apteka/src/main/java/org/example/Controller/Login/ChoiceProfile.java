@@ -1,11 +1,10 @@
 package org.example.Controller.Login;
 
 import org.example.Controller.Administrator.UserMenuMain;
-import org.example.Controller.Administrator.UserService;
-import org.example.Controller.SimpleUser.PutBasket;
+import org.example.Controller.SimpleUser.MenuActions;
 import org.example.Model.Pharmacy;
-import org.example.View.InputLogin;
-import org.example.View.InputPassword;
+import org.example.View.Input.InputLogin;
+import org.example.View.Input.InputPassword;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class ChoiceProfile{
                     // adm profile
                     if (new CheckAdmStatus().check(pharmacyList, i, j)) new UserMenuMain().service(pharmacyList, i);
                         // simple user profile
-                    else new PutBasket().service(pharmacyList, i, j);
+                    else new MenuActions().service(pharmacyList, i, j);
                 }
 
             }

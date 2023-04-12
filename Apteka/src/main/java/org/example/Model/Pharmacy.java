@@ -6,8 +6,8 @@ import java.util.List;
 public class Pharmacy {
     private String name;
     private String status;
-    List<Medicines> medicinesList;
-    List<User> userList;
+    private List<Medicines> medicinesList;
+    private List<User> userList;
 
     public Pharmacy(String name, String status, List<Medicines> medicinesList) {
         this.name = name;
@@ -46,5 +46,15 @@ public class Pharmacy {
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
+    }
+
+    @Override
+    public String toString() {
+        return "Pharmacy{" +
+                "name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                ", medicinesList=" + medicinesList +
+                ", userList=" + userList +
+                '}';
     }
 }

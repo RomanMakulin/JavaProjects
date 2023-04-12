@@ -4,12 +4,14 @@ public class User{
     private String name;
     private int password;
     Basket basket;
+    private int money;
 
 
     public User(String name, int password) {
         this.name = name;
         this.password = password;
         this.basket = new Basket();
+        this.money = 2000;
     }
 
     public String getName() {
@@ -36,4 +38,11 @@ public class User{
         this.basket = basket;
     }
 
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
 }

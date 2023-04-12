@@ -1,7 +1,8 @@
 package org.example.Model;
 
-import org.example.View.InputCountMedicine;
-import org.example.View.InputIdMedicine;
+import org.example.View.Input.InputCountMedicine;
+import org.example.View.Input.InputIdMedicine;
+import org.example.View.NotEnoughMoney;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,30 +14,31 @@ public class Basket {
         this.basketList = new ArrayList<>();
     }
 
-    public void put(List<Medicines> medicinesList) {
+    public void put(List<Medicines> medicinesList, List<Pharmacy> pharmacyList, int i, int j) {
 
         int id = new InputIdMedicine().input();
         int needCount = new InputCountMedicine().input();
-        int currentCountM = medicinesList.get(id).getCount();
-        int newCurrent = currentCountM - needCount;
+        int newCurrent = medicinesList.get(id).getCount() - needCount;
+        int tempPrice = medicinesList.get(id).getPrice() * needCount;
 
-        if (newCurrent >= 0) {
-            medicinesList.get(id).setCount(newCurrent);
-            basketList.add(new Medicines(medicinesList.get(id).getName(), medicinesList.get(id).getPrice(), needCount));
-        }
+        if (pharmacyList.get(i).getUserList().get(j).getMoney() >= tempPrice){
+            if (newCurrent >= 0) {
+                medicinesList.get(id).setCount(newCurrent);
+                basketList.add(new Medicines(medicinesList.get(id).getName(), medicinesList.get(id).getPrice(), needCount));
+
+                int tempMoney = pharmacyList.get(i).getUserList().get(j).getMoney();
+                pharmacyList.get(i).getUserList().get(j).setMoney(tempMoney - tempPrice);
+            }
+        }else new NotEnoughMoney().show();
 
 
     }
 
-    public void del(List<Medicines> medicinesList) {
-//        int temp = medicinesList.get(id).getCount();
-//        int result = temp - count;
-//        medicinesList.get(id).setCount(result);
+    public int size(){
+        return basketList.size();
     }
-
-    public void show() {
-
-        System.out.println(basketList);
+    public Medicines get(int i){
+        return basketList.get(i);
     }
 
     @Override

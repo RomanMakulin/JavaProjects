@@ -1,9 +1,8 @@
 package org.example.Controller.Login;
 
-import org.example.Controller.Administrator.UserService;
 import org.example.Controller.SimpleUser.Registration;
 import org.example.Model.Pharmacy;
-import org.example.View.SwitchLoginRegistration;
+import org.example.View.Menu.SwitchLoginRegistration;
 import org.example.View.WrongCmd;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class LoginMenu{
                     break;
 
                 default:
-                    new WrongCmd().error();
+                    new WrongCmd().show();
                     break;
             }
         }

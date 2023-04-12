@@ -1,10 +1,10 @@
 package org.example.Controller.SimpleUser;
 
-import org.example.Controller.Administrator.UserService;
+import org.example.Model.Interfaces.UserService;
 import org.example.Model.Pharmacy;
 import org.example.Model.SimpleUser;
-import org.example.View.InputLogin;
-import org.example.View.InputPassword;
+import org.example.View.Input.InputLogin;
+import org.example.View.Input.InputPassword;
 
 import java.util.List;
 
