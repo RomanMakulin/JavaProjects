@@ -17,13 +17,10 @@ import java.util.Scanner;
 
 public class Controller {
     public void buttonClick() {
-
         // Список аптек
         List<Pharmacy> pharmacyList = new ArrayList<>();
         pharmacyList.add(0, new Pharmacy("Be Health", "on", new ForBeHealth().generateList()));
         pharmacyList.add(1, new Pharmacy("Health plus", "on", new ForHealthPlus().generateList()));
-
-        pharmacyList.get(0).getUserList().add(new SimpleUser("sky",123));
 
         // card list
         List<Card> cardList = new CardsFromFile().generate();
@@ -32,8 +29,7 @@ public class Controller {
         new AddAdministrator().create(pharmacyList);
 
         // вход или регистрация для конкретной аптеки
-        new ChoicePharmacy().log(pharmacyList);
-
+        new ChoicePharmacy().log(pharmacyList, cardList);
     }
 }
 
