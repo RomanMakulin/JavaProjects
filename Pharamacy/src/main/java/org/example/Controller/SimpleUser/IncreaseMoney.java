@@ -12,20 +12,21 @@ import org.example.View.NotEnoughMoney;
 import java.util.List;
 
 public class IncreaseMoney {
-    public void service(List<Pharmacy> pharmacyList, int i, List<Card> cardList) {
+    public void service(List<Pharmacy> pharmacyList, int i, int j, List<Card> cardList) {
         int id = new InputIdCard().input();
         int pin = new InputPinCard().input();
 
         for (int k = 0; k < cardList.size(); k++) {
-            if (cardList.get(k).getID() == id && cardList.get(k).getPin() == pin) {
+            if (cardList.get(k).getID() == id) {
+                if (cardList.get(k).getPin() == pin){
+                    int needMoney = new InputNeedMoney().input();
+                    int currentMoney = pharmacyList.get(i).getUserList().get(j).getMoney();
 
-                int needMoney = new InputNeedMoney().input();
-                int currentMoney = pharmacyList.get(i).getUserList().get(k).getMoney();
-
-                if (cardList.get(k).getMoney() >= needMoney) {
-                    pharmacyList.get(i).getUserList().get(k).setMoney(currentMoney + needMoney);
-                    cardList.get(k).setMoney(cardList.get(k).getMoney() - needMoney);
-                } else new NotEnoughMoney().show();
+                    if (cardList.get(k).getMoney() >= needMoney) {
+                        pharmacyList.get(i).getUserList().get(j).setMoney(currentMoney + needMoney);
+                        cardList.get(k).setMoney(cardList.get(k).getMoney() - needMoney);
+                    } else new NotEnoughMoney().show();
+                }
             }
         }
     }

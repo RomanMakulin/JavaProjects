@@ -25,7 +25,7 @@ public class MenuActions {
                 new ShowMoney().show(pharmacyList, i, j);
                 break;
             case "4":
-                new IncreaseMoney().service(pharmacyList, i, cardList);
+                new IncreaseMoney().service(pharmacyList, i, j, cardList);
                 break;
             case "5":
                 new SystemExit().show();

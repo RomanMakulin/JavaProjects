@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Basket {
-    List<Medicines> basketList;
+    public List<Medicines> basketList;
 
     public Basket() {
         this.basketList = new ArrayList<>();

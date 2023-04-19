@@ -9,6 +9,6 @@ public class Parse {
         Scanner scanner = new Scanner(line);
         String[] values = scanner.nextLine().split(";");
         scanner.close();
-        return new Card(Integer.parseInt(values[0]), Integer.parseInt(values[2]), Integer.parseInt(values[3]));
+        return new Card(Integer.parseInt(values[0]), Integer.parseInt(values[1]), Integer.parseInt(values[2]));
     }
 }

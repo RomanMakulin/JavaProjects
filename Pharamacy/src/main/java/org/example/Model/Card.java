@@ -1,8 +1,8 @@
 package org.example.Model;
 
 public class Card {
-    private int ID;
-    private int pin;
+    private final int ID;
+    private final int pin;
     private int money;
 
     public Card(int ID, int pin, int money) {
@@ -25,5 +25,14 @@ public class Card {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "ID=" + ID +
+                ", pin=" + pin +
+                ", money=" + money +
+                '}';
     }
 }
