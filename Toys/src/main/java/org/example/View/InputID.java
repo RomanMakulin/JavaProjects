@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class InputID implements InputInt {
     @Override
-    public int print(){
+    public int input(){
         System.out.println("Введите ID игрушки: ");
         return new Scanner(System.in).nextInt();
     }

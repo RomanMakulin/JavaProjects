@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class InputWidth implements InputInt {
     @Override
-    public int print(){
+    public int input(){
         System.out.println("Введите width игрушки: ");
         return new Scanner(System.in).nextInt();
     }

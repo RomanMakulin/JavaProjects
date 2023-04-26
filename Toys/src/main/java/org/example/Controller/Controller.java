@@ -1,28 +1,42 @@
 package org.example.Controller;
 
+import org.example.Controller.CheckWinner.Logic;
+import org.example.Controller.FilesWork.ReadFile;
 import org.example.Model.Toy;
-import org.example.Model.ToyList;
-import org.example.View.InputID;
-import org.example.View.InputWidth;
-import org.example.View.ViewPrises;
-import org.example.View.ViewToyList;
+import org.example.View.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
-    public void buttonClick(){
+    public void buttonClick() {
 
-        // добавление списка игрушек к розыгрышу
-        List<Toy> toyList = new ToyList().list();
+        List<Toy> toyList = new ReadFile().read("toys.csv");
+        List<Toy> myItems = new ArrayList<>();
 
-        // функционал изменения редкости
-        toyList.get(new InputID().print()).setWidth(new InputWidth().print());
+        while (true) {
+            switch (new InputMenu().input()) {
+                case "1":
+                    new ViewToyList().view(toyList);
+                    break;
+                case "2":
+                    toyList.add(new Toy(new InputName().input(), new InputWidth().input()));
+                    break;
+                case "3":
+                    toyList.get(new InputID().input()).setWidth(new InputWidth().input());
+                    break;
+                case "4":
+                    if (!toyList.isEmpty()) new Logic().checkWinner(toyList, myItems);
+                    else {
+                        new ListNull().print();
+                        System.exit(1);
+                    }
+                    break;
+                case "5":
+                    new ViewMyList().view(myItems);
+                    break;
+            }
+        }
 
-        // просмотр списка игрушек
-        new ViewToyList().view(toyList);
-
-        // логика выбора победителя
-        new TargetWinner().checkWinner(toyList);
     }
-
 }

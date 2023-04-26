@@ -7,8 +7,8 @@ public class Toy {
     private int width;
 
     public Toy(String name, int width) {
-        this.id = counterId;
         counterId ++;
+        this.id = counterId;
         this.name = name;
         this.width = width;
     }
