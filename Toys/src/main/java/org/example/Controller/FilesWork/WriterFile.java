@@ -7,9 +7,9 @@ import java.io.FileWriter;
 import java.util.List;
 
 public class WriterFile {
-    public void file(List<Toy> myList){
+    public void file(List<Toy> myList, String path){
         try{
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("my-items.csv"));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
             for (int i = 0; i < myList.size(); i++) {
                 bufferedWriter.write(myList.get(i).getName() + ";" + myList.get(i).getWidth() + "\n");
             }
