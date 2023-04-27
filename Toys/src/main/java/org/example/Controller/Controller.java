@@ -11,7 +11,6 @@ import org.example.View.*;
 import org.example.View.Input.InputName;
 import org.example.View.Input.InputWidth;
 import org.example.View.Menu.InputMenu;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,6 @@ public class Controller {
 
         List<Toy> toyList = new ReadFile().read(new PathRead().cfg());
         List<Toy> myItems = new ArrayList<>();
-
 
         while (true) {
             switch (new InputMenu().input()) {
@@ -43,7 +41,5 @@ public class Controller {
             }
             new WriterFile().file(toyList, new PathRead().cfg()); // обновляем данные в исходнике
         }
-
-
     }
 }
