@@ -3,7 +3,15 @@ package org.example.example.version.Model.Products;
 import java.util.List;
 
 public class Category extends Product {
-    List<Product> productList;
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
+    private List<Product> productList;
     private String catName;
     public Category(String name, List<Product> productList) {
         super(name, 0);

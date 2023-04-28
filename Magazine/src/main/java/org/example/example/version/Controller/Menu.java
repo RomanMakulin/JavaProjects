@@ -8,7 +8,7 @@ import org.example.example.version.View.*;
 import java.util.List;
 
 public class Menu {
-    public void showMenu(User user, List<Product> basketball, List<Product> football, List<Product> hockey, List<Category> categoryList){
+    public void showMenu(User user, List<Category> categoryList){
         int count = 0;
         int maxTry = 5;
         new ViewLogin().print();
@@ -19,13 +19,13 @@ public class Menu {
                 while (cmd) {
                     switch (new MenuInput().input()) {
                         case "1":
-                            user.put(basketball);
+                            new ActionBuy().buy(user, categoryList, "Basketball");
                             break;
                         case "2":
-                            user.put(football);
+                            new ActionBuy().buy(user, categoryList, "Football");
                             break;
                         case "3":
-                            user.put(hockey);
+                            new ActionBuy().buy(user, categoryList, "Hockey");;
                             break;
                         case "4":
                             user.show();
