@@ -1,4 +1,4 @@
-package org.example.example.version.VIew;
+package org.example.example.version.View;
 
 import org.example.example.version.Model.Products.Category;
 

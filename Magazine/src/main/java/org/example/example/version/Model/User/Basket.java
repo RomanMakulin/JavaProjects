@@ -1,7 +1,7 @@
 package org.example.example.version.Model.User;
 
 import org.example.example.version.Model.Products.Product;
-import org.example.example.version.VIew.InputInt;
+import org.example.example.version.View.InputInt;
 
 import java.util.ArrayList;
 import java.util.List;

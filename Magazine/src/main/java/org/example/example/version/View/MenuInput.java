@@ -1,4 +1,4 @@
-package org.example.example.version.VIew;
+package org.example.example.version.View;
 
 import java.util.Scanner;
 

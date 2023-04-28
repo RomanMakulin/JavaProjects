@@ -3,8 +3,7 @@ package org.example.example.version.Controller;
 import org.example.example.version.Model.Products.Category;
 import org.example.example.version.Model.Products.Product;
 import org.example.example.version.Model.User.User;
-import org.example.example.version.VIew.MenuInput;
-import org.example.example.version.VIew.Show;
+import org.example.example.version.View.*;
 
 import java.util.List;
 
@@ -12,7 +11,7 @@ public class Menu {
     public void showMenu(User user, List<Product> basketball, List<Product> football, List<Product> hockey, List<Category> categoryList){
         int count = 0;
         int maxTry = 5;
-        System.out.println("Вход в систему: ");
+        new ViewLogin().print();
 
         while (count < maxTry) {
             if (new Login().tryLog(user)) {
@@ -33,22 +32,19 @@ public class Menu {
                             break;
                         case "5":
                             cmd = false;
-                            System.out.println("Cia");
+                            new SystemExit().cya();
                             break;
                         case "6":
                             new Show().print(categoryList);
                             break;
                         default:
-                            System.out.println("Wrong input!");
+                            new WrongInput().error();
                             break;
                     }
                 }
                 break;
             }
-            else{
-                maxTry--;
-                System.out.printf("Неверный логин или пароль!\nПопыток осталось: %d\n", maxTry);
-            }
+            else new MaxTryLogin().error(maxTry);
         }
     }
 }
