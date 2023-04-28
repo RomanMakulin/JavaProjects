@@ -6,10 +6,6 @@ import org.example.example.version.Controller.ProductsList.HockeyList;
 import org.example.example.version.Model.Products.Category;
 import org.example.example.version.Model.Products.Product;
 import org.example.example.version.Model.User.User;
-import org.example.example.version.VIew.InputStr;
-import org.example.example.version.VIew.MenuInput;
-import org.example.example.version.VIew.Show;
-import org.example.example.version.VIew.Wrong;
 
 import java.util.ArrayList;
 import java.util.List;

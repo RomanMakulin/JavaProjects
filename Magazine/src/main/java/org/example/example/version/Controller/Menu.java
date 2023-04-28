@@ -5,7 +5,6 @@ import org.example.example.version.Model.Products.Product;
 import org.example.example.version.Model.User.User;
 import org.example.example.version.VIew.MenuInput;
 import org.example.example.version.VIew.Show;
-import org.example.example.version.VIew.Wrong;
 
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class Menu {
                             new Show().print(categoryList);
                             break;
                         default:
-                            new Wrong().print();
+                            System.out.println("Wrong input!");
                             break;
                     }
                 }
