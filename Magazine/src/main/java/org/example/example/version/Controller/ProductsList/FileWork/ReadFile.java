@@ -1,4 +1,4 @@
-package org.example.example.version.Controller.ProductsList.FileWork;
+package org.example.example.version.Controller.ProductsList.ReadFile;
 
 import org.example.example.version.Model.Products.Product;
 
