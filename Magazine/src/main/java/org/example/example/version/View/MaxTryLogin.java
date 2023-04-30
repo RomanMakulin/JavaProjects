@@ -3,6 +3,6 @@ package org.example.example.version.View;
 public class MaxTryLogin {
     public void error(int maxTry){
         maxTry--;
-        System.out.printf("Неверный логин или пароль!\nПопыток осталось: %d\n", maxTry);
+        System.out.printf("Wrong login or password!\nYou are have any attempts: %d\n", maxTry);
     }
 }

@@ -1,6 +1,6 @@
 package org.example.example.version.Controller;
 
-import org.example.example.version.Controller.ProductsList.FileWork.FileWork;
+import org.example.example.version.Controller.ProductsList.FileWork.ReadFile;
 import org.example.example.version.Model.Products.Category;
 import org.example.example.version.Model.User.User;
 import java.util.Arrays;
@@ -11,9 +11,9 @@ public class Controller {
     public void start() {
 
         List<Category> categoryList = Arrays.asList(
-                new Category("Basketball", new FileWork().readFile("basketball.csv")),
-                new Category("Football", new FileWork().readFile("football.csv")),
-                new Category("Hockey", new FileWork().readFile("hockey.csv")));
+                new Category("basketball", new ReadFile().readFile("basketball.csv")),
+                new Category("football", new ReadFile().readFile("football.csv")),
+                new Category("hockey", new ReadFile().readFile("hockey.csv")));
 
         User user = new Registration().newUser();
 

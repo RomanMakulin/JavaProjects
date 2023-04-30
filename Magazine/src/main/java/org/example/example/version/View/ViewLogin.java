@@ -1,7 +1,10 @@
 package org.example.example.version.View;
 
-public class ViewLogin {
-    public void print(){
-        System.out.println("Вход в систему: ");
+import org.example.example.version.Model.Interfaces.SimpleSystemOut;
+
+public class ViewLogin implements SimpleSystemOut {
+    @Override
+    public void show(){
+        System.out.println("\nLogin system: ");
     }
 }

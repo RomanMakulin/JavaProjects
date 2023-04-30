@@ -1,6 +1,22 @@
 package org.example.example.version.Model.Products;
 
 public class Product {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     private String name;
     private int price;
     static int count;

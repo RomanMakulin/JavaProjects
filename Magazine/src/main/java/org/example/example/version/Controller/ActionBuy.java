@@ -1,5 +1,6 @@
 package org.example.example.version.Controller;
 
+import org.example.example.version.Controller.ProductsList.FileWork.SaveFile;
 import org.example.example.version.Model.Products.Category;
 import org.example.example.version.Model.User.User;
 
@@ -10,6 +11,7 @@ public class ActionBuy {
         for (int i = 0; i < categoryList.size(); i++) {
             if (categoryList.get(i).getCatName().equals(category)){
                 user.put(categoryList.get(i).getProductList());
+                new SaveFile().save(categoryList.get(i).getProductList(), category + ".csv");
             }
         }
     }

@@ -12,24 +12,24 @@ public class Menu {
         while (true) {
             switch (new MenuInput().input()) {
                 case "1":
-                    new ActionBuy().buy(user, categoryList, "Basketball");
+                    new ActionBuy().buy(user, categoryList, "basketball");
                     break;
                 case "2":
-                    new ActionBuy().buy(user, categoryList, "Football");
+                    new ActionBuy().buy(user, categoryList, "football");
                     break;
                 case "3":
-                    new ActionBuy().buy(user, categoryList, "Hockey");
+                    new ActionBuy().buy(user, categoryList, "hockey");
                     break;
                 case "4":
                     user.show();
                     break;
                 case "5":
-                    new SystemExit().cya();
-                case "6":
-                    new Show().print(categoryList);
+                    new ProductList().show(categoryList);
                     break;
+                case "6":
+                    new SystemExit().show();
                 default:
-                    new WrongInput().error();
+                    new WrongInput().show();
                     break;
             }
 

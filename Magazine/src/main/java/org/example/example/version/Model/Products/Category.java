@@ -3,14 +3,6 @@ package org.example.example.version.Model.Products;
 import java.util.List;
 
 public class Category extends Product {
-    public List<Product> getProductList() {
-        return productList;
-    }
-
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
-    }
-
     private List<Product> productList;
     private String catName;
     public Category(String name, List<Product> productList) {
@@ -38,5 +30,13 @@ public class Category extends Product {
 
     public void setCatName(String catName) {
         this.catName = catName;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 }
