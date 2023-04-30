@@ -6,6 +6,7 @@ import org.example.Model.Card;
 import org.example.Model.Pharmacy;
 import org.example.View.Input.InputLogin;
 import org.example.View.Input.InputPassword;
+import org.example.View.NotFoundUser;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class ChoiceProfile {
                     else new MenuActions().service(pharmacyList, i, j, cardList);
                 }
 
-            }
+            }else new NotFoundUser().show();
         }
     }
 }
