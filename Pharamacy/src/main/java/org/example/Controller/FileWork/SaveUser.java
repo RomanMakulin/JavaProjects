@@ -3,7 +3,7 @@ package org.example.Controller.FileWork;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-public class SaveFile {
+public class SaveUser {
     public void save(String name, int password, String path){
         try {
             FileWriter writer = new FileWriter(path, true);

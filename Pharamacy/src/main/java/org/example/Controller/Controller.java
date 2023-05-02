@@ -12,12 +12,8 @@ public class Controller {
 
         // Список аптек
         List<Pharmacy> pharmacyList = new ArrayList<>();
-
-        // Создание первой аптеки
-        pharmacyList.add(0, new Pharmacy("BeHealth", "BeHealth/productList.csv", "BeHealth/users.csv"));
-
-        // Создание второй аптеки
-        pharmacyList.add(1, new Pharmacy("HealthPlus", "HealthPlus/productList.csv", "HealthPlus/users.csv"));
+        pharmacyList.add(0, new Pharmacy("BeHealth"));
+        pharmacyList.add(1, new Pharmacy("HealthPlus"));
 
         // card list
         List<Card> cardList = new ReadCards().generate("Cards/cards.txt");

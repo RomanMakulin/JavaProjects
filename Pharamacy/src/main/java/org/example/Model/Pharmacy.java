@@ -11,10 +11,10 @@ public class Pharmacy {
     private List<Medicines> medicinesList;
     private List<User> userList;
 
-    public Pharmacy(String name, String pathProducts, String pathUsers) {
+    public Pharmacy(String name) {
         this.name = name;
-        this.medicinesList = new ReadProducts().generate(pathProducts);
-        this.userList = new ReadUsers().generate(pathUsers);
+        this.medicinesList = new ReadProducts().generate(name + "/productList.csv");
+        this.userList = new ReadUsers().generate(name + "/users.csv");
     }
 
     public String getName() {

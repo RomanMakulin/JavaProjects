@@ -1,6 +1,6 @@
 package org.example.Controller.SimpleUser;
 
-import org.example.Controller.FileWork.SaveFile;
+import org.example.Controller.FileWork.SaveUser;
 import org.example.Model.Interfaces.UserService;
 import org.example.Model.Pharmacy;
 import org.example.Model.SimpleUser;
@@ -18,7 +18,7 @@ public class Registration implements UserService {
         pharmacyList.get(i).getUserList().add(new SimpleUser(name, password));
 
         String path = pharmacyList.get(i).getName() + "/users.csv";
-        new SaveFile().save(name, password, path);
+        new SaveUser().save(name, password, path);
 
     }
 }
