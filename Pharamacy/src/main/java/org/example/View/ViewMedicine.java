@@ -7,9 +7,9 @@ import java.util.List;
 
 public class ViewMedicine implements UserService {
     @Override
-    public void service(List<Pharmacy> pharmacyList, int i) {
-        for (int k = 0; k < pharmacyList.get(i).getMedicinesList().size(); k++) {
-            System.out.println("ID: " + k + " " + pharmacyList.get(i).getMedicinesList().get(k));
+    public void service(Pharmacy pharmacy) {
+        for (int k = 0; k < pharmacy.getMedicinesList().size(); k++) {
+            System.out.println("ID: " + k + " " + pharmacy.getMedicinesList().get(k));
         }
     }
 }

@@ -5,12 +5,9 @@ import org.example.Model.Pharmacy;
 import org.example.View.Input.InputCountMedicine;
 import org.example.View.Input.InputIdMedicine;
 
-import java.util.List;
-
 public class SetCountMedicine implements UserService {
     @Override
-    public void service(List<Pharmacy> pharmacyList, int i) {
-        pharmacyList.get(i).getMedicinesList().get(
-                new InputIdMedicine().input()).setCount(new InputCountMedicine().input());
+    public void service(Pharmacy pharmacy) {
+        pharmacy.getMedicinesList().get(new InputIdMedicine().input()).setCount(new InputCountMedicine().input());
     }
 }

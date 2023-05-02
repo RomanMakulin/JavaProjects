@@ -12,7 +12,7 @@ public class ChoicePharmacy {
         while (pharmacy) {
             String find = new SwitchPharmacy().input(pharmacyList);
             for (int i = 0; i < pharmacyList.size(); i++) {
-                if (pharmacyList.get(i).getName().equals(find)) new LoginMenu().service(pharmacyList, i, cardList);
+                if (pharmacyList.get(i).getName().equals(find)) new LoginMenu().service(pharmacyList.get(i), cardList);
             }
         }
     }

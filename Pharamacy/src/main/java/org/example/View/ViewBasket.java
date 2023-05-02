@@ -1,14 +1,15 @@
 package org.example.View;
 
 import org.example.Model.Pharmacy;
+import org.example.Model.User;
 
 import java.util.List;
 
 public class ViewBasket {
-    public void show(List<Pharmacy> pharmacyList, int i, int j){
+    public void show(User user){
         System.out.println("Корзина покупок: ");
-        for (int k = 0; k < pharmacyList.get(i).getUserList().get(j).getBasket().size(); k++) {
-            System.out.println(pharmacyList.get(i).getUserList().get(j).getBasket().get(k));
+        for (int k = 0; k < user.getBasket().size(); k++) {
+            System.out.println(user.getBasket().get(k));
         }
     }
 }

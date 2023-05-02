@@ -2,28 +2,31 @@ package org.example.Controller.SimpleUser;
 
 import org.example.Model.Card;
 import org.example.Model.Pharmacy;
+import org.example.Model.User;
 import org.example.View.*;
 import org.example.View.Menu.ViewSimpleUserMenu;
-
 import java.util.List;
 
 public class MenuActions {
-    public void service(List<Pharmacy> pharmacyList, int i, int j, List<Card> cardList) {
+    public void service(Pharmacy pharmacy, User user, List<Card> cardList) {
         switch (new ViewSimpleUserMenu().input()) {
             case "1":
-                new PutBasket().put(pharmacyList, i, j);
+                new PutBasket().put(pharmacy, user);
                 break;
             case "2":
-                new ViewBasket().show(pharmacyList, i, j);
+                new ViewBasket().show(user);
                 break;
             case "3":
-                new ShowMoney().show(pharmacyList, i, j);
+                new ShowMoney().show(user);
                 break;
             case "4":
-                new IncreaseMoney().service(pharmacyList, i, j, cardList);
+                new IncreaseMoney().service(user, cardList);
                 break;
             case "5":
                 new SystemExit().show();
+            default:
+                new WrongCmd().show();
+                break;
         }
     }
 }

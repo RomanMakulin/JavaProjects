@@ -10,14 +10,14 @@ import java.util.List;
 
 public class Registration implements UserService {
     @Override
-    public void service(List<Pharmacy> pharmacyList, int i) {
+    public void service(Pharmacy pharmacy) {
 
         String name = new InputLogin().input();
         int password = new InputPassword().input();
 
-        pharmacyList.get(i).getUserList().add(new SimpleUser(name, password));
+        pharmacy.getUserList().add(new SimpleUser(name, password));
 
-        String path = pharmacyList.get(i).getName() + "/users.csv";
+        String path = pharmacy.getName() + "/users.csv";
         new SaveUser().save(name, password, path);
 
     }

@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.util.List;
 
 public class SaveCards {
-    public void save(List<Card> cardList, int i) {
+    public void save(List<Card> cardList) {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("Cards/cards.txt"));
             for (int l = 0; l < cardList.size(); l++) {
