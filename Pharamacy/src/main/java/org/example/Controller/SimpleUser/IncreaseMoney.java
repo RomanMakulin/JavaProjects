@@ -1,5 +1,6 @@
 package org.example.Controller.SimpleUser;
 
+import org.example.Controller.FileWork.UpdateFiles.SaveCards;
 import org.example.Model.Card;
 import org.example.Model.Pharmacy;
 import org.example.View.Input.InputIdCard;
@@ -23,6 +24,7 @@ public class IncreaseMoney {
                     if (cardList.get(k).getMoney() >= needMoney) {
                         pharmacyList.get(i).getUserList().get(j).setMoney(currentMoney + needMoney);
                         cardList.get(k).setMoney(cardList.get(k).getMoney() - needMoney);
+                        new SaveCards().save(cardList, i);
                     } else new NotEnoughMoney().show();
                 }
             }

@@ -1,4 +1,4 @@
-package org.example.Controller.FileWork;
+package org.example.Controller.FileWork.UpdateFiles;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

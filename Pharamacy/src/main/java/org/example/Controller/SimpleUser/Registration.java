@@ -1,6 +1,6 @@
 package org.example.Controller.SimpleUser;
 
-import org.example.Controller.FileWork.SaveUser;
+import org.example.Controller.FileWork.UpdateFiles.SaveUser;
 import org.example.Model.Interfaces.UserService;
 import org.example.Model.Pharmacy;
 import org.example.Model.SimpleUser;

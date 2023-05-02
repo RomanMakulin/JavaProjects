@@ -1,9 +1,9 @@
 package org.example.Model;
 
+import org.example.Controller.FileWork.UpdateFiles.SaveProducts;
 import org.example.View.Input.InputCountMedicine;
 import org.example.View.Input.InputIdMedicine;
 import org.example.View.NotEnoughMoney;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class Basket {
         int newCurrent = medicinesList.get(id).getCount() - needCount;
         int tempPrice = medicinesList.get(id).getPrice() * needCount;
 
-        if (pharmacyList.get(i).getUserList().get(j).getMoney() >= tempPrice){
+        if (pharmacyList.get(i).getUserList().get(j).getMoney() >= tempPrice) {
             if (newCurrent >= 0) {
                 medicinesList.get(id).setCount(newCurrent);
                 basketList.add(new Medicines(medicinesList.get(id).getName(), medicinesList.get(id).getPrice(), needCount));
@@ -29,15 +29,15 @@ public class Basket {
                 int tempMoney = pharmacyList.get(i).getUserList().get(j).getMoney();
                 pharmacyList.get(i).getUserList().get(j).setMoney(tempMoney - tempPrice);
             }
-        }else new NotEnoughMoney().show();
-
-
+        } else new NotEnoughMoney().show();
+        new SaveProducts().save(medicinesList, pharmacyList, i);
     }
 
-    public int size(){
+    public int size() {
         return basketList.size();
     }
-    public Medicines get(int i){
+
+    public Medicines get(int i) {
         return basketList.get(i);
     }
 
