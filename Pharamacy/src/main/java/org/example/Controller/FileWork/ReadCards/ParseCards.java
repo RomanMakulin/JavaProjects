@@ -1,10 +1,12 @@
-package org.example.Controller.Cards;
+package org.example.Controller.FileWork;
 
 import org.example.Model.Card;
+import org.example.Model.Interfaces.Parse;
 
 import java.util.Scanner;
 
-public class Parse {
+public class ParseCards implements Parse {
+    @Override
     public Card parse(String line) {
         Scanner scanner = new Scanner(line);
         String[] values = scanner.nextLine().split(";");
