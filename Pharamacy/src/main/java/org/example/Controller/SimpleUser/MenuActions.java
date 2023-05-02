@@ -1,16 +1,11 @@
 package org.example.Controller.SimpleUser;
 
-import org.example.Controller.Cards.CardsFromFile;
 import org.example.Model.Card;
 import org.example.Model.Pharmacy;
 import org.example.View.*;
-import org.example.View.Input.InputIdCard;
-import org.example.View.Input.InputNeedMoney;
-import org.example.View.Input.InputPinCard;
 import org.example.View.Menu.ViewSimpleUserMenu;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class MenuActions {
     public void service(List<Pharmacy> pharmacyList, int i, int j, List<Card> cardList) {

@@ -1,6 +1,5 @@
 package org.example.Controller.FileWork.ReadCards;
 
-import org.example.Controller.FileWork.ReadCards.ParseCards;
 import org.example.Model.Card;
 import org.example.Model.Interfaces.ReadFile;
 
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReadFileCards implements ReadFile {
+public class ReadCards implements ReadFile {
     @Override
     public List<Card> generate(String path){
         List<Card> cardList = new ArrayList<>();

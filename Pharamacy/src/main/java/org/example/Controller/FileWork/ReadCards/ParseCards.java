@@ -1,4 +1,4 @@
-package org.example.Controller.FileWork;
+package org.example.Controller.FileWork.ReadCards;
 
 import org.example.Model.Card;
 import org.example.Model.Interfaces.Parse;

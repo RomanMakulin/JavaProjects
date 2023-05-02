@@ -1,19 +1,20 @@
 package org.example.Model;
 
+import org.example.Controller.FileWork.ReadProducts.ReadProducts;
+import org.example.Controller.FileWork.ReadUsers.ReadUsers;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pharmacy {
     private String name;
-    private String status;
     private List<Medicines> medicinesList;
     private List<User> userList;
 
-    public Pharmacy(String name, String status, List<Medicines> medicinesList) {
+    public Pharmacy(String name, String pathProducts, String pathUsers) {
         this.name = name;
-        this.status = status;
-        this.medicinesList = medicinesList;
-        this.userList = new ArrayList<>();
+        this.medicinesList = new ReadProducts().generate(pathProducts);
+        this.userList = new ReadUsers().generate(pathUsers);
     }
 
     public String getName() {
@@ -22,14 +23,6 @@ public class Pharmacy {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public List<Medicines> getMedicinesList() {
@@ -52,7 +45,6 @@ public class Pharmacy {
     public String toString() {
         return "Pharmacy{" +
                 "name='" + name + '\'' +
-                ", status='" + status + '\'' +
                 ", medicinesList=" + medicinesList +
                 ", userList=" + userList +
                 '}';

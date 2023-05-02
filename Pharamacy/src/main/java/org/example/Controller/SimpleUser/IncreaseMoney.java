@@ -1,8 +1,6 @@
 package org.example.Controller.SimpleUser;
 
-import org.example.Controller.Cards.CardsFromFile;
 import org.example.Model.Card;
-import org.example.Model.Interfaces.UserService;
 import org.example.Model.Pharmacy;
 import org.example.View.Input.InputIdCard;
 import org.example.View.Input.InputNeedMoney;
