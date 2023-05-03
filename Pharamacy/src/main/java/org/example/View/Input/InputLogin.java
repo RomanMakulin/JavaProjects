@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class InputLogin implements InputString {
     @Override
     public String input(){
-        System.out.println("Введите имя пользователя: ");
+        System.out.print("User name: ");
         return new Scanner(System.in).nextLine();
     }
 }

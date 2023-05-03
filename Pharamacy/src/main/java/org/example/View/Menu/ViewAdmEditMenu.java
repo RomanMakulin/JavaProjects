@@ -5,6 +5,6 @@ import org.example.Model.Interfaces.ViewService;
 public class ViewAdmEditMenu implements ViewService {
     @Override
     public void show(){
-        System.out.println("1 - изменить цену\n2 - изменить количество\n3 - изменить название\n4 - назад");
+        System.out.println("\n1 - edit price medicine\n2 - edit count medicine\n3 - edit name medicine\n4 - back");
     }
 }

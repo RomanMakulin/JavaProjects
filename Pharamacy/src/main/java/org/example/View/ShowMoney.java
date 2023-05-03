@@ -11,6 +11,6 @@ public class ShowMoney implements ViewUsers {
 
     @Override
     public void show(User user) {
-        System.out.println("Доступные средства: " + user.getMoney());
+        System.out.println("Your money: " + user.getMoney());
     }
 }

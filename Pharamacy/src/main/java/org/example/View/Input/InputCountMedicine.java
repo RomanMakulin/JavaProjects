@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class InputCountMedicine implements InputInt {
     @Override
     public int input(){
-        System.out.println("Введите кол-во препарата: ");
+        System.out.print("Medicine count: ");
         return new Scanner(System.in).nextInt();
     }
 }

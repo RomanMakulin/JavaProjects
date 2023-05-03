@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class InputIdCard implements InputInt {
     @Override
     public int input() {
-        System.out.println("Введите уникальный ID карты: ");
+        System.out.print("Card ID: ");
         return new Scanner(System.in).nextInt();
     }
 }

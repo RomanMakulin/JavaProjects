@@ -1,13 +1,13 @@
 package org.example.View.Input;
 
-import org.example.Model.Interfaces.InputInt;
+import org.example.Model.Interfaces.InputString;
 
 import java.util.Scanner;
 
-public class InputPassword implements InputInt {
+public class InputPassword implements InputString {
     @Override
-    public int input(){
-        System.out.println("Введите пароль: ");
-        return new Scanner(System.in).nextInt();
+    public String input(){
+        System.out.print("Password: ");
+        return new Scanner(System.in).nextLine();
     }
 }

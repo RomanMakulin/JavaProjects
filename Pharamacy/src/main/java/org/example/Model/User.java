@@ -2,11 +2,11 @@ package org.example.Model;
 
 public class User{
     private String name;
-    private int password;
+    private String password;
     Basket basket;
     private int money;
 
-    public User(String name, int password) {
+    public User(String name, String password) {
         this.name = name;
         this.password = password;
         this.basket = new Basket();
@@ -21,12 +21,8 @@ public class User{
         this.name = name;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
-    }
-
-    public void setPassword(int password) {
-        this.password = password;
     }
 
     public Basket getBasket() {

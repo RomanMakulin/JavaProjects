@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class ViewSimpleUserMenu implements InputString {
     @Override
     public String input(){
-        System.out.println("1 - купить лекарство\n2 - показать корзину покупок" +
-                "\n3 - показать доступные средства\n4 - пополнить счет\n5 - завершить работу");
+        System.out.println("\n1 - buy medicine\n2 - show your basket" +
+                "\n3 - show your money\n4 - increase your money from card\n5 - close app\n");
         return new Scanner(System.in).nextLine();
     }
 }

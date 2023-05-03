@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class InputNameMedicine implements InputString {
     @Override
     public String input(){
-        System.out.println("Введите название препарата: ");
+        System.out.print("Medicine name: ");
         return new Scanner(System.in).nextLine();
     }
 }

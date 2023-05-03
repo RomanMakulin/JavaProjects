@@ -13,11 +13,11 @@ public class ChoiceProfile {
     public void service(Pharmacy pharmacy, List<Card> cardList) {
 
         String login = new InputLogin().input();
-        int password = new InputPassword().input();
+        String password = new InputPassword().input();
 
         for (int j = 0; j < pharmacy.getUserList().size(); j++) {
             if (login.equals(pharmacy.getUserList().get(j).getName())
-                    && password == pharmacy.getUserList().get(j).getPassword()) {
+                    && password.equals(pharmacy.getUserList().get(j).getPassword())) {
 
                 while (true) {
                     // adm profile

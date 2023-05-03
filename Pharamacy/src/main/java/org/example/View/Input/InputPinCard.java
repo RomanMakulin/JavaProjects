@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class InputPinCard implements InputInt {
     @Override
     public int input() {
-        System.out.println("Введите pin: ");
+        System.out.print("Pin: ");
         return new Scanner(System.in).nextInt();
     }
 }

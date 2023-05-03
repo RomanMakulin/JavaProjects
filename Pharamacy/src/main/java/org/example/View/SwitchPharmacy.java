@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class SwitchPharmacy {
     public String input(List<Pharmacy> pharmacyList){
         new ViewPharmacy().show(pharmacyList);
-        System.out.println("Выберите аптеку (введите название): ");
+        System.out.print("\nChoose a pharmacy (input name): ");
         return new Scanner(System.in).nextLine();
     }
 }

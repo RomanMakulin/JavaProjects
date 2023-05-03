@@ -13,7 +13,7 @@ public class Registration implements UserService {
     public void service(Pharmacy pharmacy) {
 
         String name = new InputLogin().input();
-        int password = new InputPassword().input();
+        String password = new InputPassword().input();
 
         pharmacy.getUserList().add(new SimpleUser(name, password));
 

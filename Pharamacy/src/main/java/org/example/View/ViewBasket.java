@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ViewBasket {
     public void show(User user){
-        System.out.println("Корзина покупок: ");
+        System.out.println("Your basket: ");
         for (int k = 0; k < user.getBasket().size(); k++) {
             System.out.println(user.getBasket().get(k));
         }

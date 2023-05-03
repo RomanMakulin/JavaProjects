@@ -12,6 +12,6 @@ public class ParseUsers implements Parse {
         Scanner scanner = new Scanner(line);
         String[] values = scanner.nextLine().split(";");
         scanner.close();
-        return new User(values[0], Integer.parseInt(values[1]));
+        return new User(values[0], values[1]);
     }
 }
