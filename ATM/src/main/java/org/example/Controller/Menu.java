@@ -1,19 +1,20 @@
 package org.example.Controller;
 
+import org.example.Controller.Generate.UpdateUsers;
 import org.example.Controller.UserService.Decrease;
 import org.example.Controller.UserService.Increase;
 import org.example.Controller.UserService.InfoUser;
 import org.example.Controller.UserService.NewPin;
-import org.example.Model.Interfaces.UserService;
 import org.example.Model.User;
 import org.example.View.Input;
 import org.example.View.Print.MoneyInfo;
 import org.example.View.Print.SystemExit;
 import org.example.View.ViewMenu;
 
-public class Menu implements UserService {
-    @Override
-    public void service(User user) {
+import java.util.List;
+
+public class Menu {
+    public void service(User user, List<User> userList) {
         while (true) {
             new ViewMenu().menu();
 
@@ -48,6 +49,7 @@ public class Menu implements UserService {
                     System.exit(1);
                     break;
             }
+            new UpdateUsers().upd(userList); // save users in file
         }
     }
 }
