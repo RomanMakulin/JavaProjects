@@ -6,11 +6,10 @@ import org.example.Controller.UserService.Increase;
 import org.example.Controller.UserService.InfoUser;
 import org.example.Controller.UserService.NewPin;
 import org.example.Model.User;
-import org.example.View.Input;
+import org.example.View.Input.InputCmd;
 import org.example.View.Print.MoneyInfo;
 import org.example.View.Print.SystemExit;
 import org.example.View.ViewMenu;
-
 import java.util.List;
 
 public class Menu {
@@ -18,7 +17,7 @@ public class Menu {
         while (true) {
             new ViewMenu().menu();
 
-            switch (new Input().string("cmd: ")) {
+            switch (new InputCmd().input()) {
 
                 case "1":
                     new Decrease().service(user);
