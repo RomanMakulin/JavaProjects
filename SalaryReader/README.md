@@ -15,7 +15,4 @@
 
 ### Задачи разработки:
 
-- create class "User";
-- create class "SalaryInfo"
-- create class load/save file with users;
-- 
+- доработать вывод сортировки всего списка
