@@ -1,8 +1,8 @@
 package org.example.Model;
 
 import org.example.Controller.FileWork.Notes.NotesRead;
-import org.example.View.InputLogin;
-import org.example.View.InputPassword;
+import org.example.View.Input.InputLogin;
+import org.example.View.Input.InputPassword;
 
 import java.util.ArrayList;
 import java.util.List;

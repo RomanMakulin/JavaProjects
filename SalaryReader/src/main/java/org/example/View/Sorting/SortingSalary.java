@@ -16,7 +16,7 @@ public class SortingSalary implements SortingAction {
 
         tempList.sort(Comparator.comparing(SalaryInfo::getSalary));
         for (int i = 0; i < tempList.size(); i++) {
-            System.out.println(tempList.get(i));
+            System.out.println("[ID: " + i + "]\n" + tempList.get(i) + "\n");
         }
     }
 }

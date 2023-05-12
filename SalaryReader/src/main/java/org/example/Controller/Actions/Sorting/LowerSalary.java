@@ -6,7 +6,7 @@ import org.example.View.Sorting.ShowLowerSalary;
 
 public class LowerSalary implements SortingAction {
     @Override
-    public void sort(User user){
+    public void sort(User user) {
         long min = user.getSalaryInfoList().get(0).getSalary();
         int needId = 0;
 

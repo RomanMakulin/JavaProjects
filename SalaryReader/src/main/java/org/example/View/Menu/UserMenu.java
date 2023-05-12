@@ -1,4 +1,4 @@
-package org.example.View;
+package org.example.View.Menu;
 
 import org.example.Model.Interfaces.Input;
 

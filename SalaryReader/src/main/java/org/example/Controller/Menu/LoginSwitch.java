@@ -2,10 +2,9 @@ package org.example.Controller.Menu;
 
 import org.example.Controller.Actions.Login;
 import org.example.Controller.Actions.Registration;
-import org.example.Controller.FileWork.Users.SaveUser;
 import org.example.Model.Interfaces.UserService;
 import org.example.Model.User;
-import org.example.View.LoginRegistration;
+import org.example.View.Menu.LoginRegistration;
 
 import java.util.List;
 

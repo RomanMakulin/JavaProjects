@@ -3,8 +3,9 @@ package org.example.Controller.Actions;
 import org.example.Controller.Menu.UserSwitch;
 import org.example.Model.Interfaces.UserService;
 import org.example.Model.User;
-import org.example.View.InputLogin;
-import org.example.View.InputPassword;
+import org.example.View.Error;
+import org.example.View.Input.InputLogin;
+import org.example.View.Input.InputPassword;
 
 import java.util.List;
 

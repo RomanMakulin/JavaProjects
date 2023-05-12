@@ -7,6 +7,8 @@ import org.example.Model.SalaryInfo;
 import org.example.Model.User;
 import org.example.View.*;
 import org.example.View.Error;
+import org.example.View.Input.InputID;
+import org.example.View.Menu.UserMenu;
 import org.example.View.Sorting.SortingSalary;
 
 public class UserSwitch {

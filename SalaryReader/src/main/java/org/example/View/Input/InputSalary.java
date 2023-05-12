@@ -1,4 +1,4 @@
-package org.example.View;
+package org.example.View.Input;
 
 import org.example.Model.Interfaces.Input;
 

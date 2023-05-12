@@ -1,13 +1,13 @@
-package org.example.View;
+package org.example.View.Input;
 
 import org.example.Model.Interfaces.Input;
 
 import java.util.Scanner;
 
-public class InputLogin implements Input {
+public class InputPassword implements Input {
     @Override
     public String print() {
-        System.out.println("Login: ");
+        System.out.println("Password: ");
         return new Scanner(System.in).nextLine();
     }
 }

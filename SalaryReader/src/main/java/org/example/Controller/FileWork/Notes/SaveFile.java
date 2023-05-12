@@ -11,8 +11,7 @@ public class SaveFile {
             FileWriter writer = new FileWriter(name + ".csv");
             for (int i = 0; i < salaryInfoList.size(); i++) {
                 SalaryInfo note = salaryInfoList.get(i);
-                writer.write(note.getDate() + ";" + note.getSalary() + ";" + note.getInfo1() + ";"
-                + note.getInfo2() + ";" + note.getInfo3() + "\n");
+                writer.write(note.getDate() + ";" + note.getSalary() + ";" + note.getInfo() + "\n");
             }
             writer.close();
         }catch (Exception e){

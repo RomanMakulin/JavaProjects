@@ -22,7 +22,7 @@ public class NotesParse {
             e.printStackTrace();
         }
 
-        return new SalaryInfo(date, Integer.parseInt(values[1]), values[2], values[3], values[4]);
+        return new SalaryInfo(date, Integer.parseInt(values[1]), values[2]);
 
     }
 }
