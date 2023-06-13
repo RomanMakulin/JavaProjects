@@ -1,4 +1,4 @@
-package org.example.db.Controller.DB;
+package org.example.Model.DB;
 
 public class Configs {
     protected String dbHost = "localhost";

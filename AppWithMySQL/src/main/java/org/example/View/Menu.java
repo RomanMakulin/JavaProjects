@@ -1,4 +1,4 @@
-package org.example.db.View;
+package org.example.View;
 
 import java.util.Scanner;
 
@@ -8,7 +8,10 @@ public class Menu {
                 "What do you want?\n" +
                 "1 - register new user in Data Base\n" +
                 "2 - show all already registered users\n" +
-                "3 - exit\n");
+                "3 - change user's group\n" +
+                "4 - show user with entry date\n" +
+                "5 - delete user\n" +
+                "6 - exit\n");
         return new Scanner(System.in).nextLine();
     }
 }

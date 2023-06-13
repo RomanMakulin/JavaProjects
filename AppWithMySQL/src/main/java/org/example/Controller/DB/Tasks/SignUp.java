@@ -1,13 +1,13 @@
-package org.example.db.Controller.DB.Tasks;
+package org.example.Controller.DB.Tasks;
 
-import org.example.db.Controller.DB.Const;
-import org.example.db.Controller.DB.DataBaseHandler;
-import org.example.db.Model.User;
+import org.example.Model.DB.Const;
+import org.example.Model.DB.DataBaseHandler;
+import org.example.Model.User;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class SignUpUser extends DataBaseHandler{
+public class SignUp extends DataBaseHandler{
     public void signUpUser(User user) {
         String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
                 Const.USERS_FIRST_NAME + "," +
