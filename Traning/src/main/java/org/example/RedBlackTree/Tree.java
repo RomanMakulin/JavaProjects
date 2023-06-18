@@ -115,10 +115,7 @@ public class Tree {
     void inorder(node node) {
         if (node != null) {
             inorder(node.leftChild);
-            char c = '●';
-            if (node.color == false)
-                c = '◯';
-            System.out.print(node.data + "" + c + " ");
+            System.out.print(node.data + "" + " ");
             inorder(node.rightChild);
         }
     }
