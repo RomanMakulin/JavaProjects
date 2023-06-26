@@ -7,6 +7,8 @@ import org.example.Model.Card;
 import org.example.Model.Pharmacy;
 import org.example.View.Input.InputLogin;
 import org.example.View.Input.InputPassword;
+import org.example.View.NotUserFound;
+
 import java.util.List;
 
 public class ChoiceProfile {
@@ -15,18 +17,23 @@ public class ChoiceProfile {
         String login = new InputLogin().input();
         String password = new InputPassword().input();
 
-        for (int j = 0; j < pharmacy.getUserList().size(); j++) {
-            if (login.equals(pharmacy.getUserList().get(j).getName())
-                    && password.equals(pharmacy.getUserList().get(j).getPassword())) {
+        if (pharmacy.getUserListNames().contains(login)) {
+            for (int j = 0; j < pharmacy.getUserList().size(); j++) {
+                if (login.equals(pharmacy.getUserList().get(j).getName())
+                        && password.equals(pharmacy.getUserList().get(j).getPassword())) {
 
-                while (true) {
-                    // adm profile
-                    if (pharmacy.getUserList().get(j) instanceof Administrator) new MenuMain().service(pharmacy);
-                        // simple user profile
-                    else new MenuActions().service(pharmacy, pharmacy.getUserList().get(j), cardList);
+                    while (true) {
+                        // adm profile
+                        if (pharmacy.getUserList().get(j) instanceof Administrator) new MenuMain().service(pharmacy);
+                            // simple user profile
+                        else new MenuActions().service(pharmacy, pharmacy.getUserList().get(j), cardList);
+                    }
+
                 }
-
             }
+        } else {
+            new NotUserFound().show();
         }
+
     }
 }

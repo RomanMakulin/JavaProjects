@@ -37,6 +37,15 @@ public class Pharmacy {
         return userList;
     }
 
+    public List<String> getUserListNames() {
+        List<String> names = new ArrayList<>();
+
+        for (int i = 0; i < getUserList().size(); i++) {
+            names.add(getUserList().get(i).getName());
+        }
+        return names;
+    }
+
     public void setUserList(List<User> userList) {
         this.userList = userList;
     }
