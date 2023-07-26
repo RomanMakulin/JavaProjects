@@ -6,12 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class updateAnimalType extends DataBaseHandler {
-    public void update(int id, String type){
+    public void update(int id, String type) {
         String sql = "UPDATE newhumanfriend " +
-                "SET `oldTable` = '" + type +"' " +
+                "SET `oldTable` = '" + type + "' " +
                 "WHERE `id` = " + id + ";";
-
-
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(sql);
             prSt.executeUpdate();

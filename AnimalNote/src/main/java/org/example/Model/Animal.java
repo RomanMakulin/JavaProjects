@@ -1,5 +1,7 @@
 package org.example.Model;
 
+import org.example.View.inputDateBith;
+
 import java.sql.Date;
 import java.util.List;
 
@@ -10,11 +12,11 @@ public class Animal {
     protected String bith;
     protected String oldTable;
 
-    public Animal(String name, List<String> commandsList, String bith, String oldTable) {
+    public Animal(String name, List<String> commandsList, String oldTable) {
 
         this.name = name;
         this.commandsList = commandsList;
-        this.bith = bith;
+        this.bith = new inputDateBith().input();
         this.oldTable = oldTable;
     }
 

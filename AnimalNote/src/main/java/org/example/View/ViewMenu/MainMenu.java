@@ -6,6 +6,7 @@ public class MainMenu implements Menu {
     @Override
     public void menu() {
         System.out.println("\nМеню: \n" +
+                "0 - Дать информацию по животному\n" +
                 "1 - Завести новое животное\n" +
                 "2 - Определять животное в правильный класс\n" +
                 "3 - Увидеть список команд, которое выполняет животное\n" +

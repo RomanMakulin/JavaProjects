@@ -17,13 +17,13 @@ public class PackNavigator implements Menu {
         new PackMenu().menu();
         switch (new inputMenuCommand().input()) {
             case "1":
-                new newAnimal().create(new Horse(new inputNameAnimal().input(), new inputCommandAnimal().input(), new inputDateBith().input()));
+                new newAnimal().create(new Horse(new inputNameAnimal().input(), new inputCommandAnimal().input()));
                 break;
             case "2":
-                new newAnimal().create(new Camel(new inputNameAnimal().input(), new inputCommandAnimal().input(), new inputDateBith().input()));
+                new newAnimal().create(new Camel(new inputNameAnimal().input(), new inputCommandAnimal().input()));
                 break;
             case "3":
-                new newAnimal().create(new Donkey(new inputNameAnimal().input(), new inputCommandAnimal().input(), new inputDateBith().input()));
+                new newAnimal().create(new Donkey(new inputNameAnimal().input(), new inputCommandAnimal().input()));
                 break;
             case "4":
                 new TypeMenuCase().menu();

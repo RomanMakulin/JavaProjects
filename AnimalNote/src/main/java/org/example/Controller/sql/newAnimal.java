@@ -1,7 +1,10 @@
 package org.example.Controller.sql;
 
+import org.example.Controller.CommandsConvertorDB;
 import org.example.Model.Animal;
+import org.example.Model.Counter;
 import org.example.Model.DB.DataBaseHandler;
+import org.example.View.CountAdd;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -17,21 +20,18 @@ public class newAnimal extends DataBaseHandler {
 
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
-
             prSt.setString(1, animal.getName());
-
-            StringBuilder str = new StringBuilder();
-            for (int i = 0; i < animal.getCommandsList().size(); i++) {
-                str.append(animal.getCommandsList().get(i) + " ");
-            }
-            String commands = str.toString();
-
-            prSt.setString(2, commands);
+            prSt.setString(2, new CommandsConvertorDB().convertString(animal));
             prSt.setString(3, animal.getBith());
             prSt.setString(4, animal.getOldTable());
             prSt.executeUpdate();
+
+            Counter counter = new Counter();
+            counter.add();
+            new CountAdd().show(counter);
+
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Ошибка записи в Базу данных: " + e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

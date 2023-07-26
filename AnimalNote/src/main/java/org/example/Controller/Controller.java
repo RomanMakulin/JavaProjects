@@ -2,6 +2,7 @@ package org.example.Controller;
 
 import org.example.Controller.Menu.Case.TypeMenuCase;
 import org.example.Controller.sql.getCommand;
+import org.example.Controller.sql.getInfoAnimal;
 import org.example.Controller.sql.updateAnimalCommand;
 import org.example.Controller.sql.updateAnimalType;
 import org.example.Model.DB.DataBaseHandler;
@@ -19,6 +20,10 @@ public class Controller extends DataBaseHandler {
 
             new MainMenu().menu();
             switch (new inputMenuCommand().input()){
+                case "0":
+                    new getInfoAnimal().info(new inputId().input());
+                    break;
+
                 case "1":
                     new TypeMenuCase().menu();
                     break;
