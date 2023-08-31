@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static char HUMAN_POINT = 'X';
-    private static char COMP_POINT = '0';
-    private static char EMPTY_POINT = '*';
-    private static short X_LENGTH = 3;
-    private static short Y_LENGTH = 3;
+    private final static char HUMAN_POINT = 'X';
+    private final static char COMP_POINT = '0';
+    private final static char EMPTY_POINT = '*';
+    private final static short X_LENGTH = 3;
+    private final static short Y_LENGTH = 3;
     private static char[][] DESC;
 
 
