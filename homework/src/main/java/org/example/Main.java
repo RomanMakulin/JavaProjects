@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -16,6 +17,8 @@ public class Main {
         initDesc();
         printDesc();
         humanChoice();
+        printDesc();
+        compChoice();
         printDesc();
     }
 
@@ -47,15 +50,30 @@ public class Main {
         }
     }
 
-    public static void humanChoice(){
-        System.out.printf("Введите значение Х (от 1 до %d): ", X_LENGTH);
-        int x = new Scanner(System.in).nextInt() - 1;
-        // тут бы помогло ООП )) впрочем как и везде...
-        System.out.printf("Введите значение Y (от 1 до %d): ", Y_LENGTH);
-        int y = new Scanner(System.in).nextInt() - 1;
+    public static void humanChoice() {
+        while (true){
+            System.out.printf("Введите значение Х (от 1 до %d): ", X_LENGTH);
+            int x = new Scanner(System.in).nextInt() - 1;
+            // тут бы помогло ООП )) впрочем как и везде...
+            System.out.printf("Введите значение Y (от 1 до %d): ", Y_LENGTH);
+            int y = new Scanner(System.in).nextInt() - 1;
 
-        if (isEmpty(x, y) || xyRange(x, y)) DESC[x][y] = HUMAN_POINT;
+            if (xyRange(x, y) && isEmpty(x, y)){
+                DESC[x][y] = HUMAN_POINT;
+                break;
+            } else System.out.println("Wrong input!\n");
+        }
     }
+
+    public static void compChoice(){
+        int x = new Random().nextInt(X_LENGTH);
+        int y = new Random().nextInt(Y_LENGTH);
+
+        if (isEmpty(x, y)) DESC[x][y] = COMP_POINT;
+    }
+
+    // метод выигрыша
+
 
     public static boolean isEmpty(int x, int y){
         return DESC[x][y] == EMPTY_POINT;
