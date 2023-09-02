@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.PrimitiveIterator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,18 +9,63 @@ public class Main {
     private final static char HUMAN_POINT = 'X';
     private final static char COMP_POINT = '0';
     private final static char EMPTY_POINT = '*';
-    private final static short X_LENGTH = 3;
-    private final static short Y_LENGTH = 3;
+    private final static short X_LENGTH = 5;
+    private final static short Y_LENGTH = 5;
     private static char[][] DESC;
 
 
     public static void main(String[] args) {
         initDesc();
         printDesc();
-        humanChoice();
-        printDesc();
-        compChoice();
-        printDesc();
+
+        while (true){
+
+            checkWin();
+            if (checkStatus()){
+                humanChoice();
+                printDesc();
+            } else break;
+
+            checkWin();
+            if (checkStatus()){
+                compChoice();
+                printDesc();
+            } else break;
+
+
+        }
+    }
+
+    public static void checkWin(){
+        int counter = 0;
+        int COMBINATION = 3;
+
+
+            for (int i = 0; i < X_LENGTH; i++) {
+                for (int j = 0; j < Y_LENGTH-1; j++) {
+                    if (EMPTY_POINT != DESC[i][j]){
+                        if (DESC[i][j] == DESC[i][j+1]){
+                            counter++;
+                        }
+                        if (counter == COMBINATION) {
+                            System.out.println("pobeda");
+                            break;
+                        }
+                    }
+
+                }
+            }
+
+
+    }
+
+    public static boolean checkStatus(){
+        for (int i = 0; i < X_LENGTH; i++) {
+            for (int j = 0; j < Y_LENGTH; j++) {
+                if (DESC[i][j] == EMPTY_POINT)  return true;
+            }
+        }
+        return false;
     }
 
     public static void initDesc(){
@@ -66,14 +112,19 @@ public class Main {
     }
 
     public static void compChoice(){
-        int x = new Random().nextInt(X_LENGTH);
-        int y = new Random().nextInt(Y_LENGTH);
 
-        if (isEmpty(x, y)) DESC[x][y] = COMP_POINT;
+
+        while (true){
+            int x = new Random().nextInt(X_LENGTH);
+            int y = new Random().nextInt(Y_LENGTH);
+
+            if (isEmpty(x, y)) {
+                DESC[x][y] = COMP_POINT;
+                break;
+            }
+        }
+
     }
-
-    // метод выигрыша
-
 
     public static boolean isEmpty(int x, int y){
         return DESC[x][y] == EMPTY_POINT;
