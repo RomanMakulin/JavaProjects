@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.PrimitiveIterator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -28,124 +27,160 @@ public class Main {
                 humanChoice();
             } else break;
 
-
             if (checkStatus()) {
                 compChoice();
             } else break;
 
             printDesc();
 
-
-            // check right
-
-
         }
 
+    }
+
+    public static boolean equalsX(int i, int j) {
+        return DESC[i][j] == DESC[i][j + 1] & EMPTY_POINT != DESC[i][j];
+    }
+
+    public static boolean equalsY(int i, int j) {
+        return DESC[j][i] == DESC[j + 1][i] & EMPTY_POINT != DESC[j][i];
+    }
+
+    public static boolean rangeZ(int i, int j, int countZ) {
+        return i + countZ < X_LENGTH && j + countZ < Y_LENGTH;
+    }
+
+    public static boolean equalsZ(int i, int j, int countZ) {
+        return DESC[i][j] == DESC[i + countZ][j + countZ] & EMPTY_POINT != DESC[i][j];
+    }
+
+    public static boolean rangeN(int i, int j, int countN) {
+        return i + countN < X_LENGTH && j - countN >= 0;
+    }
+
+
+    public static boolean equalsN(int i, int j, int countN) {
+        return EMPTY_POINT != DESC[i][j] && DESC[i][j] == DESC[i + countN][j - countN];
+    }
+
+    public static int checkXY(int countX, boolean equalsCheck) {
+        if (equalsCheck) {
+            countX++;
+            if (countX == operationsCount - 1) {
+                System.out.println("We are have winner!");
+                System.exit(1);
+            }
+        } else countX = 0;
+        return countX;
+    }
+
+    public static int checkZN(int countZ, boolean range, boolean equals) {
+
+        while (true) {
+            if (range) {
+                if (equals) {
+
+                    countZ++;
+                    if (countZ == operationsCount) {
+                        System.out.println("finish: ");
+                        System.exit(1);
+                    }
+                } else {
+                    countZ = 1;
+                    break;
+                }
+            } else break;
+
+        }
+        return countZ;
     }
 
     public static void winner() {
 
         for (int i = 0; i < X_LENGTH; i++) {
-            int count = 0;
+            int countX = 0;
+            int countY = 0;
+            int countZ = 1;
+            int countN = 1;
+
             for (int j = 0; j < Y_LENGTH; j++) {
 
-                if (EMPTY_POINT != DESC[i][j]) {
-                    if (j + 1 < Y_LENGTH && i + 1 < X_LENGTH) {
+                if (j + 1 < Y_LENGTH) {
 
-                        // right
-                        if (DESC[i][j] == DESC[i][j + 1]) {
-                            count++;
-                            if (count == operationsCount - 1) {
-                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
-                                System.exit(1);
-                            }
-                        } else count = 0;
+                    // right check on X
+                    countX = checkXY(countX, equalsX(i, j));
+                    // down check on Y
+                    countY = checkXY(countY, equalsY(i, j));
 
 
-
-
-                    }
                 }
+
+                // diagonal
+
+                countZ = checkZN(countZ, rangeZ(i, j, countZ), equalsZ(i, j, countZ));
+
+
+//                countN = checkZN(countN, rangeN(i, j, countN), equalsN(i, j, countN));
+
+//                while (true) {
+//                    if (rangeZ(i, j, countZ)) {
+//
+//                        if (equalsZ(i, j, countZ)) {
+//                            countZ++;
+//                            if (countZ == operationsCount) {
+//                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
+//                                System.exit(1);
+//                            }
+//                        } else {
+//                            countZ = 1;
+//                            break;
+//                        }
+//                    } else break;
+//
+//                }
+////
+//                while (true) {
+//                    if (i + countZ < X_LENGTH && j + countZ < Y_LENGTH) {
+//
+//                        if (DESC[i][j] == DESC[i + countZ][j + countZ] && EMPTY_POINT != DESC[i][j]) {
+//                            countZ++;
+//                            if (countZ == operationsCount) {
+//                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
+//                                System.exit(1);
+//                            }
+//                        } else {
+//                            countZ = 1;
+//                            break;
+//                        }
+//                    } else break;
+//
+//                }
+
+
+                //  diagonal second
+//                while (true) {
+//                    if (i + countN < X_LENGTH && j - countN > 0) {
+//
+//                        if (DESC[i][j] == DESC[i + countN][j - countN] && EMPTY_POINT != DESC[i][j]) {
+//                            countN++;
+//                            if (countN == operationsCount) {
+//                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
+//                                System.exit(1);
+//                            }
+//                        } else {
+//                            countN = 1;
+//                            break;
+//                        }
+//                    } else break;
+//                }
 
             }
         }
 
-
-
-        for (int i = 0; i < X_LENGTH; i++) {
-            int count = 0;
-            for (int j = 0; j < Y_LENGTH; j++) {
-
-                if (EMPTY_POINT != DESC[i][j]) {
-                    if (j + 1 < Y_LENGTH && i + 1 < X_LENGTH) {
-
-                        // down
-                        if (DESC[j][i] == DESC[j][i+1]) {
-                            count++;
-                            if (count == operationsCount - 1) {
-                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
-                                System.exit(1);
-                            }
-                        } else count = 0;
-                    }
-                }
-
-            }
-        }
     }
+
 
     public static void printWin(int i, int j) {
         System.out.println("pobeda " + DESC[i][j]);
-    }
-
-    public static boolean checkWin(int combinationY, int combinationX, int combinationZ, int combinationN) {
-
-        for (int i = 0; i <= X_LENGTH; i++) {
-            for (int j = 0; j <= Y_LENGTH; j++) {
-
-                try {
-                    if (EMPTY_POINT != DESC[i][j]) {
-
-                        if (DESC[i][j] == DESC[i][j + 1]) {
-                            combinationY--;
-                            if (combinationY == 1) {
-                                printWin(i, j);
-                                return false;
-                            }
-                        }
-
-                        if (DESC[i + 1][j] == DESC[i][j]) {
-                            combinationX--;
-                            if (combinationX == 1) {
-                                printWin(i, j);
-                                return false;
-                            }
-                        }
-
-                        if (DESC[i][j] == DESC[i + 1][j + 1]) {
-                            combinationZ--;
-                            if (combinationZ == 1) {
-                                printWin(i, j);
-                                return false;
-                            }
-                        }
-
-                        if (DESC[i + 1][j + 1] == DESC[i][j]) {
-                            combinationN--;
-                            if (combinationN == 1) {
-                                printWin(i, j);
-                                return false;
-                            }
-                        }
-                    }
-                } catch (ArrayIndexOutOfBoundsException e) {
-
-                }
-
-            }
-        }
-        return true;
-
     }
 
     public static boolean checkStatus() {
@@ -202,7 +237,6 @@ public class Main {
     }
 
     public static void compChoice() {
-
 
         while (true) {
             int x = new Random().nextInt(X_LENGTH);
