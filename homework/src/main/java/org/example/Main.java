@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Main {
 
+    //region Static fields
     private final static char HUMAN_POINT = 'X';
     private final static char COMP_POINT = '0';
     private final static char EMPTY_POINT = '*';
@@ -12,6 +13,7 @@ public class Main {
     private final static short Y_LENGTH = 5;
     private final static int operationsCount = 3;
     private static char[][] DESC;
+    //endregion
 
 
     public static void main(String[] args) {
@@ -39,29 +41,13 @@ public class Main {
 
     }
 
+    //region X and Y check (horizontal vertical)
     public static boolean equalsX(int i, int j) {
         return DESC[i][j] == DESC[i][j + 1] & EMPTY_POINT != DESC[i][j];
     }
 
     public static boolean equalsY(int i, int j) {
         return DESC[j][i] == DESC[j + 1][i] & EMPTY_POINT != DESC[j][i];
-    }
-
-    public static boolean rangeZ(int i, int j, int countZ) {
-        return ((i + countZ) < X_LENGTH) & ((j + countZ) < Y_LENGTH);
-    }
-
-    public static boolean equalsZ(int i, int j, int countZ) {
-        return DESC[i][j] == DESC[i + countZ][j + countZ] & EMPTY_POINT != DESC[i][j];
-    }
-
-    public static boolean rangeN(int i, int j, int countN) {
-        return i + countN < X_LENGTH && j - countN >= 0;
-    }
-
-
-    public static boolean equalsN(int i, int j, int countN) {
-        return EMPTY_POINT != DESC[i][j] && DESC[i][j] == DESC[i + countN][j - countN];
     }
 
     public static int checkXY(int countX, boolean equalsCheck) {
@@ -74,28 +60,52 @@ public class Main {
         } else countX = 0;
         return countX;
     }
+    //endregion
 
-    public static int checkZN(int countZ, boolean range, boolean equals) {
+    //region One class for diagonals check
 
-        while (true) {
-            if (range) {
-                System.out.println(countZ);
-                if (equals) {
+//    public static boolean rangeZ(int i, int j, int countZ) {
+//        return ((i + countZ) < X_LENGTH) & ((j + countZ) < Y_LENGTH);
+//    }
+//
+//    public static boolean equalsZ(int i, int j, int countZ) {
+//        return DESC[i][j] == DESC[i + countZ][j + countZ] & EMPTY_POINT != DESC[i][j];
+//    }
+//
+//    public static boolean rangeN(int i, int j, int countN) {
+//        return i + countN < X_LENGTH && j - countN >= 0;
+//    }
+//
+//
+//    public static boolean equalsN(int i, int j, int countN) {
+//        return EMPTY_POINT != DESC[i][j] && DESC[i][j] == DESC[i + countN][j - countN];
+//    }
 
-                    countZ++;
-                    if (countZ == operationsCount) {
-                        printWin();
-                        System.exit(1);
-                    }
-                } else {
-                    countZ = 1;
-                    break;
-                }
-            } else break;
+    //    public static int checkZN(int countZ, boolean range, boolean equals) {
+//
+//        while (true) {
+//            if (range) {
+//                System.out.println(countZ);
+//                if (equals) {
+//
+//                    countZ++;
+//                    if (countZ == operationsCount) {
+//                        printWin();
+//                        System.exit(1);
+//                    }
+//                } else {
+//                    countZ = 1;
+//                    break;
+//                }
+//            } else break;
+//
+//        }
+//        return countZ;
+//    }
 
-        }
-        return countZ;
-    }
+    // endregion
+
+
 
     public static void winner() {
 
@@ -108,59 +118,49 @@ public class Main {
             for (int j = 0; j < Y_LENGTH; j++) {
 
                 if (j + 1 < Y_LENGTH) {
-
                     // right check on X
                     countX = checkXY(countX, equalsX(i, j));
                     // down check on Y
                     countY = checkXY(countY, equalsY(i, j));
-
-
                 }
 
                 // diagonal
-
-                countZ = checkZN(countZ, rangeZ(i, j, countZ), equalsZ(i, j, countZ));
-
-
+//                countZ = checkZN(countZ, rangeZ(i, j, countZ), equalsZ(i, j, countZ));
 //                countN = checkZN(countN, rangeN(i, j, countN), equalsN(i, j, countN));
+//
+                while (true) {
+                    if (i + countZ < X_LENGTH && j + countZ < Y_LENGTH) {
 
-//
+                        if (DESC[i][j] == DESC[i + countZ][j + countZ] && EMPTY_POINT != DESC[i][j]) {
+                            countZ++;
+                            if (countZ == operationsCount) {
+                                printWin();
+                                System.exit(1);
+                            }
+                        } else {
+                            countZ = 1;
+                            break;
+                        }
+                    } else break;
 
-//
-//                while (true) {
-//                    if (i + countZ < X_LENGTH && j + countZ < Y_LENGTH) {
-//
-//                        if (DESC[i][j] == DESC[i + countZ][j + countZ] && EMPTY_POINT != DESC[i][j]) {
-//                            countZ++;
-//                            if (countZ == operationsCount) {
-//                                printWin();
-//                                System.exit(1);
-//                            }
-//                        } else {
-//                            countZ = 1;
-//                            break;
-//                        }
-//                    } else break;
-//
-//                }
-//
-//
-//                // diagonal second
-//                while (true) {
-//                    if (i + countN < X_LENGTH && j - countN > 0) {
-//
-//                        if (DESC[i][j] == DESC[i + countN][j - countN] && EMPTY_POINT != DESC[i][j]) {
-//                            countN++;
-//                            if (countN == operationsCount) {
-//                                printWin();
-//                                System.exit(1);
-//                            }
-//                        } else {
-//                            countN = 1;
-//                            break;
-//                        }
-//                    } else break;
-//                }
+                }
+
+                // diagonal second
+                while (true) {
+                    if (i + countN < X_LENGTH && j - countN > 0) {
+
+                        if (DESC[i][j] == DESC[i + countN][j - countN] && EMPTY_POINT != DESC[i][j]) {
+                            countN++;
+                            if (countN == operationsCount) {
+                                printWin();
+                                System.exit(1);
+                            }
+                        } else {
+                            countN = 1;
+                            break;
+                        }
+                    } else break;
+                }
 
             }
         }
@@ -169,6 +169,7 @@ public class Main {
 
 
     public static void printWin() {
+        printDesc();
         System.out.println("Finish game");
     }
 
