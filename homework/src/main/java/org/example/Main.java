@@ -21,15 +21,17 @@ public class Main {
 
         while (true) {
 
-            winner();
-
             if (checkStatus()) {
                 humanChoice();
             } else break;
 
+            winner();
+
             if (checkStatus()) {
                 compChoice();
             } else break;
+
+            winner();
 
             printDesc();
 
@@ -46,7 +48,7 @@ public class Main {
     }
 
     public static boolean rangeZ(int i, int j, int countZ) {
-        return i + countZ < X_LENGTH && j + countZ < Y_LENGTH;
+        return ((i + countZ) < X_LENGTH) & ((j + countZ) < Y_LENGTH);
     }
 
     public static boolean equalsZ(int i, int j, int countZ) {
@@ -66,7 +68,7 @@ public class Main {
         if (equalsCheck) {
             countX++;
             if (countX == operationsCount - 1) {
-                System.out.println("We are have winner!");
+                printWin();
                 System.exit(1);
             }
         } else countX = 0;
@@ -77,11 +79,12 @@ public class Main {
 
         while (true) {
             if (range) {
+                System.out.println(countZ);
                 if (equals) {
 
                     countZ++;
                     if (countZ == operationsCount) {
-                        System.out.println("finish: ");
+                        printWin();
                         System.exit(1);
                     }
                 } else {
@@ -121,30 +124,16 @@ public class Main {
 
 //                countN = checkZN(countN, rangeN(i, j, countN), equalsN(i, j, countN));
 
-//                while (true) {
-//                    if (rangeZ(i, j, countZ)) {
 //
-//                        if (equalsZ(i, j, countZ)) {
-//                            countZ++;
-//                            if (countZ == operationsCount) {
-//                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
-//                                System.exit(1);
-//                            }
-//                        } else {
-//                            countZ = 1;
-//                            break;
-//                        }
-//                    } else break;
+
 //
-//                }
-////
 //                while (true) {
 //                    if (i + countZ < X_LENGTH && j + countZ < Y_LENGTH) {
 //
 //                        if (DESC[i][j] == DESC[i + countZ][j + countZ] && EMPTY_POINT != DESC[i][j]) {
 //                            countZ++;
 //                            if (countZ == operationsCount) {
-//                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
+//                                printWin();
 //                                System.exit(1);
 //                            }
 //                        } else {
@@ -154,16 +143,16 @@ public class Main {
 //                    } else break;
 //
 //                }
-
-
-                //  diagonal second
+//
+//
+//                // diagonal second
 //                while (true) {
 //                    if (i + countN < X_LENGTH && j - countN > 0) {
 //
 //                        if (DESC[i][j] == DESC[i + countN][j - countN] && EMPTY_POINT != DESC[i][j]) {
 //                            countN++;
 //                            if (countN == operationsCount) {
-//                                System.out.println("finish: " + DESC[i][j] + " " + i + " " + j);
+//                                printWin();
 //                                System.exit(1);
 //                            }
 //                        } else {
@@ -179,8 +168,8 @@ public class Main {
     }
 
 
-    public static void printWin(int i, int j) {
-        System.out.println("pobeda " + DESC[i][j]);
+    public static void printWin() {
+        System.out.println("Finish game");
     }
 
     public static boolean checkStatus() {
