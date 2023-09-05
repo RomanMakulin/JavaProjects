@@ -45,8 +45,8 @@ public class Controller {
         //region Sorting
 
         employeeList.sort(new SortingAge()); // сортировка по возрасту
-//        employeeList.sort(new SortingSalary()); // сортировка по возрасту
-//        employeeList.sort(new SortName());
+//        employeeList.sort(new SortingSalary()); // сортировка по ЗП
+//        employeeList.sort(new SortName()); // сортировка по именам
 
         //endregion
 
