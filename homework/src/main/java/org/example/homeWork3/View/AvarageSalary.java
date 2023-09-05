@@ -6,9 +6,8 @@ import java.util.List;
 
 public class AvarageSalary {
     public void show(List<Employee> employeeList){
-        for (int i = 0; i < employeeList.size(); i++) {
-            System.out.printf("%s result avarage: %s\n",employeeList.get(i).getName(), employeeList.get(i).salaryResult());
+        for (Employee employee : employeeList) {
+            System.out.printf("%s result avarage: %s\n", employee.getName(), employee.salaryResult());
         }
-        System.out.println("=================");
     }
 }

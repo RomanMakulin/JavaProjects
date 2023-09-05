@@ -1,6 +1,5 @@
 package org.example.homeWork3.Controller;
 
-import org.example.homeWork3.Controller.Sorting.SortingAge;
 import org.example.homeWork3.Model.Employee;
 import org.example.homeWork3.Model.Freelance;
 import org.example.homeWork3.Model.Office;
@@ -42,13 +41,8 @@ public class Controller {
         // Печать всех ребят
         new PrintOffice().show(employeeList, office);
 
-        //region Sorting
-
-        employeeList.sort(new SortingAge()); // сортировка по возрасту
-//        employeeList.sort(new SortingSalary()); // сортировка по ЗП
-//        employeeList.sort(new SortName()); // сортировка по именам
-
-        //endregion
+        // Sorting
+        new Menu().menu(employeeList);
 
         // Печать всех ребят # 2: после сортировки
         new PrintOffice().show(employeeList, office);
