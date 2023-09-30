@@ -4,8 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -22,6 +23,7 @@ public class Server extends JFrame {
     JPanel panelMessage = new JPanel(new GridLayout(1, 1));
     JPanel panelBottom = new JPanel(new GridLayout(1, 2));
     Vars vars = new Vars();
+    ArrayList<String> stringList = new ArrayList<>();
 
     Server(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,12 +58,17 @@ public class Server extends JFrame {
         panelBottom.add(btnSend);
         add(panelBottom, BorderLayout.SOUTH);
 
+        new FileWork().fileRead(stringList);
+
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 isLogin = true;
                 panelTop.setVisible(false);
                 messageArea.append(new Date() + ": Complete login! \n");
+                for (String s : stringList) {
+                    messageArea.append(s + "\n");
+                }
             }
         });
 
@@ -69,8 +76,17 @@ public class Server extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isLogin){
-                    messageArea.append(vars.getNAME() + ": " + inputMessage.getText() + "\n");
+                    String line = vars.getNAME() + ": " + inputMessage.getText() + "\n";
+                    messageArea.append(line);
                     inputMessage.setText(null);
+
+                    try (FileWriter fr = new FileWriter("logs.txt", true)) {
+                        fr.write(line);
+                        fr.flush();
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
                 } else{
                     messageArea.append("Не залогинились \n");
                 }

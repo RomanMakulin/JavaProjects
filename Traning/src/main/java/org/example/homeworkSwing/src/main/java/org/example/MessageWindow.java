@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class MessageWindow extends JFrame {
 
@@ -16,7 +17,7 @@ public class MessageWindow extends JFrame {
     JTextArea log;
     Server server;
 
-    MessageWindow(){
+    MessageWindow() throws IOException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
