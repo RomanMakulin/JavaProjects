@@ -9,72 +9,75 @@ import java.awt.event.KeyListener;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
-
 
 public class Server extends JFrame {
+
     private static final int WIDTH = 500;
     private static final int HEIGHT = 500;
-    private boolean isLogin = false;
+    private boolean isServerWorking;
 
-    JTextField inputIP, inputPort, inputName, inputMessage;
-    JPasswordField inputPassword;
-    JButton btnLogin, btnSend;
-    JTextArea messageArea;
-    JPanel panelTop = new JPanel(new GridLayout(2, 3));
-    JPanel panelMessage = new JPanel(new GridLayout(1, 1));
-    JPanel panelBottom = new JPanel(new GridLayout(1, 2));
-    Vars vars = new Vars();
+    JButton btnStart, btnStop;
+    JPanel panelMenu, textArea;
+    JTextArea log;
+    Client client;
     ArrayList<String> stringList = new ArrayList<>();
+    Vars vars = new Vars();
 
-    Server(){
+    Server() throws IOException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
+        setTitle("Messanger");
         setResizable(false);
-        setTitle("Server client");
 
-        inputIP = new JTextField(vars.getIP());
-        inputPort = new JTextField(vars.getPORT());
-        inputName = new JTextField(vars.getNAME());
-        inputMessage = new JTextField();
-        inputPassword = new JPasswordField(vars.getPASSWORD());
+        client = new Client();
+        client.setVisible(false);
 
-        btnLogin = new JButton("Login");
-        btnSend = new JButton("Send");
+        btnStart = new JButton("Start");
+        btnStop = new JButton("Stop");
+        log = new JTextArea();
+        JScrollPane scroll = new JScrollPane(log);
 
-        panelTop.add(inputIP);
-        panelTop.add(inputPort);
-        panelTop.add(inputName);
-        panelTop.add(inputPassword);
-        panelTop.add(btnLogin);
-
-        add(panelTop, BorderLayout.NORTH);
-
-        messageArea = new JTextArea();
-        JScrollPane scroll = new JScrollPane(messageArea);
-        panelMessage.add(scroll);
-        add(panelMessage);
-
-        panelBottom.add(inputMessage);
-        panelBottom.add(btnSend);
-        add(panelBottom, BorderLayout.SOUTH);
-
-        new FileWork().fileRead(stringList);
-
-        btnLogin.addActionListener(new ActionListener() {
+        btnStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                isLogin = true;
-                panelTop.setVisible(false);
-                messageArea.append(new Date() + ": Complete login! \n");
-                for (String s : stringList) {
-                    messageArea.append(s + "\n");
+                if (isServerWorking){
+                    log.append("Server already started \n");
+                } else{
+                    isServerWorking = true;
+                    log.append("Starting server \n");
+                    client.setVisible(true);
+                        new FileWork().fileRead(stringList);
+                        for (String s : stringList) {
+                            client.messageArea.append(s + "\n");
+                        }
                 }
             }
         });
 
-        inputMessage.addKeyListener(new KeyListener() {
+        btnStop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (isServerWorking){
+                    isServerWorking = false;
+                    log.append("Stop server \n");
+                    client.setVisible(false);
+                } else{
+                    log.append("Server already stopped \n");
+                }
+            }
+        });
+
+        client.btnSend.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (client.isLogin) {
+                    new SendMessage().send(client, vars);
+                }
+            }
+        });
+
+        client.inputMessage.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
 
@@ -82,17 +85,8 @@ public class Server extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER && isLogin){
-                    String line = vars.getNAME() + ": " + inputMessage.getText() + "\n";
-                    messageArea.append(line);
-                    inputMessage.setText(null);
-
-                    try (FileWriter fr = new FileWriter("logs.txt", true)) {
-                        fr.write(line);
-                        fr.flush();
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
+                if (e.getKeyCode() == KeyEvent.VK_ENTER && client.isLogin){
+                    new SendMessage().send(client, vars);
                 }
             }
 
@@ -102,27 +96,15 @@ public class Server extends JFrame {
             }
         });
 
-        btnSend.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (isLogin){
-                    String line = vars.getNAME() + ": " + inputMessage.getText() + "\n";
-                    messageArea.append(line);
-                    inputMessage.setText(null);
+        panelMenu = new JPanel(new GridLayout(1, 2));
+        textArea = new JPanel(new GridLayout(1, 1));
 
-                    try (FileWriter fr = new FileWriter("logs.txt", true)) {
-                        fr.write(line);
-                        fr.flush();
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
+        textArea.add(scroll);
+        panelMenu.add(btnStart);
+        panelMenu.add(btnStop);
 
-                } else{
-                    messageArea.append("Не залогинились \n");
-                }
-
-            }
-        });
+        add(panelMenu, BorderLayout.SOUTH);
+        add(textArea);
 
         setVisible(true);
     }
