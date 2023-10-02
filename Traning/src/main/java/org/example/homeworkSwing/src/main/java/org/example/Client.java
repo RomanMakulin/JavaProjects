@@ -6,9 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -26,9 +24,10 @@ public class Client extends JFrame {
     JPanel panelBottom = new JPanel(new GridLayout(1, 2));
     Vars vars = new Vars();
     String line;
+    FileWork fileWork = new FileWork();
 
 
-    Client(){
+    Client() throws IOException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
@@ -70,6 +69,46 @@ public class Client extends JFrame {
             }
         });
 
+        btnSend.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    sendMsg();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        inputMessage.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER && isLogin){
+                    try {
+                        sendMsg();
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
         setVisible(true);
+    }
+    public void sendMsg() throws IOException {
+        line = vars.getNAME() + ": " + inputMessage.getText() + "\n";
+        messageArea.append(line);
+        inputMessage.setText(null);
+        fileWork.sendLog(line);
     }
 }
