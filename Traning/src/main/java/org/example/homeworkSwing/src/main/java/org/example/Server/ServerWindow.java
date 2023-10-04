@@ -24,7 +24,7 @@ public class ServerWindow extends JFrame {
     ArrayList<String> stringList = new ArrayList<>();
     Vars vars = new Vars();
 
-    ServerWindow() throws IOException {
+    public ServerWindow() throws IOException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);

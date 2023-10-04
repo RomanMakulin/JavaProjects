@@ -5,10 +5,7 @@ import org.example.Vars;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.util.Date;
 
@@ -16,8 +13,6 @@ import java.util.Date;
 public class ClientGUI extends JFrame {
     private static final int WIDTH = 500;
     private static final int HEIGHT = 500;
-    boolean isLogin = false;
-
     JTextField inputIP;
     JTextField inputPort;
     JTextField inputName;
@@ -28,27 +23,70 @@ public class ClientGUI extends JFrame {
     JPanel panelTop = new JPanel(new GridLayout(2, 3));
     JPanel panelMessage = new JPanel(new GridLayout(1, 1));
     JPanel panelBottom = new JPanel(new GridLayout(1, 2));
-    Vars vars = new Vars();
-    String line;
-    FileWork fileWork = new FileWork();
+    Client client = new Client();
 
 
-    public ClientGUI() throws IOException {
+    public ClientGUI(){
+
+        settingsWindow();
+        createFrames();
+        panelTopAdd();
+        messageAreaAdd();
+        panelBottomAdd();
+
+        btnLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                login();
+            }
+        });
+
+        btnSend.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sendMessage();
+            }
+        });
+
+        inputMessage.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER){
+                    sendMessage();
+                }
+            }
+        });
+
+        setVisible(true);
+    }
+    public void settingsWindow(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Server client");
-
-        inputIP = new JTextField(vars.getIP());
-        inputPort = new JTextField(vars.getPORT());
-        inputName = new JTextField(vars.getNAME());
+    }
+    public void sendMessage(){
+        client.sendMessage(inputMessage.getText());
+        messageArea.append(client.line);
+        inputMessage.setText(null);
+    }
+    public void login(){
+        client.isLogin = true;
+        panelTop.setVisible(false);
+        messageArea.append(new Date() + ": Complete login! \n");
+    }
+    public void createFrames(){
+        inputIP = new JTextField(client.vars.getIP());
+        inputPort = new JTextField(client.vars.getPORT());
+        inputName = new JTextField(client.vars.getNAME());
         inputMessage = new JTextField();
-        inputPassword = new JPasswordField(vars.getPASSWORD());
+        inputPassword = new JPasswordField(client.vars.getPASSWORD());
 
         btnLogin = new JButton("Login");
         btnSend = new JButton("Send");
-
+    }
+    public void panelTopAdd(){
         panelTop.add(inputIP);
         panelTop.add(inputPort);
         panelTop.add(inputName);
@@ -56,65 +94,16 @@ public class ClientGUI extends JFrame {
         panelTop.add(btnLogin);
 
         add(panelTop, BorderLayout.NORTH);
-
+    }
+    public void messageAreaAdd(){
         messageArea = new JTextArea();
         JScrollPane scroll = new JScrollPane(messageArea);
         panelMessage.add(scroll);
         add(panelMessage);
-
+    }
+    public void panelBottomAdd(){
         panelBottom.add(inputMessage);
         panelBottom.add(btnSend);
         add(panelBottom, BorderLayout.SOUTH);
-
-        btnLogin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                isLogin = true;
-                panelTop.setVisible(false);
-                messageArea.append(new Date() + ": Complete login! \n");
-            }
-        });
-
-        btnSend.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    sendMsg();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
-
-        inputMessage.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER && isLogin){
-                    try {
-                        sendMsg();
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-
-            }
-        });
-
-        setVisible(true);
-    }
-    public void sendMsg() throws IOException {
-        line = vars.getNAME() + ": " + inputMessage.getText() + "\n";
-        messageArea.append(line);
-        inputMessage.setText(null);
-        fileWork.sendLog(line);
     }
 }
