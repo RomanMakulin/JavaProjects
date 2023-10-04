@@ -1,4 +1,7 @@
-package org.example;
+package org.example.Client;
+
+import org.example.FileWork;
+import org.example.Vars;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,15 +13,18 @@ import java.io.IOException;
 import java.util.Date;
 
 
-public class Client extends JFrame {
+public class ClientGUI extends JFrame {
     private static final int WIDTH = 500;
     private static final int HEIGHT = 500;
     boolean isLogin = false;
 
-    JTextField inputIP, inputPort, inputName, inputMessage;
+    JTextField inputIP;
+    JTextField inputPort;
+    JTextField inputName;
+    public JTextField inputMessage;
     JPasswordField inputPassword;
     JButton btnLogin, btnSend;
-    JTextArea messageArea;
+    public JTextArea messageArea;
     JPanel panelTop = new JPanel(new GridLayout(2, 3));
     JPanel panelMessage = new JPanel(new GridLayout(1, 1));
     JPanel panelBottom = new JPanel(new GridLayout(1, 2));
@@ -27,7 +33,7 @@ public class Client extends JFrame {
     FileWork fileWork = new FileWork();
 
 
-    Client() throws IOException {
+    public ClientGUI() throws IOException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
