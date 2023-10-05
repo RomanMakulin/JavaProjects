@@ -1,84 +1,83 @@
 package org.example.Server;
 
 import org.example.Client.ClientGUI;
-import org.example.FileWork;
-import org.example.Vars;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class ServerWindow extends JFrame {
 
     private static final int WIDTH = 500;
     private static final int HEIGHT = 500;
-    private boolean isServerWorking;
-
+    Server server = new Server();
     JButton btnStart, btnStop;
     JPanel panelMenu, textArea;
     JTextArea log;
-    ClientGUI clientGUI;
-    ArrayList<String> stringList = new ArrayList<>();
-    Vars vars = new Vars();
+    ClientGUI clientGUI = new ClientGUI();
 
-    public ServerWindow() throws IOException {
+    public ServerWindow() {
+
+        settingsServerWindow();
+        clientGUI.setVisible(false);
+
+        btnStart = new JButton("Start");
+        btnStop = new JButton("Stop");
+
+        btnStart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                startServer();
+            }
+        });
+        btnStop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                stopServer();
+            }
+        });
+
+        textAreaAdd();
+        panelBottomAdd();
+        setVisible(true);
+    }
+    public void settingsServerWindow(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
         setTitle("Messanger");
         setResizable(false);
+    }
+    public void startServer(){
+        if (server.isServerWorking()){
+            log.append("Server already started \n");
+        } else{
+            server.start(clientGUI);
+            log.append("Starting server \n");
 
-        clientGUI = new ClientGUI();
-        clientGUI.setVisible(false);
-
-        btnStart = new JButton("Start");
-        btnStop = new JButton("Stop");
+        }
+    }
+    public void stopServer(){
+        if (server.isServerWorking()){
+            server.setServerWorking(false);
+            log.append("Stop server \n");
+            clientGUI.setVisible(false);
+        } else{
+            log.append("Server already stopped \n");
+        }
+    }
+    public void textAreaAdd(){
         log = new JTextArea();
         JScrollPane scroll = new JScrollPane(log);
-
-        btnStart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (isServerWorking){
-                    log.append("Server already started \n");
-                } else{
-                    isServerWorking = true;
-                    log.append("Starting server \n");
-                    clientGUI.setVisible(true);
-                        new FileWork().fileRead(stringList);
-                        for (String s : stringList) {
-                            clientGUI.messageArea.append(s + "\n");
-                        }
-                }
-            }
-        });
-
-        btnStop.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (isServerWorking){
-                    isServerWorking = false;
-                    log.append("Stop server \n");
-                    clientGUI.setVisible(false);
-                } else{
-                    log.append("Server already stopped \n");
-                }
-            }
-        });
-
-        panelMenu = new JPanel(new GridLayout(1, 2));
         textArea = new JPanel(new GridLayout(1, 1));
-
         textArea.add(scroll);
+        add(textArea);
+    }
+    public void panelBottomAdd(){
+        panelMenu = new JPanel(new GridLayout(1, 2));
         panelMenu.add(btnStart);
         panelMenu.add(btnStop);
-
         add(panelMenu, BorderLayout.SOUTH);
-        add(textArea);
-
-        setVisible(true);
     }
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Server;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileWork {
+public class FileWork implements FileView{
+    @Override
     public void fileRead(ArrayList<String> stringList){
         File fileReader = new File("logs.txt");
 
@@ -19,6 +20,7 @@ public class FileWork {
             e.printStackTrace();
         }
     }
+    @Override
     public void sendLog(String line){
         try (FileWriter fr = new FileWriter("logs.txt", true)) {
             fr.write(line);

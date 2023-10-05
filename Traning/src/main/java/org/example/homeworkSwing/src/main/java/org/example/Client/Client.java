@@ -1,7 +1,7 @@
 package org.example.Client;
 
-import org.example.FileWork;
-import org.example.Vars;
+import org.example.Server.FileWork;
+import org.example.Server.Vars;
 
 public class Client implements ClientView {
     Vars vars;

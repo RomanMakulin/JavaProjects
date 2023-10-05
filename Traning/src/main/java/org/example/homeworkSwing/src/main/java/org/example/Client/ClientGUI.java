@@ -1,12 +1,8 @@
 package org.example.Client;
 
-import org.example.FileWork;
-import org.example.Vars;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
 import java.util.Date;
 
 

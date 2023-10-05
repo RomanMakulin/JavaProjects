@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Server;
 
 public class Vars {
     private String IP;
