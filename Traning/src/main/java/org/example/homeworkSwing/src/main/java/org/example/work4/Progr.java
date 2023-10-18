@@ -10,8 +10,8 @@ public class Progr {
         workers.printWorkers();
 //        workers.findByStage();
 //        workers.findPhoneByName();
-//        workers.findById();
-        workers.newWorker();
-        workers.printWorkers();
+        workers.findById();
+//        workers.newWorker();
+//        workers.printWorkers();
     }
 }

@@ -73,14 +73,9 @@ public class Workers {
     public void findById() {
         System.out.print("Print ID: ");
         int idFind = new Scanner(System.in).nextInt();
-        List<Worker> findWorkers = new ArrayList<>();
 
-        for (Worker worker : workerList) {
-            if (worker.id == idFind) {
-                findWorkers.add(worker);
-            }
-        }
-        checkFind(findWorkers);
+        System.out.println(workerList.stream().filter(worker -> idFind == worker.id).findAny());
+
     }
 
     public <T> void checkFind(List<T> findWorkers) {
