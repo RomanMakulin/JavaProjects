@@ -16,7 +16,7 @@ public class Workers {
         this.workerList = generateWorkers();
     }
 
-    public List<Worker> generateWorkers(){
+    public List<Worker> generateWorkers() {
         workerList = new ArrayList<>();
         workerList.add(new Worker("911", "Roman", 5));
         workerList.add(new Worker("534", "Olga", 1));
@@ -27,14 +27,14 @@ public class Workers {
         return workerList;
     }
 
-    public void printWorkers(){
-        for (Worker el1: workerList) {
+    public void printWorkers() {
+        for (Worker el1 : workerList) {
             System.out.println(el1);
         }
     }
 
     //    Добавить метод добавление нового сотрудника в справочник
-    public void newWorker(){
+    public void newWorker() {
         workerList.add(new Worker(
                 new InputNumber().inputDate(),
                 new InputName().inputDate(),
@@ -42,7 +42,7 @@ public class Workers {
     }
 
     //    Добавить метод, который ищет сотрудника по стажу (может быть список)
-    public void findByStage(){
+    public void findByStage() {
         System.out.print("Print stage: ");
         int stageFind = new Scanner(System.in).nextInt();
         List<Worker> findWorkers = new ArrayList<>();
@@ -56,7 +56,7 @@ public class Workers {
     }
 
     //    Добавить метод, который выводит номер телефона сотрудника по имени (может быть список)
-    public void findPhoneByName(){
+    public void findPhoneByName() {
         System.out.print("Print name: ");
         String nameFind = new Scanner(System.in).next();
         List<String> findWorkers = new ArrayList<>();
@@ -70,7 +70,7 @@ public class Workers {
     }
 
     //    Добавить метод, который ищет сотрудника по табельному номеру
-    public void findById(){
+    public void findById() {
         System.out.print("Print ID: ");
         int idFind = new Scanner(System.in).nextInt();
         List<Worker> findWorkers = new ArrayList<>();
@@ -83,9 +83,9 @@ public class Workers {
         checkFind(findWorkers);
     }
 
-    public <T> void checkFind (List<T> findWorkers){
-        if (findWorkers.size() > 0){
-            for (T el1: findWorkers) {
+    public <T> void checkFind(List<T> findWorkers) {
+        if (findWorkers.size() > 0) {
+            for (T el1 : findWorkers) {
                 System.out.println(el1);
             }
         } else System.out.println("No one");
