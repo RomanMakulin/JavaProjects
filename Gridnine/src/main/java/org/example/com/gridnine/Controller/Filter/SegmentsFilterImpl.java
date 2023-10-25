@@ -58,7 +58,6 @@ public class SegmentsFilterImpl implements SegmentsFilter{
                 long hoursOnEarth = ChronoUnit.HOURS.between(arr, dep);
                 if (hoursOnEarth >= hours) {
                     tempFlights.add(flight);
-                    break;
                 }
             }
         }
