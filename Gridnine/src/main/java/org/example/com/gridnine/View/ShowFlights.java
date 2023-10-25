@@ -1,6 +1,6 @@
-package org.example.com.gridnine.testing.View;
+package org.example.com.gridnine.View;
 
-import org.example.com.gridnine.testing.Model.Flight;
+import org.example.com.gridnine.Model.Flight;
 
 import java.util.List;
 

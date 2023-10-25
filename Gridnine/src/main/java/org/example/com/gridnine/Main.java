@@ -1,6 +1,6 @@
-package org.example.com.gridnine.testing;
+package org.example.com.gridnine;
 
-import org.example.com.gridnine.testing.Controller.Controller;
+import org.example.com.gridnine.Controller.Controller;
 
 public class Main {
     public static void main(String[] args) {

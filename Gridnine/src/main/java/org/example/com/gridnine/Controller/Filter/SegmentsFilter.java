@@ -1,6 +1,6 @@
-package org.example.com.gridnine.testing.Controller.Filter;
+package org.example.com.gridnine.Controller.Filter;
 
-import org.example.com.gridnine.testing.Model.Flight;
+import org.example.com.gridnine.Model.Flight;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package org.example.com.gridnine.testing.Controller;
+package org.example.com.gridnine.Controller;
 
-import org.example.com.gridnine.testing.Controller.Filter.SegmentsFilterImpl;
-import org.example.com.gridnine.testing.Model.Flight;
-import org.example.com.gridnine.testing.View.ShowFlights;
+import org.example.com.gridnine.Controller.Filter.SegmentsFilterImpl;
+import org.example.com.gridnine.Model.Flight;
+import org.example.com.gridnine.View.ShowFlights;
 
 import java.util.List;
 
