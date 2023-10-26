@@ -2,12 +2,12 @@ package org.example;
 
 import java.util.Objects;
 
-public class Philosopher extends Thread{
-    protected Objects leftFork;
-    protected Objects rightFork;
+public class Philosopher extends Thread {
+    protected Object leftFork;
+    protected Object rightFork;
     protected String name;
 
-    public Philosopher(Objects leftFork, Objects rightFork, String name) {
+    public Philosopher(Object leftFork, Object rightFork, String name) {
         this.leftFork = leftFork;
         this.rightFork = rightFork;
         this.name = name;
@@ -22,8 +22,16 @@ public class Philosopher extends Thread{
     public void run() {
         try {
             action(name + " думает");
+            synchronized (leftFork) {
+                action(name + " взял левую вилку");
+                synchronized (rightFork) {
+                    action(name + " взял правую вилку и начал есть");
+                }
+            }
+            action(name + " закончил прием еды, положил вилки и думает");
+
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            Thread.currentThread().interrupt();
         }
     }
 }
