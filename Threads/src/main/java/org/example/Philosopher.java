@@ -20,18 +20,20 @@ public class Philosopher extends Thread {
 
     @Override
     public void run() {
-        try {
-            action(name + " думает");
-            synchronized (leftFork) {
-                action(name + " взял левую вилку");
-                synchronized (rightFork) {
-                    action(name + " взял правую вилку и начал есть");
+        for (int i = 0; i < 3; i++) {
+            try {
+                action(name + " думает");
+                synchronized (leftFork) {
+                    action(name + " взял левую вилку");
+                    synchronized (rightFork) {
+                        action(name + " взял правую вилку и начал есть " + "[" + (i+1) + "] раз");
+                    }
                 }
-            }
-            action(name + " закончил прием еды, положил вилки и думает");
+                action(name + " закончил прием еды, положил вилки и думает");
 
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 }
