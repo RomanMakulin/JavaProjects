@@ -1,16 +1,18 @@
 package org.example;
 
-import java.util.Objects;
+import java.util.concurrent.Semaphore;
 
 public class Philosopher extends Thread {
-    protected Object leftFork;
-    protected Object rightFork;
+    protected Fork leftFork;
+    protected Fork rightFork;
     protected String name;
+    protected Semaphore semaphore;
 
-    public Philosopher(Object leftFork, Object rightFork, String name) {
+    public Philosopher(Fork leftFork, Fork rightFork, String name, Semaphore sem) {
         this.leftFork = leftFork;
         this.rightFork = rightFork;
         this.name = name;
+        this.semaphore = sem;
     }
 
     protected void action(String action) throws InterruptedException {
@@ -20,20 +22,38 @@ public class Philosopher extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 3; i++) {
+        int countEating = 0;
+        int maxCountEating = 3;
+        try {
+            action(name + " думает");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        while (countEating != maxCountEating) {
             try {
-                action(name + " думает");
-                synchronized (leftFork) {
-                    action(name + " взял левую вилку");
-                    synchronized (rightFork) {
-                        action(name + " взял правую вилку и начал есть " + "[" + (i+1) + "] раз");
+                if (rightFork.isFree() && leftFork.isFree()) {
+                    semaphore.acquire();
+                    rightFork.setFree(false);
+                    leftFork.setFree(false);
+                    countEating++;
+                    synchronized (leftFork) {
+                        action(name + " взял левую вилку");
+                        synchronized (rightFork) {
+                            action(name + " взял правую вилку и начал есть " + "[" + countEating + "] раз");
+                        }
                     }
+                    endEating();
                 }
-                action(name + " закончил прием еды, положил вилки и думает");
 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
+    }
+    public void endEating() throws InterruptedException {
+        action(name + " закончил прием еды, положил вилки и думает");
+        rightFork.setFree(true);
+        leftFork.setFree(true);
+        semaphore.release();
     }
 }
