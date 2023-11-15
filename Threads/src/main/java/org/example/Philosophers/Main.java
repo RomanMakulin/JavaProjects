@@ -1,6 +1,4 @@
-package org.example;
-
-import java.util.Objects;
+package org.example.Philosophers;
 
 public class Main {
     public static void main(String[] args) {

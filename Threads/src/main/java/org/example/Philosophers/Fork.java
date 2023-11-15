@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Philosophers;
 
 public class Fork {
     protected volatile boolean free;
