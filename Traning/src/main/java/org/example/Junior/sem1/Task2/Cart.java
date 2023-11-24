@@ -6,9 +6,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Корзина
+ *
  * @param <T> Еда
  */
-public class Cart <T extends Food>{
+public class Cart<T extends Food> {
 
     /**
      * Товары в магазине
@@ -17,8 +18,7 @@ public class Cart <T extends Food>{
     private final UMarket market;
     private final Class<T> clazz;
 
-    public Cart(Class<T> clazz, UMarket market)
-    {
+    public Cart(Class<T> clazz, UMarket market) {
         this.clazz = clazz;
         this.market = market;
         foodstuffs = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Cart <T extends Food>{
     /**
      * Распечатать список продуктов в корзине
      */
-    public void printFoodstuffs(){
+    public void printFoodstuffs() {
         AtomicInteger index = new AtomicInteger(1);
         foodstuffs.forEach(food -> {
             System.out.printf("[%d] %s (Белки: %s Жиры: %s Углеводы: %s)\n",
@@ -45,8 +45,7 @@ public class Cart <T extends Food>{
     /**
      * Балансировка корзины
      */
-    public void cardBalancing()
-    {
+    public void cardBalancing() {
         boolean[] proteins = {false};
         boolean[] fats = {false};
         boolean[] carbohydrates = {false};
@@ -55,25 +54,25 @@ public class Cart <T extends Food>{
             if (item.getProteins()) proteins[0] = true;
             else if (item.getFats()) fats[0] = true;
             else if (item.getCarbohydrates()) carbohydrates[0] = true;
-            if (proteins[0] && fats[0] && carbohydrates[0]) System.out.println("Корзина уже сбалансирована по БЖУ.");
         });
 
-        market.getThings(Food.class).forEach(item -> {
-            if (!proteins[0] && item.getProteins()){
-                proteins[0] = true;
-                foodstuffs.add((T)item);
-            } else if (!fats[0] && item.getFats()){
-                fats[0] = true;
-                foodstuffs.add((T)item);
-            } else if (!carbohydrates[0] && item.getCarbohydrates()){
-                carbohydrates[0] = true;
-                foodstuffs.add((T)item);
-            }
-        });
-
-        if (proteins[0] && fats[0] && carbohydrates[0]) System.out.println("Корзина сбалансирована по БЖУ.");
-        else System.out.println("Не удалось сбалансировать");
-
+        if (proteins[0] && fats[0] && carbohydrates[0]) System.out.println("Корзина уже сбалансирована по БЖУ.");
+        else {
+            market.getThings(Food.class).forEach(item -> {
+                if (!proteins[0] && item.getProteins()) {
+                    proteins[0] = true;
+                    foodstuffs.add((T) item);
+                } else if (!fats[0] && item.getFats()) {
+                    fats[0] = true;
+                    foodstuffs.add((T) item);
+                } else if (!carbohydrates[0] && item.getCarbohydrates()) {
+                    carbohydrates[0] = true;
+                    foodstuffs.add((T) item);
+                }
+            });
+            if (proteins[0] && fats[0] && carbohydrates[0]) System.out.println("Корзина сбалансирована по БЖУ.");
+            else System.out.println("Не удалось сбалансировать");
+        }
     }
 
 }
