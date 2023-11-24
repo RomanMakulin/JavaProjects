@@ -12,10 +12,7 @@ public class Main {
 //    Программа должна вывести на экран среднее значение всех четных чисел в списке.
 
         List<Integer> integerList = Arrays.asList(1, 2, 10, 4, 3, 23);
-
-        double a = integerList.stream().filter(x -> x%2 == 0).reduce(Integer::sum).get();
-        List<Integer> ls2 = integerList.stream().filter(x -> x%2 == 0).toList();
-
-        System.out.println(a + " / " + ls2.size() + " = " + a/ls2.size());
+        double avg = integerList.stream().filter(x -> x%2 == 0).mapToInt(a -> a).average().getAsDouble();
+        System.out.println(avg);
     }
 }
