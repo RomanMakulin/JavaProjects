@@ -2,17 +2,28 @@ package org.example.example.version.Controller;
 
 import org.example.example.version.Controller.ProductsList.FileWork.SaveFile;
 import org.example.example.version.Model.Products.Category;
+import org.example.example.version.Model.Products.Product;
 import org.example.example.version.Model.User.User;
 
 import java.util.List;
 
 public class ActionBuy {
     public void buy(User user, List<Category> categoryList, String category){
-        for (int i = 0; i < categoryList.size(); i++) {
-            if (categoryList.get(i).getCatName().equals(category)){
-                user.put(categoryList.get(i).getProductList());
-                new SaveFile().save(categoryList.get(i).getProductList(), category + ".csv");
-            }
-        }
+
+        categoryList.stream().
+                        filter(item -> item.getCatName().
+                        equals(category)).
+                        forEach(item -> putSave(user, item, category));
+
+//        for (Category value : categoryList) {
+//            if (value.getCatName().equals(category)) {
+//                user.put(value.getProductList());
+//                new SaveFile().save(value.getProductList(), category + ".csv");
+//            }
+//        }
+    }
+    public void putSave(User user, Category item, String category){
+        user.put(item.getProductList());
+        new SaveFile().save(item.getProductList(), category + ".csv");
     }
 }

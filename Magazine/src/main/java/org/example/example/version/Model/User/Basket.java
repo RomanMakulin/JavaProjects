@@ -25,8 +25,6 @@ public class Basket {
     }
 
     public void show() {
-        for (int i = 0; i < basketList.size(); i++) {
-            System.out.println(basketList.get(i));
-        }
+        basketList.stream().forEach(System.out::println);
     }
 }
