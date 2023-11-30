@@ -3,9 +3,8 @@ package org.example.Junior.sem2;
 import org.example.Junior.sem2.Model.Animal;
 import org.example.Junior.sem2.Model.Cat;
 import org.example.Junior.sem2.Model.Dog;
+import org.example.Junior.sem2.Model.MethodsAnimals;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -18,23 +17,14 @@ public class Program {
 //        Выведите на экран информацию о каждом объекте.
 //        Вызовите метод "makeSound()" у каждого объекта, если такой метод присутствует.
 
+        List<Animal> animals = Arrays.asList(
+                new CreateAnimal().newAnimal(Cat.class, "Milka", 2),
+                new CreateAnimal().newAnimal(Cat.class, "Anfiska", 10),
+                new CreateAnimal().newAnimal(Dog.class, "Rex", 5)
+        );
 
-        Class<?>[] animalList = List.of(
-                Class.forName("org.example.Junior.sem2.Model.Cat"),
-                Class.forName("org.example.Junior.sem2.Model.Dog"),
-                Class.forName("org.example.Junior.sem2.Model.Cat")).toArray(new Class[0]);
-
-        List<Object> animals = new ArrayList<>();
-
-
-        for (int i = 0; i < animalList.length; i++) {
-            Constructor<?>[] constructors = animalList[i].getConstructors();
-            animals.add(constructors[0].newInstance());
-        }
-
-        System.out.println(animals);
-
-
+        animals.forEach(animal -> System.out.println(animal + ", class = " + animal.getClass()));
+        new MethodsAnimals().getMethods(animals);
 
     }
 }
