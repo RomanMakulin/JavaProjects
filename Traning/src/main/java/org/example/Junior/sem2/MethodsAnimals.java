@@ -1,4 +1,6 @@
-package org.example.Junior.sem2.Model;
+package org.example.Junior.sem2;
+
+import org.example.Junior.sem2.Model.Animal;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

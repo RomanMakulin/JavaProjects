@@ -3,10 +3,8 @@ package org.example.Junior.sem2;
 import org.example.Junior.sem2.Model.Animal;
 import org.example.Junior.sem2.Model.Cat;
 import org.example.Junior.sem2.Model.Dog;
-import org.example.Junior.sem2.Model.MethodsAnimals;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class Program {
