@@ -13,6 +13,9 @@ public class Student implements Serializable {
         this.gpa = gpa;
     }
 
+    public Student() {
+    }
+
     public String getName() {
         return name;
     }
