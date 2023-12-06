@@ -33,15 +33,17 @@ public class Program {
 //        System.out.println(studentNew1);
         //endregion
 
-        //region Jackson method
+        //region Jackson method (JSON)
         ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File("data.json");
+
         Student student = new Student("Roman", 25, 99.9);
         Student student1;
 
-//        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-//        objectMapper.writeValue(new File("data.json"), student);
+        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        objectMapper.writeValue(file, student);
 
-        student1 = objectMapper.readValue(new File("data.json"), Student.class);
+        student1 = objectMapper.readValue(file, Student.class);
         System.out.println(student1);
         //endregion
 
