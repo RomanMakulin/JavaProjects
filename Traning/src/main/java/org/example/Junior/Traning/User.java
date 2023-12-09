@@ -1,12 +1,13 @@
 package org.example.Junior.Traning;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import org.example.Junior.sem2.task3.Column;
 import org.example.Junior.sem2.task3.Entity;
 import org.example.Junior.sem2.task3.Table;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Date;
 
 @Entity
@@ -24,7 +25,7 @@ public class User {
     @Column(name = "age")
     private int age;
     @Column(name = "reg_date")
-    private Date date;
+    private Date regDate;
     @Column(name = "info")
     private String info;
     @Column(name = "group_id")
@@ -41,7 +42,7 @@ public class User {
         this.secondName = secondName;
         this.lastName = lastName;
         this.age = age;
-        this.date = date;
+        this.regDate = date;
         this.info = info;
         this.groupId = groupId;
         this.statusId = statusId;
@@ -57,7 +58,7 @@ public class User {
                 ", secondName='" + secondName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                ", date=" + date +
+                ", date=" + regDate +
                 ", info='" + info + '\'' +
                 ", groupId=" + groupId +
                 ", statusId=" + statusId +
@@ -107,11 +108,11 @@ public class User {
     }
 
     public Date getDate() {
-        return date;
+        return regDate;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.regDate = date;
     }
 
     public String getInfo() {
