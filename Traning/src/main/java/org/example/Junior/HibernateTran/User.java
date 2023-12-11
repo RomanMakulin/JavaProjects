@@ -1,8 +1,6 @@
 package org.example.Junior.HibernateTran;
 
-
 import org.example.Junior.sem2.task3.Column;
-
 import javax.persistence.*;
 
 @Entity
