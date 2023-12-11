@@ -1,4 +1,4 @@
-package org.example.Junior.Traning;
+package org.example.Junior.HibernateTran;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

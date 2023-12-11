@@ -1,4 +1,4 @@
-package org.example.Junior.Traning;
+package org.example.Junior.HibernateTran;
 
 
 import org.example.Junior.sem2.task3.Column;

@@ -1,14 +1,6 @@
-package org.example.Junior.Traning;
+package org.example.Junior.HibernateTran;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.query.Query;
-
-import java.util.List;
 
 public class DB {
     public static void connectDB() {
