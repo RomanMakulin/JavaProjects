@@ -12,7 +12,7 @@
         <property name="current_session_context_class">thread</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
-        <mapping class="org.example.Junior.Traning.User" />
+        <mapping class="org.example.Junior.HibernateTran.User" />
 
     </session-factory>
 </hibernate-configuration>
