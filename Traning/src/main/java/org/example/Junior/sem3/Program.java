@@ -1,7 +1,7 @@
 package org.example.Junior.sem3;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+//import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.*;
 public class Program {
@@ -34,17 +34,17 @@ public class Program {
         //endregion
 
         //region Jackson method (JSON)
-        ObjectMapper objectMapper = new ObjectMapper();
-        File file = new File("data.json");
-
-        Student student = new Student("Roman", 25, 99.9);
-        Student student1;
-
-        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-        objectMapper.writeValue(file, student);
-
-        student1 = objectMapper.readValue(file, Student.class);
-        System.out.println(student1);
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        File file = new File("data.json");
+//
+//        Student student = new Student("Roman", 25, 99.9);
+//        Student student1;
+//
+//        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+//        objectMapper.writeValue(file, student);
+//
+//        student1 = objectMapper.readValue(file, Student.class);
+//        System.out.println(student1);
         //endregion
 
     }

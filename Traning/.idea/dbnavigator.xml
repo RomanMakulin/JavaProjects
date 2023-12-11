@@ -13,7 +13,12 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="4bf7e133-16fc-48ee-a755-4699b6c487a7">
-      <console name="Connection" type="STANDARD" schema="" session="Main" />
+      <console name="Connection" type="STANDARD" schema="anya" session="Main" />
+      <console name="console" type="STANDARD" schema="hibernate" session="Main"><![CDATA[CREATE TABLE hibernate.users (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(30) NOT NULL,
+    `age` INT NOT NULL,
+    PRIMARY KEY (`id`));]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -25,10 +30,18 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="4bf7e133-16fc-48ee-a755-4699b6c487a7" dataset="anya.payment_status" active-filter-id="" />
     <filter-actions connection-id="4bf7e133-16fc-48ee-a755-4699b6c487a7" dataset="anya.users" active-filter-id="" />
+    <filter-actions connection-id="4bf7e133-16fc-48ee-a755-4699b6c487a7" dataset="test111.users" active-filter-id="" />
+    <filter-actions connection-id="4bf7e133-16fc-48ee-a755-4699b6c487a7" dataset="hibernate.users" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
@@ -523,5 +536,9 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
+    <execution-variable-types />
   </component>
 </project>
