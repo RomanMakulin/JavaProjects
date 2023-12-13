@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.DataBase.DB;
 import org.example.Model.User;
+import org.hibernate.boot.archive.scan.spi.Scanner;
 
 import java.sql.Date;
 import java.time.LocalDate;
