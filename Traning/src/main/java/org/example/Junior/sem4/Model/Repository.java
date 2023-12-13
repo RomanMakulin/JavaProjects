@@ -1,17 +1,16 @@
 package org.example.Junior.sem4.Model;
 
-import java.util.Collection;
 import java.util.List;
 
 public interface Repository<T, TId> {
 
-    void createCourse(T item);
+    void create(T item);
 
-    void deleteCourseByID(TId id);
+    void delete(TId id);
 
-    T getCourseByID(TId id);
+    T getByID(TId id);
 
-    void deleteAllCourses();
+    void deleteAll();
 
-    List<T> getAllCourses();
+    List<T> getAllList();
 }
