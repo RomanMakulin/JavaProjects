@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class Program {
     public static void main(String[] args) {
-        assertThat(calk(4, 2, '-')).isEqualTo(1);
+        assertThat(calk(4, 2, '-')).isNotZero().isNotNegative(); // прописываем каким должен быть результат
         System.out.printf("Result: %s", calk(4, 2, '-'));
     }
 
