@@ -1,6 +1,7 @@
-package seminars.first.Shop;
+package org.example.UnitTests.h1.Shop;
 
-import java.util.Comparator;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Shop {
@@ -11,20 +12,23 @@ public class Shop {
         return products;
     }
 
+    public Shop(List<Product> products) {
+        this.products = products;
+    }
+
     public void setProducts(List<Product> products) {
         this.products = products;
     }
 
     // Метод должен вернуть отсортированный по возрастанию по цене список продуктов
     public List<Product> sortProductsByPrice() {
-        // Допишите реализацию метода самостоятельно
-        return null;
+        Collections.sort(products);
+        return products;
     }
 
     // Метод должен вернуть самый дорогой продукт
     public Product getMostExpensiveProduct() {
-        // Допишите реализацию метода самостоятельно
-        return null;
+        return Collections.max(products);
     }
 
 }
