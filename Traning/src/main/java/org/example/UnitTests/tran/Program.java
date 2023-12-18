@@ -4,8 +4,12 @@ import static org.assertj.core.api.Assertions.*;
 
 public class Program {
     public static void main(String[] args) {
-        assertThat(calk(4, 2, '-')).isNotZero().isNotNegative(); // прописываем каким должен быть результат
-        System.out.printf("Result: %s", calk(4, 2, '-'));
+//        assertThat(calk(4, 2, '-')).isNotZero().isNotNegative(); // прописываем каким должен быть результат
+//        System.out.printf("Result: %s", calk(4, 2, '-'));
+
+        String[] days = {"111", "222"};
+
+
     }
 
     public static int calk(int a, int b, char c) {
