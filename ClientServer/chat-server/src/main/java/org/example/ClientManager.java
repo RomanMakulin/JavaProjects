@@ -49,39 +49,28 @@ public class ClientManager implements Runnable {
 
         List<String> arrMes = new ArrayList<>(List.of(message.split(" ")));
 
-        if(arrMes.get(1).charAt(0) == '@'){
-
+        if (arrMes.get(1).charAt(0) == '@') {
+            StringBuilder stringBuilder = new StringBuilder();
             String needName = arrMes.get(1).substring(1);
             arrMes.remove(1);
-
-            StringBuilder stringBuilder = new StringBuilder();
-
             for (String arrMe : arrMes) stringBuilder.append(arrMe).append(" ");
-
             clients.forEach(item -> {
-                try {
-                    if (Objects.equals(item.name, needName)) {
-                        item.bufferedWriter.write(stringBuilder.toString());
-                        item.bufferedWriter.newLine();
-                        item.bufferedWriter.flush();
-                    }
-                } catch (IOException e) {
-                    closeAll(socket, bufferedWriter, bufferedReader);
-                }
+                WriteIsEquals(item, Objects.equals(item.name, needName), stringBuilder.toString());
             });
+        } else clients.forEach(item -> {
+            WriteIsEquals(item, !item.name.equals(name), message);
+        });
+    }
 
-        }else {
-            clients.forEach(item -> {
-                try {
-                    if (!item.name.equals(name)) {
-                        item.bufferedWriter.write(message);
-                        item.bufferedWriter.newLine();
-                        item.bufferedWriter.flush();
-                    }
-                } catch (IOException e) {
-                    closeAll(socket, bufferedWriter, bufferedReader);
-                }
-            });
+    public void WriteIsEquals(ClientManager item, boolean isEquals, String message) {
+        try {
+            if (isEquals) {
+                item.bufferedWriter.write(message);
+                item.bufferedWriter.newLine();
+                item.bufferedWriter.flush();
+            }
+        } catch (IOException e) {
+            closeAll(socket, bufferedWriter, bufferedReader);
         }
     }
 
