@@ -7,12 +7,11 @@ import org.hibernate.cfg.Configuration;
 public class Connector {
     protected SessionFactory sessionFactory;
 
-    public Session getSession(){
-        if (sessionFactory == null){
-            try {
-                Configuration configuration = new Configuration().configure();
-                configuration.addAnnotatedClass();
-            }
-        }
+    public Session getSession() {
+        Configuration configuration = new Configuration().configure();
+        configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Profile.class);
+        sessionFactory = configuration.buildSessionFactory();
+        return sessionFactory.openSession();
     }
 }
