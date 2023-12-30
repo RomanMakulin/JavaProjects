@@ -10,7 +10,7 @@ public class Connector {
     public Session getSession() {
         Configuration configuration = new Configuration().configure();
         configuration.addAnnotatedClass(User.class);
-        configuration.addAnnotatedClass(Profile.class);
+        configuration.addAnnotatedClass(Address.class);
         sessionFactory = configuration.buildSessionFactory();
         return sessionFactory.openSession();
     }

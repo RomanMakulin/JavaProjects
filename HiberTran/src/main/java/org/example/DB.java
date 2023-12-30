@@ -4,10 +4,11 @@ import org.hibernate.Session;
 
 public class DB {
     Connector connector = new Connector();
-    public void newUser(String name, String lastName, String userName, String pass){
+    public void newUser(String name, String lastName, int age, Address address){
         try(Session session = connector.getSession()){
             session.beginTransaction();
-            session.save(new User(name, lastName, userName, pass));
+            User user1 = new User(name, lastName, age, address);
+            session.save(user1);
             session.getTransaction().commit();
         } catch (Exception e){
             e.printStackTrace();
