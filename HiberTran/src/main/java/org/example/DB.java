@@ -15,6 +15,14 @@ public class DB {
         }
     }
 
+    public void getByID(int id){
+        try(Session session = connector.getSession()){
+            session.beginTransaction();
+            User needUser = session.get(User.class, id);
+            System.out.println(needUser);
+        }
+    }
+
     public void delUser(int id){
         try(Session session = connector.getSession()){
             session.beginTransaction();
