@@ -1,6 +1,6 @@
-package org.example;
+package org.example.hw1;
 
-import org.example.others.Type;
+import org.example.hw1.others.Type;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package org.example;
+package org.example.hw1;
 
-import org.example.others.Point3D;
-import org.example.others.Texture;
+import org.example.hw1.others.Point3D;
+import org.example.hw1.others.Texture;
 
 import java.util.ArrayList;
 import java.util.List;

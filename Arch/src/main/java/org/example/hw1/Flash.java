@@ -1,8 +1,8 @@
-package org.example;
+package org.example.hw1;
 
-import org.example.others.Angle3D;
-import org.example.others.Color;
-import org.example.others.Point3D;
+import org.example.hw1.others.Angle3D;
+import org.example.hw1.others.Color;
+import org.example.hw1.others.Point3D;
 
 
 public class Flash {
